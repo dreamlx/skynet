@@ -7,7 +7,7 @@
       %h4 Public Opinion Monitoring System
       %input#searchInput.radiusBtn{ type: "search", placeholder: "搜索关键字" }
 
-  = render 'weiboList'
+  = render 'weiboList', object: @weibo_items
 
   = render 'lastestUpdate'
 
