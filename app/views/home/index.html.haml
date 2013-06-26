@@ -1,0 +1,21 @@
+= render "aside"
+/ begin page right warp
+.rightWarp
+  %header#mainArticalHeader
+    %hgroup
+      %h1 舆情预警分析系统
+      %h4 Public Opinion Monitoring System
+      %input#searchInput.radiusBtn{ type: "search", placeholder: "搜索关键字" }
+
+  = render 'weiboList'
+
+  = render 'lastestUpdate'
+
+  = render 'realTimeChartBlock'
+
+  = render 'moreInfoBlock'
+
+  .lessMoreBtn
+    %a#lessInfoBtn{:href => "#"}
+      %span.spritebg.moreIcon
+      展开更多详情
