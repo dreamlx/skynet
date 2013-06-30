@@ -154,14 +154,23 @@
 #lastestUpdate
 {
 	width:880px;
-	height:175px;
+	height:179px;	
 	margin:0 auto;
 	margin-top:35px;
+	overflow-y:hidden;
 }
 
-.tab-pane
+.tab-content
 {
+	width:880px;
+	clear:both;
+}
+
+#lastestUpdate div.tab-pane
+{
+	width:878px;
 	height:120px;
+	overflow:hidden;
 }
 
 .lastestWeiboArticle
@@ -193,9 +202,13 @@
 
 .lastestWeiboArticle p
 {
+	width:100%;
+	height:45px;
 	font-size:12px;
 	font-family:Arial;
 	margin:5px 0 0 0 ;
+	overflow:hidden;
+	text-overflow:hidden;
 }
 
 .lastestWeiboArticle > span
@@ -338,6 +351,7 @@
 
 #lineChartWarp
 {
+	clear:both;
 	width:780px;
 	height:140px;
 	margin:0 auto;
@@ -546,6 +560,13 @@ tr.evenRow
 	z-index:20;
 }
 
+#top10ChartWarp
+{
+	width:778px;
+	height:280px;
+	clear:both;
+}
+
 /*============================================*/
 #weiboTable
 {
@@ -664,7 +685,7 @@ tr.evenRow
 	height:36px;
 	float:right;
 	margin-right:35px;
-	margin-top:35px;
+	margin-top:31px;
 	/*position:relative;
 	z-index:2;
 	left:754px;
