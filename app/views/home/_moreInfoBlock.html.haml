@@ -130,13 +130,13 @@
   #weiboTable
     %ul.tab-items
       %li
-        %a{:href => "#table1"} 微博舆情
+        %a{:href => "#table1", onFocus: "this.blur()"} 微博舆情
       %li
-        %a{:href => "#table2"} 负面微博
+        %a{:href => "#table2", onFocus: "this.blur()"} 负面微博
       %li
-        %a{:href => "#table3"} 最热传播
+        %a{:href => "#table3", onFocus: "this.blur()"} 最热传播
       %li
-        %a{:href => "#table4"} 最热评论
+        %a{:href => "#table4", onFocus: "this.blur()"} 最热评论
     .tab-content
       #table1.tab-pane
         %table
