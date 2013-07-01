@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(function(){
+  $(".tab-items a").click(function(){
+   $(".tab-content").fadeOut().fadeIn();
+  });
+});

@@ -14,3 +14,4 @@
  *= require home
  *= require tabstyle
  */
+a {blr:expression(this.onFocus=this.blur())}

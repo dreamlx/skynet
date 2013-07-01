@@ -147,54 +147,66 @@
             %th{:scope => "col"} 时间
             %td
           %tbody
-            %tr.evenRow
-              %th
-                %span.weiboIcon16.spritebg
-              %td.weiboTableContent Out of the same door, but personality is different, Changhe Suzuki camp hi pass wonderful
-              %td Weibo
-              %td.weiboTimeTd 2006-6-1 12:36:00 PM
-              %td
-                %a.closeLastestBtn.spritebg{:href => ""}
-            %tr
-              %th
-                %span.weiboIcon16.spritebg
-              %td.weiboTableContent Out of the same door, but personality is different, Changhe Suzuki camp hi pass wonderful
-              %td Weibo
-              %td.weiboTimeTd 2006-6-1 12:36:00 PM
-              %td
-                %a.closeLastestBtn.spritebg{:href => ""}
-            %tr.evenRow
-              %th
-                %span.weiboIcon16.spritebg
-              %td.weiboTableContent Out of the same door, but personality is different, Changhe Suzuki camp hi pass wonderful
-              %td Weibo
-              %td.weiboTimeTd 2006-6-1 12:36:00 PM
-              %td
-                %a.closeLastestBtn.spritebg{:href => ""}
-            %tr
-              %th
-                %span.weiboIcon16.spritebg
-              %td.weiboTableContent Out of the same door, but personality is different, Changhe Suzuki camp hi pass wonderful
-              %td Weibo
-              %td.weiboTimeTd 2006-6-1 12:36:00 PM
-              %td
-                %a.closeLastestBtn.spritebg{:href => ""}
-            %tr.evenRow
-              %th
-                %span.weiboIcon16.spritebg
-              %td.weiboTableContent Out of the same door, but personality is different, Changhe Suzuki camp hi pass wonderful
-              %td Weibo
-              %td.weiboTimeTd 2006-6-1 12:36:00 PM
-              %td
-                %a.closeLastestBtn.spritebg{:href => ""}
-            %tr
-              %th
-                %span.weiboIcon16.spritebg
-              %td.weiboTableContent Out of the same door, but personality is different, Changhe Suzuki camp hi pass wonderful
-              %td Weibo
-              %td.weiboTimeTd 2006-6-1 12:36:00 PM
-              %td
-                %a.closeLastestBtn.spritebg{:href => ""}
+            - @weiboTable1.each_with_index do |weibo,index|
+              %tr{ class: index%2 == 1 ? "" : ".evenRow" }
+                %th
+                  %span.weiboIcon16.spritebg
+                %td.weiboTableContent= weibo[:content]
+                %td= weibo[:meiti]
+                %td.weiboTimeTd= weibo[:cteated_at]
+                %td
+                  %a.closeLastestBtn.spritebg{ :href => "" }
       #table2.tab-pane
+        %table
+          %thead
+            %td
+            %th.darkGreyThBg{:scope => "col"} 内容
+            %th{:scope => "col"} 媒体
+            %th{:scope => "col"} 时间
+            %td
+          %tbody
+            - @weiboTable2.each_with_index do |weibo,index|
+              %tr{ class: index%2 == 1 ? "" : ".evenRow" }
+                %th
+                  %span.weiboIcon16.spritebg
+                %td.weiboTableContent= weibo[:content]
+                %td= weibo[:meiti]
+                %td.weiboTimeTd= weibo[:cteated_at]
+                %td
+                  %a.closeLastestBtn.spritebg{ :href => "" }      
       #table3.tab-pane
+        %table
+          %thead
+            %td
+            %th.darkGreyThBg{:scope => "col"} 内容
+            %th{:scope => "col"} 媒体
+            %th{:scope => "col"} 时间
+            %td
+          %tbody
+            - @weiboTable3.each_with_index do |weibo,index|
+              %tr{ class: index%2 == 1 ? "" : ".evenRow" }
+                %th
+                  %span.weiboIcon16.spritebg
+                %td.weiboTableContent= weibo[:content]
+                %td= weibo[:meiti]
+                %td.weiboTimeTd= weibo[:cteated_at]
+                %td
+                  %a.closeLastestBtn.spritebg{ :href => "" }      
       #table4.tab-pane
+        %table
+          %thead
+            %td
+            %th.darkGreyThBg{:scope => "col"} 内容
+            %th{:scope => "col"} 媒体
+            %th{:scope => "col"} 时间
+            %td
+          %tbody
+            - @weiboTable1.each_with_index do |weibo,index|
+              %tr{ class: index%2 == 1 ? "" : ".evenRow" }
+                %th
+                  %span.weiboIcon16.spritebg
+                %td.weiboTableContent= weibo[:content]
+                %td= weibo[:meiti]
+                %td.weiboTimeTd= weibo[:cteated_at]
+                %td
+                  %a.closeLastestBtn.spritebg{ :href => "" }     
