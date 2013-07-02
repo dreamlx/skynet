@@ -8,18 +8,18 @@
     #tab1.tab-pane
       .lastestWeiboArticle
         %header
-          %h3 @lastestWeiboArticle[1].title
+          %h3= @weibo_yq.last['text']
           %span
             %img{:alt => "", :src => "assets/weiboLogo.png"}/
-        %p= @lastestWeiboArticle[1]
-        %span @lastestWeiboArticle[1].updated_at
+        %p= @weibo_yq.last['content']
+        %span=@weibo_yq.last['published_at']
       %a.closeLastestBtn.spritebg{:href => "#"}
     #tab2.tab-pane
       .lastestWeiboArticle
         %header
-          %h3 @lastestWeiboArticle[2].title
+          %h3= @weibo_yj.last['text']
           %span
             %img{:alt => "", :src => "assets/weiboLogo.png"}/
-        %p= @lastestWeiboArticle[2]
-        %span @lastestWeiboArticle[1].updated_at
+        %p= @weibo_yj.last['content']
+        %span=@weibo_yj.last['published_at']
       %a.closeLastestBtn.spritebg{:href => "#"}
