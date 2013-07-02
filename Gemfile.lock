@@ -43,6 +43,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    curb (0.8.4)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -129,6 +130,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano (~> 2.12.0)
   coffee-rails (~> 3.2.1)
+  curb
   haml
   jquery-rails
   rails (= 3.2.12)
