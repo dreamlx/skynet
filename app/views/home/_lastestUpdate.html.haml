@@ -11,7 +11,7 @@
           %h3= @weibo_yq.last['text']
           %span
             %img{:alt => "", :src => "assets/weiboLogo.png"}/
-        %p= @weibo_yq.last['content']
+        %p= link_to @weibo_yq.last['content'], @weibo_yq.last['url'], target: '_blank'
         %span=@weibo_yq.last['published_at']
       %a.closeLastestBtn.spritebg{:href => "#"}
     #tab2.tab-pane

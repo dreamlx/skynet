@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     #through curl login skynet
     api_url = 'http://imws.voc.com.cn/cgi-bin/imetrics/api'
     login_api = 'api_login.cgi'
+    weibo_api   = 'api_index.cgi'
     act = 'login'
     username = 'changhe@163.com'
     password = 'voc2013'
@@ -17,29 +18,19 @@ class HomeController < ApplicationController
     if http.http_get
       # puts hash_login: 
       # {"code"=>"200", "data"=>{"id_cp"=>30, "id_gp"=>183, "VOC_CenterID"=>"432bee3c62e2dcf01ef76a87b59ba49178", "url"=>"http://imws.voc.com.cn/imetrics/30_183.html"}} 
-      hash_login =  ActiveSupport::JSON.decode(http.body_str)
+      hash_login  =  ActiveSupport::JSON.decode(http.body_str)
 
       #get weibo_list
-      weibo_api = 'api_index.cgi'
-      id_gp = hash_login['data']['id_gp']
-      id_cp = hash_login['data']['id_cp']
-
-      act = 'get_wb_list'
-      curl = "#{api_url}/#{weibo_api}?act=#{act}&id_gp=#{id_gp}&id_cp=#{id_cp}"
-      http.url = curl
-      @weibo_list = ActiveSupport::JSON.decode(http.body_str)['arts'] if http.http_get
-
+      act         = 'get_wb_list'
+      @weibo_list = get_weibo_list(api_url, weibo_api, act, hash_login, http)
+     
       #舆情
-      act = 'get_yq_list'
-      curl = "#{api_url}/#{weibo_api}?act=#{act}&id_gp=#{id_gp}&id_cp=#{id_cp}"
-      http.url = curl
-      @weibo_yq = ActiveSupport::JSON.decode(http.body_str)['arts'] if http.http_get
+      act         = 'get_yq_list'
+      @weibo_yq   = get_weibo_list(api_url, weibo_api, act, hash_login, http)
 
       #预警
-      act = 'get_yj_list'
-      curl = "#{api_url}/#{weibo_api}?act=#{act}&id_gp=#{id_gp}&id_cp=#{id_cp}"
-      http.url = curl
-      @weibo_yj = ActiveSupport::JSON.decode(http.body_str)['arts'] if http.http_get
+      act         = 'get_yj_list'
+      @weibo_yj   = get_weibo_list(api_url, weibo_api, act, hash_login, http)
 
     else
         #TODO, try again
@@ -73,5 +64,19 @@ class HomeController < ApplicationController
     @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
     @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
     @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
+  end
+
+  private
+
+  def get_weibo_list(api_url,weibo_api,act,hash_login,http)
+    id_gp = hash_login['data']['id_gp']
+    id_cp = hash_login['data']['id_cp']
+    curl = "#{api_url}/#{weibo_api}?act=#{act}&id_gp=#{id_gp}&id_cp=#{id_cp}"
+    http.url = curl
+    if http.http_get
+      weibo_list = ActiveSupport::JSON.decode(http.body_str)['arts'] 
+    else
+      weibo_list = []
+    end
   end
 end
