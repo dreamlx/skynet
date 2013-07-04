@@ -20,6 +20,6 @@
           %h3= @weibo_yj.last['text']
           %span
             %img{:alt => "", :src => "assets/weiboLogo.png"}/
-        %p= @weibo_yj.last['content']
+        %p= link_to @weibo_yj.last['content'], @weibo_yj.last['url'], target: '_blank'
         %span=@weibo_yj.last['published_at']
       %a.closeLastestBtn.spritebg{:href => "#"}

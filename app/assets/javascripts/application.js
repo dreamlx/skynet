@@ -19,3 +19,23 @@ $(function(){
    $(".tab-content").fadeOut().fadeIn();
   });
 });
+
+//gon 的变量
+//动态趋势图
+//alert(gon.realTimeChartBlock);
+//alert(gon.realTimeChartTitle);
+
+//[全部调性]
+//      alert(gon.qbdx_today);
+//      gon.qbdx_yesterday
+//      gon.qbdx_15days
+
+//      #[媒体类型]
+//      gon.media_kind_today
+//      gon.media_kind_yesterday
+//      gon.media_kind_15days 
+
+//      #top10
+//      gon.top10_today 
+//      gon.top10_yesterday
+//      gon.top10_15days 
