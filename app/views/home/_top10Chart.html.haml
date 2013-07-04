@@ -1,0 +1,16 @@
+%section#top10ChartBlock
+  %header
+    %h2 网站 TOP10
+  %section.chartTabs
+    %ul
+      %li
+        %a#top10ChartTab1.radiusBtn.currentChartTabBtn{:href => "#"} 今天
+      %li
+        %a#top10ChartTab2.radiusBtn.chartTabBtn{:href => "#"} 昨天
+      %li
+        %a#top10ChartTab3.radiusBtn.chartTabBtn{:href => "#"} 15天
+  %figure.dnp
+    %a.downloadBtn.radiusBtn{:href => "#"}
+    %a.printBtn.radiusBtn{:href => "#"}
+  #top10ChartWarp
+    #top10Chart

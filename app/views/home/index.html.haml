@@ -8,12 +8,13 @@
     %input#searchInput.radiusBtn{ type: "search", placeholder: "搜索关键字" }
 
   = render 'weiboList', object: @weibo_items
-
   = render 'lastestUpdate'
-
   = render 'realTimeChartBlock'
-
-  = render 'moreInfoBlock'
+  
+  #moreInfoBlock
+    = render 'otherChart'
+    = render 'top10Chart'
+    = render 'weiboTable'
 
   .lessMoreBtn
     %a#lessInfoBtn{:href => "#"}
