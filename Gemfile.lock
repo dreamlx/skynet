@@ -48,6 +48,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    gon (4.1.1)
+      actionpack (>= 2.3.0)
+      json
     haml (4.0.3)
       tilt
     highline (1.6.19)
@@ -137,6 +140,7 @@ DEPENDENCIES
   capistrano (~> 2.12.0)
   coffee-rails (~> 3.2.1)
   curb
+  gon
   haml
   jquery-rails
   less-rails

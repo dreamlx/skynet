@@ -32,46 +32,26 @@ class HomeController < ApplicationController
       act         = 'get_yj_list'
       @weibo_yj   = get_weibo_list(api_url, weibo_api, act, hash_login, http)
 
+      #微博舆情
+      #0为正面微博，1为负面微博，2为最热传播，3为最热评论，缺省为0
+      act         = 'get_wb_yq'
+      @weiboTable = []
+      @weiboTable[0] = get_weibo_list(api_url, weibo_api, act, hash_login, http,0)
+      @weiboTable[1] = get_weibo_list(api_url, weibo_api, act, hash_login, http,0)
+      @weiboTable[2] = get_weibo_list(api_url, weibo_api, act, hash_login, http,0)
+      @weiboTable[3] = get_weibo_list(api_url, weibo_api, act, hash_login, http,0)
     else
         #TODO, try again
     end
-
-    @weiboTable1 =  []
-    @weiboTable1<< {content: "新疆好风景A", meiti: "CCTV", created_at: Time.now, url: '#' }
-    @weiboTable1<< {content: "新疆好风景B", meiti: "CCTV", created_at: Time.now, url: '#' }
-    @weiboTable1<< {content: "新疆暴动C", meiti: "CCTV", created_at: Time.now, url: '#' }
-    @weiboTable1<< {content: "新疆好风景D", meiti: "CCTV", created_at: Time.now, url: '#' }
-    @weiboTable1<< {content: "新疆好风景E", meiti: "CCTV", created_at: Time.now, url: '#' }
-
-    @weiboTable2 =  []
-    @weiboTable2<< {content: "上海经济良好A", meiti: "CCTV2", created_at: Time.now, url: '#' }
-    @weiboTable2<< {content: "上海经济良好B", meiti: "CCTV2", created_at: Time.now, url: '#' }
-    @weiboTable2<< {content: "上海经济良好C", meiti: "CCTV2", created_at: Time.now, url: '#' }
-    @weiboTable2<< {content: "上海经济良好A", meiti: "CCTV2", created_at: Time.now, url: '#' }
-    @weiboTable2<< {content: "上海经济良好E", meiti: "CCTV2", created_at: Time.now, url: '#' }
-
-        @weiboTable3 =  []
-    @weiboTable3<< {content: "东海稳定良好A", meiti: "CCTV3", created_at: Time.now, url: '#' }
-    @weiboTable3<< {content: "东海稳定良好B", meiti: "CCTV3", created_at: Time.now, url: '#' }
-    @weiboTable3<< {content: "东海稳定良好C", meiti: "CCTV3", created_at: Time.now, url: '#' }
-    @weiboTable3<< {content: "东海稳定良好D", meiti: "CCTV3", created_at: Time.now, url: '#' }
-    @weiboTable3<< {content: "东海稳定良好E", meiti: "CCTV3", created_at: Time.now, url: '#' }
-
-
-        @weiboTable4 =  []
-    @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
-    @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
-    @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
-    @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
-    @weiboTable4<< {content: "浙江地区良好", meiti: "CCTV4", created_at: Time.now, url: '#' }
   end
 
   private
 
-  def get_weibo_list(api_url,weibo_api,act,hash_login,http)
+  def get_weibo_list(api_url,weibo_api,act,hash_login,http,date=nil)
     id_gp = hash_login['data']['id_gp']
     id_cp = hash_login['data']['id_cp']
     curl = "#{api_url}/#{weibo_api}?act=#{act}&id_gp=#{id_gp}&id_cp=#{id_cp}"
+    curl += "&date=#{date}" unless date.nil?
     http.url = curl
     if http.http_get
       weibo_list = ActiveSupport::JSON.decode(http.body_str)['arts'] 
