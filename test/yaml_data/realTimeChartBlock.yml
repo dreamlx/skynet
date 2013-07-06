@@ -1,0 +1,50 @@
+--- 
+charts: 
+  - 
+    date: "2013-05-30"
+    value: 138
+  - 
+    date: "2013-05-31"
+    value: 219
+  - 
+    date: "2013-06-01"
+    value: 93
+  - 
+    date: "2013-06-02"
+    value: 87
+  - 
+    date: "2013-06-03"
+    value: 374
+  - 
+    date: "2013-06-04"
+    value: 241
+  - 
+    date: "2013-06-05"
+    value: 184
+  - 
+    date: "2013-06-06"
+    value: 270
+  - 
+    date: "2013-06-07"
+    value: 137
+  - 
+    date: "2013-06-08"
+    value: 535
+  - 
+    date: "2013-06-09"
+    value: 263
+  - 
+    date: "2013-06-10"
+    value: 672
+  - 
+    date: "2013-06-11"
+    value: 756
+  - 
+    date: "2013-06-12"
+    value: 75
+  - 
+    date: "2013-06-13"
+    value: 60
+title: !binary |
+    1+69/DE1zOy84LLi19zBv9ffysY=
+

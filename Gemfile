@@ -8,7 +8,8 @@ gem 'rails', '3.2.12'
 gem 'sqlite3'
 gem 'curb'
 gem 'gon'
-
+gem 'psych'
+gem 'ya2yaml'  
 gem 'haml'
 
 # deploy
@@ -28,7 +29,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'pry-rails', :group => :development
+gem "pry-nav", :group => :development
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

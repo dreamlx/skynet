@@ -1,0 +1,30 @@
+--- 
+code: "200"
+data: 
+  date: 2
+  media: 
+    - 
+      name: !binary |
+          0MLOxQ==
+
+      value: 146
+    - 
+      name: !binary |
+          wtvMsw==
+
+      value: 5
+    - 
+      name: !binary |
+          sqm/zQ==
+
+      value: 0
+    - 
+      name: !binary |
+          zqKyqQ==
+
+      value: 53
+    - 
+      name: !binary |
+          zPmwyQ==
+
+      value: 1

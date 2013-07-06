@@ -1,0 +1,55 @@
+--- 
+code: "200"
+data: 
+  date: 15
+  top10: 
+    - 
+      sitename: !binary |
+          0teztc34
+
+      value: 708
+    - 
+      sitename: !binary |
+          0MLAy86isqk=
+
+      value: 411
+    - 
+      sitename: !binary |
+          zNrRts6isqk=
+
+      value: 109
+    - 
+      sitename: !binary |
+          zfjS186isqk=
+
+      value: 91
+    - 
+      sitename: !binary |
+          xvuztdauvNLN+A==
+
+      value: 87
+    - 
+      sitename: !binary |
+          sNm2yMz5sMk=
+
+      value: 54
+    - 
+      sitename: !binary |
+          1tC5+sb7s7XP+7fRzfg=
+
+      value: 29
+    - 
+      sitename: !binary |
+          xvuztdauvNI=
+
+      value: 24
+    - 
+      sitename: !binary |
+          y9G6/M6isqk=
+
+      value: 24
+    - 
+      sitename: !binary |
+          zfjJz7O1ytA=
+
+      value: 23

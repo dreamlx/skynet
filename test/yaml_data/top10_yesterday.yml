@@ -1,0 +1,53 @@
+--- 
+code: "200"
+data: 
+  date: 2
+  top10: 
+    - 
+      sitename: !binary |
+          0teztc34
+
+      value: 101
+    - 
+      sitename: !binary |
+          0MLAy86isqk=
+
+      value: 42
+    - 
+      sitename: !binary |
+          xvuztdauvNLN+A==
+
+      value: 29
+    - 
+      sitename: !binary |
+          zNrRts6isqk=
+
+      value: 5
+    - 
+      sitename: !binary |
+          zfjS186isqk=
+
+      value: 5
+    - 
+      sitename: auto.youth.cn
+      value: 3
+    - 
+      sitename: !binary |
+          zfjJz7O1ytA=
+
+      value: 3
+    - 
+      sitename: !binary |
+          1tCwstTaz9+yxr6t
+
+      value: 2
+    - 
+      sitename: !binary |
+          zKvGvdHzxvuztc34
+
+      value: 2
+    - 
+      sitename: !binary |
+          xLW1pLLo1/k=
+
+      value: 2
