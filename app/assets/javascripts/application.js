@@ -16,7 +16,13 @@
 
 $(function(){
   $(".tab-items a").click(function(){
-   $(".tab-content").fadeOut().fadeIn();
+   $(".lastestWeiboArticle").hide(10,function(){
+    $(".tab-pane").slideUp(400,function(){
+      $(".tab-pane").slideDown(400,function(){
+        $(".lastestWeiboArticle").show(10);
+      });
+    });
+   });
   });
 });
 
