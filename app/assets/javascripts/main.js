@@ -88,6 +88,12 @@
             }
         });
 
+        console.log($("#weiboTable table tbody tr").size());
+        $("#weiboTable a.closeLastestBtn").click(function(e){
+            e.preventDefault();
+            $(this).parent().parent().remove();
+        });
+
         setCharts();
     });
 

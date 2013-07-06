@@ -59,6 +59,7 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@import "colorDefine";
 body
 {
     font-family:"微软雅黑","宋体";
@@ -78,24 +79,26 @@ input{outline: none}
 {
     width:100%;
     height:70px;
-    background-color: #3d3e3f;
+    background-color: @balticSea;
+    #headerWarp
+    {
+        width:1280px;
+        height:100%;
+        margin:0 auto;
+    }
+    .mainLogo
+    {
+        display:block;
+        float:left;
+        width: 236px;
+        height: 43px;
+        background-position: -296px 0; 
+        margin:15px 0 0 40px;
+    }
 }
 
-#headerWarp
-{
-    width:1280px;
-    height:100%;
-    margin:0 auto;
-}
-.mainLogo
-{
-    display:block;
-    float:left;
-    width: 236px;
-    height: 43px;
-    background-position: -296px 0; 
-    margin:15px 0 0 40px;
-}
+
+
 
 
 .globalNav
@@ -105,25 +108,22 @@ input{outline: none}
     width:600px;
     height:100%;
     margin-right:40px;
-}
-
-.globalNav ul
-{
-    width:100%;
-    text-align: right;
-    margin:26px 0 0 0;
-    padding:0;
-}
-
-.globalNav ul li
-{
-    display: inline;
-    margin-left:44px;
-}
-
-.globalNav a
-{
-    font-size:12px;
+    ul
+    {
+        width:100%;
+        text-align: right;
+        margin:26px 0 0 0;
+        padding:0;
+        li
+        {
+            display: inline;
+            margin-left:44px;
+            a
+            {
+                font-size:12px;
+            }
+        }
+    }
 }
 
 .mainContainer
@@ -131,7 +131,7 @@ input{outline: none}
     width:1280px;
     margin:0 auto;
     overflow: auto;
-    background-color: #4e5457;
+    background-color: @trout;
     -moz-box-shadow:0 5px 6px 0px rgba(0,0,0,0.55);
     -webkit-box-shadow:0 5px 6px 0px rgba(0,0,0,0.3);
     box-shadow:0 5px 6px 0px rgba(0,0,0,0.65);
@@ -139,86 +139,80 @@ input{outline: none}
 
 #globalAside
 {
-    width:320px;
-    
+    width:320px;    
     float:left;
-}
-.systemNav ul
-{
-    width:100%;
-    margin:0;
-    padding:0;
-    border-bottom:1px solid #6c7273;
-}
-
-.systemNav ul li
-{
-    width:100%;
-    height:68px;
-    border-top:1px solid #6c7273;
-    border-bottom:1px solid #3d3e3f;
-}
-
-.systemNav ul li:first-child
-{
-    border-top:none;
-}
-
-.systemNav a
-{
-    display: block;
-    width:100%;
-    height:68px;
-    line-height:68px;
-    font-size:14px;
-}
-
-.systemNav a:hover
-{
-    background-color:#6c7273;
-    -moz-box-shadow:0 5px 6px 0px rgba(0,0,0,0.55) inset;
-    -webkit-box-shadow:0 5px 6px 0px rgba(0,0,0,0.3) inset;
-    -box-shadow:0 5px 6px 0px rgba(0,0,0,0.65) inset;
-}
-
-.systemNav a span
-{
-    display:inline-block;
-}
-.navIcon
-{
-    margin-left:40px;
-}
-.systemNav #systemNavIcon1
-{
-    background-position: -41px 0; width: 17px; height: 15px; 
-}
-.systemNav #systemNavIcon2
-{
-    background-position: -130px 0; width: 17px; height: 16px;
-}
-.systemNav #systemNavIcon3
-{
-    background-position: -227px 0; width: 17px; height: 14px;
-}
-.systemNav #systemNavIcon4
-{
-    background-position: -185px 0; width: 17px; height: 13px;
-}
-.systemNav #systemNavIcon5
-{
-    background-position: -78px 0; width: 17px; height: 10px;
+    .systemNav ul
+    {
+        width:100%;
+        margin:0;
+        padding:0;
+        border-bottom:1px solid @nevada;
+        li
+        {
+            width:100%;
+            height:68px;
+            border-top:1px solid @nevada;
+            border-bottom:1px solid @balticSea;
+            a
+            {
+                display: block;
+                width:100%;
+                height:68px;
+                line-height:68px;
+                font-size:14px;
+                &:hover
+                {
+                    background-color:@nevada;
+                    -moz-box-shadow:0 5px 6px 0px rgba(0,0,0,0.55) inset;
+                    -webkit-box-shadow:0 5px 6px 0px rgba(0,0,0,0.3) inset;
+                    -box-shadow:0 5px 6px 0px rgba(0,0,0,0.65) inset;
+                }
+                span
+                {
+                    display:inline-block;
+                }
+            }
+            &:first-child
+            {
+                border-top:none;
+            }
+            .navIcon
+            {
+                margin-left:40px;
+            }
+            #systemNavIcon1
+            {
+                background-position: -41px 0; width: 17px; height: 15px; 
+            }
+            #systemNavIcon2
+            {
+                background-position: -130px 0; width: 17px; height: 16px;
+            }
+            #systemNavIcon3
+            {
+                background-position: -227px 0; width: 17px; height: 14px;
+            }
+            #systemNavIcon4
+            {
+                background-position: -185px 0; width: 17px; height: 13px;
+            }
+            #systemNavIcon5
+            {
+                background-position: -78px 0; width: 17px; height: 10px;
+            }
+            .sysNavChn{width:56px;margin-left:9px;}
+            .sysNavEng{font-size:12px;color:#c5c6c7;margin-left: 5px;font-family:Arial;}
+            .infoNum{float:right;margin-right:22px;}
+        }
+    }    
 }
 
-.sysNavChn{width:56px;margin-left:9px;}
-.sysNavEng{font-size:12px;color:#c5c6c7;margin-left: 5px;font-family:Arial;}
-.infoNum{float:right;margin-right:22px;}
 
 .rightWarp
 {
     float:left;
     width:960px;
-    background-color:#f2f2f2;
+    background-color:@whiteSmoke;
     /*height:1966px;*/
 }
 
@@ -227,22 +221,27 @@ input{outline: none}
     width:1280px;
     height:125px;
     margin:0 auto;
-    color:#6c7273;
+    color:@nevada;
     padding-top:35px;
+    .companyLogo, 
+    .companyInfo
+    {
+        width:1200px;
+        height:35px;
+        margin:0 auto;
+    }
+    .companyLogo
+    {
+        border-bottom:1px solid #d8d8d8;
+        img,p{display:inline;}
+    }
+    .dnsLogo{float:right;}
+    .icpNumber{font-size:10px;}
+    .companyInfo{font-size:8px;margin-top:5px;}
+    .companyName, .telAndFax{float:right;margin-left:25px;}
 }
-.companyLogo, .companyInfo
-{
-    width:1200px;
-    height:35px;
-    margin:0 auto;
-}
-.companyLogo{border-bottom:1px solid #d8d8d8;}
-.companyLogo img, .companyLogo p{display:inline;}
-.dnsLogo{float:right;}
-.icpNumber{font-size:10px;}
 
-.companyInfo{font-size:8px;margin-top:5px;}
-.companyName, .telAndFax{float:right;margin-left:25px;}
+
 
 
 /* ==========================================================================
