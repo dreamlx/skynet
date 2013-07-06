@@ -4,7 +4,7 @@
 /*	common								*/
 /*======================================*/
 
-.radiusBtn()
+.radiusBtn
 {
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
@@ -46,7 +46,6 @@
 .closeLastestBtn
 {
 	display:block;
-	background-position: 0 0; width: 15px; height: 15px;
 }
 
 #realTimeChartBlock header h2,
@@ -55,6 +54,38 @@
 #top10ChartBlock header h2
 {
 	.blockH2;
+}
+
+figure.dnp
+{
+	float:right;
+	margin-right:50px;	
+	height:35px;
+	a
+	{
+		display:inline-block;
+		width:48px;
+		height:23px;
+		background-color:#d3180f;
+		background-repeat:no-repeat;
+		background-position:17px 4px;
+		border-color:#d3180f;
+		text-align: center;
+		svg
+		{
+			// margin-left:17px;
+			margin-top:4px;
+		}
+	}
+	.downloadBtn
+	{
+		margin-right:25px;
+		// background-image:url("/assets/iconDownload.png");
+	}
+	.printBtn
+	{
+		// background-image:url("/assets/iconPrint.png");	
+	}
 }
 
 /*=================================*/
@@ -305,33 +336,9 @@
 	}
 	figure
 	{
-		float:right;
-		margin-right:50px;
 		margin-top:35px;
-		.dnp
-		{
-			height:35px;
-			a
-			{
-				display:inline-block;
-				width:48px;
-				height:23px;
-				background-color:#d3180f;
-				background-repeat:no-repeat;
-				background-position:17px 4px;
-				border-color:#d3180f;
-			}
-			.downloadBtn
-			{
-				margin-right:25px;
-				background-image:url("/assets/iconDownload.png");
-			}
-			.printBtn
-			{
-				background-image:url("/assets/iconPrint.png");	
-			}
-		}
 	}
+	
 	#lineChartWarp
 	{
 		.centerBlock(780px, 140px);
@@ -551,11 +558,12 @@
 		height:260px;
 		width:880px;
 		overflow: hidden;
+		clear:both;
 	}
 	table
 	{
 		width:780px;
-		height:246px;
+		height:247px;
 		overflow: hidden;
 		margin:0 auto;
 		margin-top:10px;

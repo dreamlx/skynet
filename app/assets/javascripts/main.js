@@ -88,9 +88,12 @@
             }
         });
 
-        console.log($("#weiboTable table tbody tr").size());
+        // console.log($("#weiboTable table tbody tr").size());
         $("#weiboTable a.closeLastestBtn").click(function(e){
             e.preventDefault();
+            var tb = $(this).parentsUntil(".tab-pane","table");
+            var oldHeight = tb.height()
+            tb.height(oldHeight-39);
             $(this).parent().parent().remove();
         });
 
