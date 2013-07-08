@@ -66,10 +66,10 @@ figure.dnp
 		display:inline-block;
 		width:48px;
 		height:23px;
-		background-color:#d3180f;
+		background-color:@jade;
 		background-repeat:no-repeat;
 		background-position:17px 4px;
-		border-color:#d3180f;
+		border-color:@jade;
 		text-align: center;
 		svg
 		{
@@ -88,47 +88,7 @@ figure.dnp
 	}
 }
 
-/*=================================*/
 
-.rightWarp 
-{
-	header#mainArticalHeader
-	{
-		width:880px;
-		height:70px;
-		margin:35px auto 0 auto;
-		hgroup
-		{
-			display: inline-block;
-			width:300px;
-		}
-		.mainH(@size, @color)
-		{
-			margin:0;padding:0;
-			font-size:@size;
-			font-weight:normal;
-			color:@color;
-		}
-		h1
-		{
-			.mainH(24px, #333);
-			height:35px;
-		}
-		h4
-		{
-			.mainH(16px, #8c8c8c)
-		}
-	}
-	#searchInput
-	{
-		.floatBlock(right, 205px, 35px);
-		background:url(/assets/iconSearch.png) @gainsboro no-repeat scroll 171px 10px;
-		border-color:@gainsboro;	
-		vertical-align:top;
-		.radiusBtn;
-	}
-
-}
 
 /*===========================================*/
 /*			weibo list                    	 */
@@ -137,23 +97,23 @@ figure.dnp
 #weiboList
 {
 	width:100%;
-	height:68px;
+	height:76px;
 	background-color:@gainsboroLighter;
-	border-top:1px solid @gainsboro;
+	// border-top:1px solid @gainsboro;
 	border-bottom:1px solid @gainsboro;
 	ul
 	{
 		margin:0;
 		padding:0;
-		margin-left:40px;
-		.floatBlock(left,670px,68px);
+		margin-left:60px;
+		.floatBlock(left,600px,68px);
 		list-style: none;
 		font-size:12px;
 		color:#333;
 		overflow: hidden;
 		li
 		{
-			height:68px;
+			height:76px;
 			position:relative;
 			top:0;
 			.weiboIcon24
@@ -161,16 +121,14 @@ figure.dnp
 				.floatBlock(left, 24px, 24px);
 				background-position: -267px 0;
 				background-repeat:no-repeat;
-				margin-top:20px;
+				margin-top:27px;
 			}
 			.weiboListContent
 			{
 				.floatBlock(left, 620px, 68px);
-				line-height:68px;
-				margin:0;
-				margin-left:25px;
-				overflow: hidden;
-				text-overflow:clip;
+				margin:27px 0 0 25px;
+				height:40px;
+				width:534px;
 			}
 		}
 	}
@@ -196,14 +154,23 @@ figure.dnp
 	}
 	#weiboListBtn
 	{
-		.floatBlock(right, 143px, 38px);
-		background-color:@fireEngineRed;
-		border-color:@fireEngineRed;	
+		.floatBlock(right, 150px, 40px);
+		background-color:@jade;
+		border-color:@jade;	
 		text-align: center;
-		line-height:38px;
+		line-height:40px;
 		letter-spacing:1px;
 		margin-top:14px;
-		margin-right:40px;
+		margin-right:60px;
+		font-size:18px;
+		.iconbar
+		{
+			width:16px;
+			height:3px;
+			display: block;
+			background-color: @puertoRico;
+			margin-bottom:2px;	
+		}
 	}
 }
 

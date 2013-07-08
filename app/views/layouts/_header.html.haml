@@ -1,6 +1,6 @@
 %header#globalHeader
   #headerWarp
-    %a.spritebg.mainLogo{:href => "/"}
+    %a.mainLogo{:href => "/"}
     %nav.globalNav
       %ul.globalNavList
         %li
@@ -13,5 +13,13 @@
           %a{:href => "#", onFocus: "this.blur()"} 成功案例
         %li
           %a{:href => "#", onFocus: "this.blur()"} 关于我们
-        %li
-          %a{:href => "#", onFocus: "this.blur()"} 退出系统
+    %input#searchInput.radiusBtn{ type: "search", placeholder: "搜索关键字" }
+
+%section#mainBanner
+  %div#mainBannerWarp
+    %div#avatar
+      %img{:src => "/assets/smileface.png"}
+    %header#mainArticalHeader
+      %hgroup
+        %h1= get_home_title("cn")
+        %h4= get_home_title("en")

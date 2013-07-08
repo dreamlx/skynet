@@ -12,7 +12,7 @@ textarea {
 
 body {
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1;
 }
 
 ::-moz-selection {
@@ -78,8 +78,8 @@ input{outline: none}
 #globalHeader
 {
     width:100%;
-    height:70px;
-    background-color: @balticSea;
+    height:100px;
+    background-color: @white;
     #headerWarp
     {
         width:1280px;
@@ -90,51 +90,110 @@ input{outline: none}
     {
         display:block;
         float:left;
-        width: 236px;
-        height: 43px;
-        background-position: -296px 0; 
-        margin:15px 0 0 40px;
+        width: 230px;
+        height: 47px;
+        background: url(/assets/globalLogo.png) scroll no-repeat;
+        margin:27px 0 0 60px;
+    }
+    .globalNav
+    {
+        float:left;
+        display:block;
+        width:500px;
+        height:100%;
+        margin-left:60px;
+        ul
+        {
+            width:100%;
+            text-align: left;
+            margin:42px 0 0 0;
+            padding:0;
+            li
+            {
+                display: inline;
+                margin-left:44px;
+                &:first-child
+                {
+                    margin-left:28px;
+                }
+                a
+                {
+                    color:@gulfBlue;
+                    font-size:14px;
+                }
+            }
+        }
+    }
+    #searchInput
+    {
+        display:block;
+        float:right;
+        width: 220px;
+        height: 39px;
+        background:url(/assets/iconSearch.png) @white no-repeat scroll 190px 14px;
+        border-color:@heather;    
+        vertical-align:top;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:5px;
+        border-style:solid;
+        border-width: 1px;
+        color:@heather;
+        margin:31px 60px 0 0;
     }
 }
 
 
-
-
-
-.globalNav
+#mainBanner
 {
-    float:right;
-    display:block;
-    width:600px;
-    height:100%;
-    margin-right:40px;
-    ul
+    width:100%;
+    height:148px;
+    background-color:@cinnabar ;
+    border-bottom:2px solid @venetianRed;
+    #mainBannerWarp
     {
-        width:100%;
-        text-align: right;
-        margin:26px 0 0 0;
-        padding:0;
-        li
+        width:1280px;
+        height:100%;
+        margin:0 auto;
+        background:url("/assets/banner_bg.png") @cinnabar scroll no-repeat;
+        overflow: hidden;
+        div#avatar
         {
-            display: inline;
-            margin-left:44px;
-            a
+            width:100px;
+            height:100px;
+            -webkit-border-radius:1px;
+            -moz-border-radius:1px;
+            border-radius:1px;
+            border:1px solid @persianRed;
+            background-color: @white;
+            margin:24px 30px 0 60px;
+            float:left;
+        }
+        header
+        {
+            float:left;
+            margin-top:49px;
+            hgroup
             {
-                font-size:12px;
+                h1{color:@white;margin:0;font-size:36px;padding:0;letter-spacing:8px;}
+                h4{margin:0;font-size:20px;color:@white;opacity:0.6;}
             }
         }
     }
 }
+
+
+
 
 .mainContainer
 {
     width:1280px;
     margin:0 auto;
     overflow: auto;
-    background-color: @trout;
-    -moz-box-shadow:0 5px 6px 0px rgba(0,0,0,0.55);
+    background-color: @gulfBlue;
+    /*-moz-box-shadow:0 5px 6px 0px rgba(0,0,0,0.55);
     -webkit-box-shadow:0 5px 6px 0px rgba(0,0,0,0.3);
-    box-shadow:0 5px 6px 0px rgba(0,0,0,0.65);
+    box-shadow:0 5px 6px 0px rgba(0,0,0,0.65);*/
 }
 
 #globalAside
@@ -146,19 +205,17 @@ input{outline: none}
         width:100%;
         margin:0;
         padding:0;
-        border-bottom:1px solid @nevada;
         li
         {
             width:100%;
-            height:68px;
-            border-top:1px solid @nevada;
-            border-bottom:1px solid @balticSea;
+            height:73px;            
+            border-bottom:2px solid @madison;
             a
             {
                 display: block;
                 width:100%;
-                height:68px;
-                line-height:68px;
+                height:73px;
+                line-height:73px;
                 font-size:14px;
                 &:hover
                 {
@@ -174,13 +231,14 @@ input{outline: none}
             }
             &:first-child
             {
-                border-top:none;
+                border-top:2px solid @madison;
+                // border-top:none;
             }
-            svg{margin-left:40px;}
+            svg{margin-left:60px;vertical-align:middle;}
             .navIcon
             {
                 display:none;
-                margin-left:40px;
+                margin-left:60px;
             }
             #systemNavIcon1
             {
@@ -204,7 +262,21 @@ input{outline: none}
             }
             .sysNavChn{width:56px;margin-left:9px;}
             .sysNavEng{font-size:12px;color:#c5c6c7;margin-left: 5px;font-family:Arial;}
-            .infoNum{float:right;margin-right:22px;}
+            .infoNum
+            {
+                float:right;
+                margin-right:18px;
+                display:inline;
+                width:21px;
+                height:21px;
+                background-color:@jade;
+                -webkit-border-radius:10px;
+                -moz-border-radius:10px;
+                border-radius:10px;
+                margin-top:24px;
+                line-height:22px;
+                text-align: center;
+            }
         }
     }    
 }

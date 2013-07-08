@@ -1,11 +1,6 @@
 = render "aside"
 / begin page right warp
 .rightWarp
-  %header#mainArticalHeader
-    %hgroup
-      %h1= get_home_title("cn")
-      %h4= get_home_title("en")
-    %input#searchInput.radiusBtn{ type: "search", placeholder: "搜索关键字" }
 
   = render 'weiboList', object: @weibo_items
   = render 'lastestUpdate'
