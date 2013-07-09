@@ -1,5 +1,26 @@
 --- 
 - 
+  author: 651O
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 1
+  click: 0
+  content: "昌河铃木首款纯电动车 最高车速72km/h(组图) ;在外观设计方面，北斗星电动版较汽油版车型有着明显的区别，前脸采用了全新的设计风格，酷似大众老款迈腾 (详情 图片 报价)的中网格栅让人印象深刻"
+  dx: 1
+  id: 156033496
+  level: "1"
+  media: 论坛
+  pic: /imetrics/upload/2013-03-18/1363599859.jpg
+  published_at: "2013-07-09 21:53:11"
+  reply: 0
+  rz: 普通
+  site: 汽车之家
+  text: "转帖：昌河铃木首款纯电动车 最高车速72km/h"
+  url: "http://club.autohome.com.cn/bbs/thread-c-2534-23737891-1.html"
+- 
   author: ""
   bDelete: false
   bHot: false
@@ -398,24 +419,3 @@
   site: 网易论坛
   text: 第十届长春汽车博览会观展指南
   url: "http://club2011.auto.163.com/post/100012612697.html"
-- 
-  author: 月神赎罪
-  bDelete: true
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 0
-  click: 66
-  content: 省油更是唯一的真理，动力嘛拉货载人不费劲就行了，至于外形最好能时尚点;上周末和朋友们约了一起去上庄水库烧烤，烧烤炉子、各种肉、饮料···我家X5巨能装;目前，上庄水库的岸边基本已经被当地人按片划分，搞成了踏青、烧烤、垂钓、休闲一体的农家乐了
-  dx: 0
-  id: 155962091
-  level: "1"
-  media: 论坛
-  pic: /imetrics/upload/2013-03-18/1363583617.jpg
-  published_at: "2013-07-09 13:53:10"
-  reply: 8
-  rz: 普通
-  site: 搜狐社区
-  text: 北斗星X5巡航自驾上庄烧烤+实在的用车感受
-  url: "http://saa.auto.sohu.com/beidouxing/thread-124671559433755-1.shtml"

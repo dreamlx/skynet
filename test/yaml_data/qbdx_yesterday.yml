@@ -7,14 +7,14 @@ data:
       name: !binary |
           1f3D5g==
 
-      value: 24
+      value: 86
     - 
       name: !binary |
           1tDQ1A==
 
-      value: 17
+      value: 32
     - 
       name: !binary |
           uLrD5g==
 
-      value: 5
+      value: 10

@@ -1,9 +1,6 @@
 --- 
 charts: 
   - 
-    date: "2013-06-25"
-    value: 94
-  - 
     date: "2013-06-26"
     value: 120
   - 
@@ -44,7 +41,7 @@ charts:
     value: 77
   - 
     date: "2013-07-09"
-    value: 172
+    value: 177
 title: !binary |
     1+69/DE1zOy84LLi19zBv9ffysY=
 

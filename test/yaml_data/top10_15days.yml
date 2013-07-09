@@ -7,37 +7,37 @@ data:
       sitename: !binary |
           0teztc34
 
-      value: 720
+      value: 704
     - 
       sitename: !binary |
           0MLAy86isqk=
 
-      value: 437
-    - 
-      sitename: !binary |
-          zNrRts6isqk=
-
-      value: 115
+      value: 406
     - 
       sitename: !binary |
           xvuztdauvNLN+A==
 
-      value: 107
+      value: 104
+    - 
+      sitename: !binary |
+          zNrRts6isqk=
+
+      value: 104
     - 
       sitename: !binary |
           zfjS186isqk=
 
-      value: 96
+      value: 92
     - 
       sitename: !binary |
           sNm2yMz5sMk=
 
-      value: 54
+      value: 46
     - 
       sitename: !binary |
           xvuztdauvNI=
 
-      value: 29
+      value: 30
     - 
       sitename: !binary |
           zfjJz7O1ytA=
@@ -45,11 +45,11 @@ data:
       value: 26
     - 
       sitename: !binary |
-          y9G6/M6isqk=
+          sK6/qMb7s7XN+A==
 
-      value: 24
+      value: 19
     - 
       sitename: !binary |
-          sK6/qMb7s7XN+A==
+          y9G6/M6isqk=
 
       value: 19

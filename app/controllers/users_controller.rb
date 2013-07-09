@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create_session
-      http = login_to_remote(params["user"]["name"], params["user"]["password"])
+    http = login_to_remote(params["user"]["name"], params["user"]["password"])
     if http.http_get
       if json2hash(http.body_str)["code"] == "200"
         session[:current_user] = params[:user]

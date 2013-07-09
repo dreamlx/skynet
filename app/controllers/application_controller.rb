@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
+  
+  def auth_user!
+    redirect_to "/users/login" if session[:current_user].nil?
+  end
+  
   private
 
   def get_voc(api_url, act, hash_login, http, other_condition=nil)

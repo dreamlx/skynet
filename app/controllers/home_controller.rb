@@ -1,5 +1,7 @@
 # coding: utf-8
 class HomeController < ApplicationController
+  before_filter :auth_user!
+
   def index
     base_url = 'http://imws.voc.com.cn/cgi-bin/imetrics/api'
     api_url = "#{base_url}/api_index.cgi"

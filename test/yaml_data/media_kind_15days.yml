@@ -7,7 +7,7 @@ data:
       name: !binary |
           0MLOxQ==
 
-      value: 1097
+      value: 1071
     - 
       name: !binary |
           wtvMsw==
@@ -17,14 +17,14 @@ data:
       name: !binary |
           sqm/zQ==
 
-      value: 25
+      value: 22
     - 
       name: !binary |
           zqKyqQ==
 
-      value: 672
+      value: 621
     - 
       name: !binary |
           zPmwyQ==
 
-      value: 52
+      value: 44
