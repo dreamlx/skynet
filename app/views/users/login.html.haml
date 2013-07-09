@@ -1,0 +1,9 @@
+= flash[:alert]
+= form_tag :action => :create_session do
+  %p
+    用户名：
+    = text_field :user,:name
+  %p
+    密码：
+    = text_field :user,:password
+  %p= submit_tag "登录系统"

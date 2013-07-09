@@ -1,50 +1,50 @@
 --- 
 charts: 
   - 
-    date: "2013-05-30"
-    value: 138
+    date: "2013-06-25"
+    value: 94
   - 
-    date: "2013-05-31"
-    value: 219
+    date: "2013-06-26"
+    value: 120
   - 
-    date: "2013-06-01"
-    value: 93
+    date: "2013-06-27"
+    value: 132
   - 
-    date: "2013-06-02"
-    value: 87
+    date: "2013-06-28"
+    value: 125
   - 
-    date: "2013-06-03"
-    value: 374
-  - 
-    date: "2013-06-04"
-    value: 241
-  - 
-    date: "2013-06-05"
-    value: 184
-  - 
-    date: "2013-06-06"
-    value: 270
-  - 
-    date: "2013-06-07"
-    value: 137
-  - 
-    date: "2013-06-08"
-    value: 535
-  - 
-    date: "2013-06-09"
-    value: 263
-  - 
-    date: "2013-06-10"
-    value: 672
-  - 
-    date: "2013-06-11"
-    value: 756
-  - 
-    date: "2013-06-12"
+    date: "2013-06-29"
     value: 75
   - 
-    date: "2013-06-13"
-    value: 60
+    date: "2013-06-30"
+    value: 54
+  - 
+    date: "2013-07-01"
+    value: 116
+  - 
+    date: "2013-07-02"
+    value: 174
+  - 
+    date: "2013-07-03"
+    value: 164
+  - 
+    date: "2013-07-04"
+    value: 111
+  - 
+    date: "2013-07-05"
+    value: 216
+  - 
+    date: "2013-07-06"
+    value: 105
+  - 
+    date: "2013-07-07"
+    value: 105
+  - 
+    date: "2013-07-08"
+    value: 77
+  - 
+    date: "2013-07-09"
+    value: 172
 title: !binary |
     1+69/DE1zOy84LLi19zBv9ffysY=
 

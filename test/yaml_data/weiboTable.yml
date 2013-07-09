@@ -1,6 +1,27 @@
 --- 
 - 
   - 
+    author: 昌河铃木沧州市新时代4S店
+    bDelete: false
+    bHot: false
+    bInfo: false
+    bWarning: false
+    bWeight: false
+    baobiao_num: 1
+    click: 0
+    content: "昌河铃木沧州新时代汽车销售有限公司 利亚纳1.6L手动标准型优惠1.8万元 销售电话：0317-3096660、5639807"
+    dx: 1
+    id: 156006696
+    level: "1"
+    media: 微博
+    pic: /imetrics/upload/2013-03-05/1362449852.jpg
+    published_at: "2013-07-09 17:03:00"
+    reply: 0
+    rz: 普通
+    site: 新浪微博
+    text: "昌河铃木沧州新时代汽车销售有限公司 利亚纳1.6L手动标准型优惠1.8万元 销售电话：0317-3096660、5639807"
+    url: "http://api.t.sina.com.cn/2093168067/statuses/3598197656384582?source=2046614329"
+  - 
     author: 远通昌华昌河铃木4S店
     bDelete: false
     bHot: false
@@ -9,83 +30,20 @@
     bWeight: false
     baobiao_num: 1
     click: 0
-    content: "昌河铃木温馨提示：在雨中行车应保持直线和低速行驶。特别是在高速上，车速最好控制在30km/h内，并和前车保持安全车距，勿跟大货车。 如果需要停车，最好提前100米左右就开始减速、轻点刹车，给后面的车辆留出足够的应对时间。"
+    content: 远通集团昌华昌河铃木4S店实用车型VVT利亚纳a+钜惠3000元，同时享受国家3000元节能惠民补贴。活动时间即日起截止到7月31号。
     dx: 1
-    id: 155446175
+    id: 155986279
     level: "1"
     media: 微博
     pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-06 16:03:00"
+    published_at: "2013-07-09 15:40:00"
     reply: 0
     rz: 普通
     site: 新浪微博
-    text: 昌河铃木温馨提示：在雨中行车应保持直线和低速行驶。特别是在高速上，车速最好控制在30km/h内，并和前车保持安全车距，勿跟大货车...
-    url: "http://api.t.sina.com.cn/2659342813/statuses/3597095267372683?source=2046614329"
+    text: 远通集团昌华昌河铃木4S店实用车型VVT利亚纳a+钜惠3000元，同时享受国家3000元节能惠民补贴。活动时间即日起截止到7月31号。
+    url: "http://api.t.sina.com.cn/2659342813/statuses/3598176689193277?source=2046614329"
   - 
-    author: 铃木吉姆尼俱乐部
-    bDelete: false
-    bHot: false
-    bInfo: false
-    bWarning: false
-    bWeight: false
-    baobiao_num: 3
-    click: 0
-    content: "【建立覆盖全国业务网络昌河铃木全面升级服务】日前，记者获悉，国内最早倡导汽车下乡的昌河铃木，正全力备战三四线市场，从完善产品体系、创新产品技术、拓展营销网络、加强售后服务等多方面着手，形成万村千乡渠道战略部署，以软硬实力的双向提升展开...http://t.cn/zQz5r4O"
-    dx: 1
-    id: 155430321
-    level: "1"
-    media: 微博
-    pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-06 12:50:00"
-    reply: 0
-    rz: 普通
-    site: 新浪微博
-    text: 【建立覆盖全国业务网络昌河铃木全面升级服务】日前，记者获悉，国内最早倡导汽车下乡的昌河铃木，正全力备战三四线市场，从完善产...
-    url: "http://api.t.sina.com.cn/1822458997/statuses/3597046701099383?source=2046614329"
-  - 
-    author: 铃木天语SX4
-    bDelete: false
-    bHot: false
-    bInfo: false
-    bWarning: false
-    bWeight: false
-    baobiao_num: 3
-    click: 0
-    content: "【建立覆盖全国业务网络昌河铃木全面升级服务】日前，记者获悉，国内最早倡导汽车下乡的昌河铃木，正全力备战三四线市场，从完善产品体系、创新产品技术、拓展营销网络、加强售后服务等多方面着手，形成万村千乡渠道战略部署，以软硬实力的双向提升展开...http://t.cn/zQzvnYj"
-    dx: 1
-    id: 155384113
-    level: "1"
-    media: 微博
-    pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-06 08:08:00"
-    reply: 0
-    rz: 普通
-    site: 新浪微博
-    text: 【建立覆盖全国业务网络昌河铃木全面升级服务】日前，记者获悉，国内最早倡导汽车下乡的昌河铃木，正全力备战三四线市场，从完善产...
-    url: "http://api.t.sina.com.cn/1830405345/statuses/3596975859315326?source=2046614329"
-  - 
-    author: 上海通用Buick
-    bDelete: false
-    bHot: false
-    bInfo: false
-    bWarning: false
-    bWeight: false
-    baobiao_num: 7
-    click: 0
-    content: "【9代雅阁/艾瑞泽3/宝马5系　15款新车曝光[13]】11. CH7002BEVA——昌河北斗星纯电动版 预计上市时间：2013年 预计售价：5万元左右 新车亮点：低成本纯电动车型 本期公告目录中，昌河铃木申请了一款纯电动版北斗星。它...http://t.cn/zQ7Yxyx"
-    dx: 1
-    id: 155333992
-    level: "1"
-    media: 微博
-    pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-05 20:47:00"
-    reply: 0
-    rz: 普通
-    site: 新浪微博
-    text: "【9代雅阁/艾瑞泽3/宝马5系　15款新车曝光[13]】11. CH7002BEVA——昌河北斗星纯电动版 预计上市时间：2013年 预计售价：5万元左右..."
-    url: "http://api.t.sina.com.cn/1827864451/statuses/3596804295544540?source=2046614329"
-  - 
-    author: 铃木Splash
+    author: 远通昌华昌河铃木4S店
     bDelete: false
     bHot: false
     bInfo: false
@@ -93,61 +51,145 @@
     bWeight: false
     baobiao_num: 1
     click: 0
-    content: "【昌河铃木派喜直降5000元现金 店内有现车】新浪大连汽车讯 近日编辑走访大连骏升4S店了解到，派喜直降5000元现金，全系四年或二十万公里超长质保并送千元装修礼包。感兴趣的朋友可到店赏车试驾。 车型名称厂家指导价市场价优惠促销备注20...http://t.cn/zQ7WqmM"
+    content: 在正常情况下，昌河铃木利亚纳的后备箱容积已经足够日常使用了，而当后排座椅还可以4/6分别放倒后，后备箱的长度可达1.5米，这样的尺寸几乎可以与一辆面包车媲美。在储物空间方面，昌河铃木利亚纳同样有不错的表现，随身携带的物品基本都有放置位置，而且驾驶室中间区域储物能力尤为出色。
     dx: 1
-    id: 155319595
+    id: 155986278
     level: "1"
     media: 微博
     pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-05 19:26:00"
+    published_at: "2013-07-09 15:44:00"
     reply: 0
     rz: 普通
     site: 新浪微博
-    text: "【昌河铃木派喜直降5000元现金 店内有现车】新浪大连汽车讯 近日编辑走访大连骏升4S店了解到，派喜直降5000元现金，全系四年或二十..."
-    url: "http://api.t.sina.com.cn/1830700777/statuses/3596783936348427?source=2046614329"
+    text: 在正常情况下，昌河铃木利亚纳的后备箱容积已经足够日常使用了，而当后排座椅还可以4/6分别放倒后，后备箱的长度可达1.5米，这样的...
+    url: "http://api.t.sina.com.cn/2659342813/statuses/3598177800355235?source=2046614329"
   - 
-    author: 全球欧美时尚范
+    author: 昌河铃木
     bDelete: false
     bHot: false
     bInfo: false
     bWarning: false
     bWeight: false
-    baobiao_num: 75
-    click: 0
-    content: "【不仅仅是加长版 试驾昌河铃木北斗星X5】北斗星一直是我们所熟知的铃木旗下经典车型，对于这样一款经历多年中国市场的磨练，加上国人对经济车实用性的诉求，所以在北斗星的基础上“加长”得到更好的实用性，北斗星X5这款车型也就应运而生，但是在整体的设计上我们看到它并不是仅仅的加长。"
+    baobiao_num: 1
+    click: 1
+    content: 2013年7月12日-7月21日，看长春车展，聚焦3号展馆！日前，第10届中国长春国际汽车博览会的展区平面图已经公开，届时昌河铃木入驻的三号展馆展台位置也已确定！精彩的展台活动，优惠的现场购车，利亚纳A6更将高调出展！7月12日-7月21日，来长春看车展，不见不散，锁定3号展馆！
     dx: 1
-    id: 155258936
+    id: 155986276
     level: "1"
     media: 微博
     pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-05 14:15:00"
+    published_at: "2013-07-09 15:59:00"
     reply: 0
     rz: 普通
     site: 新浪微博
-    text: "【不仅仅是加长版 试驾昌河铃木北斗星X5】北斗星一直是我们所熟知的铃木旗下经典车型，对于这样一款经历多年中国市场的磨练，加上国..."
-    url: "http://api.t.sina.com.cn/1894890655/statuses/3596705629219143?source=2046614329"
+    text: 2013年7月12日-7月21日，看长春车展，聚焦3号展馆！日前，第10届中国长春国际汽车博览会的展区平面图已经公开，届时昌河铃木入驻的...
+    url: "http://api.t.sina.com.cn/1866338964/statuses/3598181542106641?source=2046614329"
   - 
-    author: 铃木Splash
+    author: 保定荣盛昌河铃木4S店
     bDelete: false
     bHot: false
     bInfo: false
     bWarning: false
     bWeight: false
-    baobiao_num: 5
+    baobiao_num: 1
     click: 0
-    content: "【铃木第四代全球战略车型 跨界派喜领军“三环标”】昌河铃木派喜在国内上市前，其原型车SPLASH已声誉在外。2011年昌河铃木派喜作为首款悬挂“三环标”的跨界车正式上市，为铃木全球战略铺就了一条小排量王者的突破之路。时隔一年多来，昌河铃...http://t.cn/zQ7Ikr5"
+    content: "昌河福瑞达加长版特价处理，优惠5000元，铃木1.2L发动机，销售热线：0312-5939556 保定荣盛昌河铃木4S店"
     dx: 1
-    id: 155257442
+    id: 155949478
     level: "1"
     media: 微博
     pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-05 13:11:00"
+    published_at: "2013-07-09 10:22:00"
     reply: 0
     rz: 普通
     site: 新浪微博
-    text: "【铃木第四代全球战略车型 跨界派喜领军“三环标”】昌河铃木派喜在国内上市前，其原型车SPLASH已声誉在外。2011年昌河铃木派喜作为..."
-    url: "http://api.t.sina.com.cn/1830700777/statuses/3596689656809173?source=2046614329"
+    text: "昌河福瑞达加长版特价处理，优惠5000元，铃木1.2L发动机，销售热线：0312-5939556 保定荣盛昌河铃木4S店"
+    url: "http://api.t.sina.com.cn/2804450060/statuses/3598096632409439?source=2046614329"
+  - 
+    author: 汽车音响达人-德国彩虹
+    bDelete: false
+    bHot: false
+    bInfo: false
+    bWarning: false
+    bWeight: false
+    baobiao_num: 1
+    click: 0
+    content: "珠海音匠汽车音响改装—昌河铃木北斗星升级前门喇叭——不论车平与贵，喜欢听音乐的车友们都为爱车升级音响的。……_珠海音匠汽车音响改装#西祠热帖#http://t.cn/zQwA8X0（分享自@西祠胡同网）"
+    dx: 1
+    id: 155776810
+    level: "1"
+    media: 微博
+    pic: /imetrics/upload/2013-03-05/1362449852.jpg
+    published_at: "2013-07-08 14:08:00"
+    reply: 1
+    rz: 普通
+    site: 新浪微博
+    text: 珠海音匠汽车音响改装—昌河铃木北斗星升级前门喇叭——不论车平与贵，喜欢听音乐的车友们都为爱车升级音响的。……_珠海音匠汽车音...
+    url: "http://api.t.sina.com.cn/2371189830/statuses/3597790997885606?source=2046614329"
+  - 
+    author: 李二话唠菇凉
+    bDelete: false
+    bHot: false
+    bInfo: false
+    bWarning: false
+    bWeight: false
+    baobiao_num: 1
+    click: 0
+    content: 一大早昌河铃木就给我发短信说买车优惠啊怎么怎么，啊，难道我是你们的目标客户群？就一买昌河铃木的命啊！
+    dx: 1
+    id: 155736335
+    level: "1"
+    media: 微博
+    pic: /imetrics/upload/2013-03-05/1362449852.jpg
+    published_at: "2013-07-08 09:36:00"
+    reply: 0
+    rz: 普通
+    site: 新浪微博
+    text: 一大早昌河铃木就给我发短信说买车优惠啊怎么怎么，啊，难道我是你们的目标客户群？就一买昌河铃木的命啊！
+    url: "http://api.t.sina.com.cn/1232383831/statuses/3597722676198543?source=2046614329"
 - 
+  - 
+    author: 支格阿尔
+    bDelete: false
+    bHot: false
+    bInfo: false
+    bWarning: false
+    bWeight: false
+    baobiao_num: 1
+    click: 0
+    content: "【昌河铃木北斗星驾驶室前壁板装饰板 前内壁装饰件[原装配件]】卖家发货相当快，圆通超级不给力。送货那丫送来的时候家里没人，竟然给扔到了楼下超市... (分享自@QQ空间)http://url.cn/E56mzL"
+    dx: 2
+    id: 155918815
+    level: "1"
+    media: 微博
+    pic: /imetrics/upload/2013-03-05/1362450320.jpg
+    published_at: "2013-07-08 17:20:00"
+    reply: 0
+    rz: 普通
+    site: 腾讯微博
+    text: "【昌河铃木北斗星驾驶室前壁板装饰板 前内壁装饰件[原装配件]】卖家发货相当快，圆通超级不给力。送货那丫送来的时候家里没人，竟然..."
+    url: "http://t.qq.com/t/265522097835572"
+  - 
+    author: 昌河铃木唐山冀东华昌形象店
+    bDelete: false
+    bHot: false
+    bInfo: false
+    bWarning: false
+    bWeight: false
+    baobiao_num: 1
+    click: 0
+    content: "#掉价#掉价第一季开始了！唐山庞大昌河铃木4S店考虑到气温太热，担心北斗星会被晒化，因此决定：于每周六15：00—18：00开展“热上加热之掉价”活动，每次活动3小时内有效，当然了快要晒化的车价格你懂得。详询0315-5939393@昌河铃木@昌河汽车@唐山汽车今日头条@新浪唐山汽车@网上车市唐山分站"
+    dx: 2
+    id: 155566767
+    level: "1"
+    media: 微博
+    pic: /imetrics/upload/2013-03-05/1362449852.jpg
+    published_at: "2013-07-07 09:13:00"
+    reply: 0
+    rz: 普通
+    site: 新浪微博
+    text: "#掉价#掉价第一季开始了！唐山庞大昌河铃木4S店考虑到气温太热，担心北斗星会被晒化，因此决定：于每周六15：00—18：00开展“热上..."
+    url: "http://api.t.sina.com.cn/1365610415/statuses/3597354559458534?source=2046614329"
   - 
     author: 微问助手
     bDelete: false
@@ -253,70 +295,28 @@
     site: 新浪微博
     text: 王家桥昌河铃木4S店门口有个黑洞，个人觉得是与地铁有关。希望有关部门能重视一下，不要到发生什么不幸事故了才想起来补救！@大连5...
     url: "http://api.t.sina.com.cn/1095278203/statuses/3596059676769699?source=2046614329"
-  - 
-    author: 美丽车
-    bDelete: false
-    bHot: false
-    bInfo: false
-    bWarning: false
-    bWeight: false
-    baobiao_num: 4
-    click: 0
-    content: "保养车脚昌河铃木汽车轮胎保养:汽车驾驶方法与轮胎磨损有很大关系。良好、熟练的驾驶技术能有效地减少轮胎的磨损,延长轮胎的使用寿命,同时提高行驶安全性。下面总结几个减少轮胎磨损的小窍门。 气压...http://url.cn/IjF8C4"
-    dx: 2
-    id: 154915529
-    level: "1"
-    media: 微博
-    pic: /imetrics/upload/2013-03-05/1362450320.jpg
-    published_at: "2013-07-03 14:31:00"
-    reply: 0
-    rz: 普通
-    site: 腾讯微博
-    text: "保养车脚昌河铃木汽车轮胎保养:汽车驾驶方法与轮胎磨损有很大关系。良好、熟练的驾驶技术能有效地减少轮胎的磨损,延长轮胎的使用寿..."
-    url: "http://t.qq.com/t/195552008698768"
-  - 
-    author: 车载导航
-    bDelete: false
-    bHot: false
-    bInfo: false
-    bWarning: false
-    bWeight: false
-    baobiao_num: 4
-    click: 0
-    content: "保养车脚昌河铃木汽车轮胎保养:汽车驾驶方法与轮胎磨损有很大关系。良好、熟练的驾驶技术能有效地减少轮胎的磨损,延长轮胎的使用寿命,同时提高行驶安全性。下面总结几个减少轮胎磨损的小窍门。 气压...http://url.cn/IjF8C4"
-    dx: 2
-    id: 154915528
-    level: "1"
-    media: 微博
-    pic: /imetrics/upload/2013-03-05/1362450320.jpg
-    published_at: "2013-07-03 14:32:00"
-    reply: 0
-    rz: 普通
-    site: 腾讯微博
-    text: "保养车脚昌河铃木汽车轮胎保养:汽车驾驶方法与轮胎磨损有很大关系。良好、熟练的驾驶技术能有效地减少轮胎的磨损,延长轮胎的使用寿..."
-    url: "http://t.qq.com/t/306848122187370"
 - 
   - 
-    author: 昌河铃木
+    author: 实用汽车志
     bDelete: true
     bHot: false
     bInfo: false
     bWarning: false
     bWeight: false
     baobiao_num: 0
-    click: 531
-    content: "关注@昌河铃木，并转发此微博+@三位好友就有机会获得由昌河铃木送出的价值20元的手机充值卡！端午节好礼好心情，昌河铃木汽车伴您“粽”横驰骋！http://t.cn/zHWZUda"
+    click: 168
+    content: 【利亚纳A6上海车展亮相】昌河铃木利亚纳的改款车型利亚纳A6在上海车展正式发布，预计将在今年年内上市。利亚纳A6将沿用现款车型的1.4L(低功率版73kw、高功率版74kw)和1.6L发动机(最大功率80kw)，与发动机匹配的是5速手动变速器和4速自动变速器。
     dx: 0
-    id: 150717522
+    id: 155899771
     level: "1"
     media: 微博
     pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-06-07 18:22:00"
-    reply: 472
+    published_at: "2013-07-09 04:20:00"
+    reply: 17
     rz: 普通
     site: 新浪微博
-    text: 关注@昌河铃木，并转发此微博+@三位好友就有机会获得由昌河铃木送出的价值20元的手机充值卡！端午节好礼好心情，昌河铃木汽车伴您“...
-    url: "http://api.t.sina.com.cn/1866338964/statuses/3586621020515264?source=2046614329"
+    text: 【利亚纳A6上海车展亮相】昌河铃木利亚纳的改款车型利亚纳A6在上海车展正式发布，预计将在今年年内上市。利亚纳A6将沿用现款车型的...
+    url: "http://api.t.sina.com.cn/2091816331/statuses/3598005582240840?source=2046614329"
   - 
     author: 尓康84020
     bDelete: true
@@ -381,48 +381,6 @@
     text: 广潍集团名列“2012中国汽车经销商集团百强排行榜”第三十九位。@潍坊广华奥迪@新浪潍坊汽车@潍坊广宇奥迪@潍坊广潍-昌河铃木4S店
     url: "http://api.t.sina.com.cn/2235580243/statuses/3587597080827278?source=2046614329"
   - 
-    author: 赵管家Turbo
-    bDelete: false
-    bHot: false
-    bInfo: false
-    bWarning: false
-    bWeight: false
-    baobiao_num: 1
-    click: 3
-    content: "freed！//@小侯修车:ERTIGA有消息昌河铃木可能要上，昌河也在上海，但是和FREED混装，某企业采购的逆向车和拆解技术储备车的感觉更多。FREED是普通型还是SPIKE？"
-    dx: 3
-    id: 154574920
-    level: "1"
-    media: 微博
-    pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-07-01 19:08:00"
-    reply: 0
-    rz: 普通
-    site: 新浪微博
-    text: "freed！//@小侯修车:ERTIGA有消息昌河铃木可能要上，昌河也在上海，但是和FREED混装，某企业采购的逆向车和拆解技术储备车的感觉更..."
-    url: "http://api.t.sina.com.cn/1842431107/statuses/3595329893500035?source=2046614329"
-  - 
-    author: 见谁爱谁0
-    bDelete: true
-    bHot: false
-    bInfo: false
-    bWarning: false
-    bWeight: false
-    baobiao_num: 0
-    click: 3
-    content: "在网易汽车论坛【昌河铃木】版下发表了话题为《自觉补作业----北京北斗星X5米兰红提车》的帖子 >>http://163.fm/Vf38jI7"
-    dx: 0
-    id: 153452027
-    level: "1"
-    media: 微博
-    pic: /imetrics/upload/2013-03-05/1362450230.jpg
-    published_at: "2013-06-24 15:44:00"
-    reply: 3
-    rz: 普通
-    site: 网易微博
-    text: "在网易汽车论坛【昌河铃木】版下发表了话题为《自觉补作业----北京北斗星X5米兰红提车》的帖子 >>http://163.fm/Vf38jI7"
-    url: "http://t.163.com/4201605461/status/6606455901542823690"
-  - 
     author: eeeqjx
     bDelete: true
     bHot: false
@@ -443,28 +401,49 @@
     site: 网易微博
     text: "在网易汽车论坛【昌河铃木】版下发表了话题为《感觉新奥拓有点落伍》的帖子 >>http://163.fm/XMrApM8"
     url: "http://t.163.com/8942905169/status/8331646955663720356"
-- 
   - 
-    author: 昌河铃木
+    author: naworth
     bDelete: true
     bHot: false
     bInfo: false
     bWarning: false
     bWeight: false
     baobiao_num: 0
-    click: 531
-    content: "关注@昌河铃木，并转发此微博+@三位好友就有机会获得由昌河铃木送出的价值20元的手机充值卡！端午节好礼好心情，昌河铃木汽车伴您“粽”横驰骋！http://t.cn/zHWZUda"
+    click: 3
+    content: "在网易汽车论坛【昌河铃木】版下发表了话题为《JWRC小派车主的折腾记实（六）》的帖子 >>http://163.fm/PMvjz6t"
     dx: 0
-    id: 150717522
+    id: 152523434
     level: "1"
     media: 微博
-    pic: /imetrics/upload/2013-03-05/1362449852.jpg
-    published_at: "2013-06-07 18:22:00"
-    reply: 472
+    pic: /imetrics/upload/2013-03-05/1362450230.jpg
+    published_at: "2013-06-18 16:37:00"
+    reply: 3
     rz: 普通
-    site: 新浪微博
-    text: 关注@昌河铃木，并转发此微博+@三位好友就有机会获得由昌河铃木送出的价值20元的手机充值卡！端午节好礼好心情，昌河铃木汽车伴您“...
-    url: "http://api.t.sina.com.cn/1866338964/statuses/3586621020515264?source=2046614329"
+    site: 网易微博
+    text: "在网易汽车论坛【昌河铃木】版下发表了话题为《JWRC小派车主的折腾记实（六）》的帖子 >>http://163.fm/PMvjz6t"
+    url: "http://t.163.com/9837730583/status/2845995938804513426"
+  - 
+    author: kjlhjlkg
+    bDelete: true
+    bHot: false
+    bInfo: false
+    bWarning: false
+    bWeight: false
+    baobiao_num: 0
+    click: 3
+    content: "在网易汽车论坛【昌河铃木】版下发表了话题为《新奥拓配置不如同级车》的帖子 >>http://163.fm/3I8WyTE"
+    dx: 0
+    id: 152523435
+    level: "1"
+    media: 微博
+    pic: /imetrics/upload/2013-03-05/1362450230.jpg
+    published_at: "2013-06-18 14:39:00"
+    reply: 3
+    rz: 普通
+    site: 网易微博
+    text: "在网易汽车论坛【昌河铃木】版下发表了话题为《新奥拓配置不如同级车》的帖子 >>http://163.fm/3I8WyTE"
+    url: "http://t.163.com/3396560170/status/17753582192487456497"
+- 
   - 
     author: 李宾lee
     bDelete: true
@@ -484,8 +463,29 @@
     reply: 24
     rz: 普通
     site: 新浪微博
-    text: 4481米拔昇测试，北斗星X5首探四姑娘山。成都-映秀-垭口-四姑娘山，从2000~4481米的攀升过程。领略了高原的风光与秀丽。@昌河铃木@...l
+    text: 4481米拔昇测试，北斗星X5首探四姑娘山。成都-映秀-垭口-四姑娘山，从2000~4481米的攀升过程。领略了高原的风光与秀丽。@昌河铃木@...c
     url: "http://api.t.sina.com.cn/1885492987/statuses/3595653676336397?source=2046614329"
+  - 
+    author: 实用汽车志
+    bDelete: true
+    bHot: false
+    bInfo: false
+    bWarning: false
+    bWeight: false
+    baobiao_num: 0
+    click: 168
+    content: 【利亚纳A6上海车展亮相】昌河铃木利亚纳的改款车型利亚纳A6在上海车展正式发布，预计将在今年年内上市。利亚纳A6将沿用现款车型的1.4L(低功率版73kw、高功率版74kw)和1.6L发动机(最大功率80kw)，与发动机匹配的是5速手动变速器和4速自动变速器。
+    dx: 0
+    id: 155899771
+    level: "1"
+    media: 微博
+    pic: /imetrics/upload/2013-03-05/1362449852.jpg
+    published_at: "2013-07-09 04:20:00"
+    reply: 17
+    rz: 普通
+    site: 新浪微博
+    text: 【利亚纳A6上海车展亮相】昌河铃木利亚纳的改款车型利亚纳A6在上海车展正式发布，预计将在今年年内上市。利亚纳A6将沿用现款车型的...
+    url: "http://api.t.sina.com.cn/2091816331/statuses/3598005582240840?source=2046614329"
   - 
     author: 何宗键
     bDelete: false
@@ -571,23 +571,23 @@
     text: 壮哉我大昌河铃木小面包！雨天可当冲锋舟用！一米多的洪水，通过如摧枯拉朽！看那些熄火在水里的思密达车，笑而不语呵呵呵！景德镇...
     url: "http://api.t.sina.com.cn/1145617834/statuses/3593567606123470?source=2046614329"
   - 
-    author: 见谁爱谁0
+    author: 尓康84020
     bDelete: true
     bHot: false
     bInfo: false
     bWarning: false
     bWeight: false
     baobiao_num: 0
-    click: 3
-    content: "在网易汽车论坛【昌河铃木】版下发表了话题为《自觉补作业----北京北斗星X5米兰红提车》的帖子 >>http://163.fm/Vf38jI7"
+    click: 102
+    content: 【利亚纳A6上海车展亮相】昌河铃木利亚纳的改款车型利亚纳A6在上海车展正式发布，预计将在今年年内上市。利亚纳A6将沿用现款车型的1.4L(低功率版73kw、高功率版74kw)和1.6L发动机(最大功率80kw)，与发动机匹配的是5速手动变速器和4速自动变速器。
     dx: 0
-    id: 153452027
+    id: 151759557
     level: "1"
     media: 微博
-    pic: /imetrics/upload/2013-03-05/1362450230.jpg
-    published_at: "2013-06-24 15:44:00"
+    pic: /imetrics/upload/2013-03-05/1362449852.jpg
+    published_at: "2013-06-17 08:36:00"
     reply: 3
     rz: 普通
-    site: 网易微博
-    text: "在网易汽车论坛【昌河铃木】版下发表了话题为《自觉补作业----北京北斗星X5米兰红提车》的帖子 >>http://163.fm/Vf38jI7"
-    url: "http://t.163.com/4201605461/status/6606455901542823690"
+    site: 新浪微博
+    text: 【利亚纳A6上海车展亮相】昌河铃木利亚纳的改款车型利亚纳A6在上海车展正式发布，预计将在今年年内上市。利亚纳A6将沿用现款车型的...
+    url: "http://api.t.sina.com.cn/3074146485/statuses/3590097407049017?source=2046614329"

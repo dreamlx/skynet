@@ -1,24 +1,10 @@
 # coding: utf-8
 class HomeController < ApplicationController
   def index
-    #through curl login skynet
     base_url = 'http://imws.voc.com.cn/cgi-bin/imetrics/api'
-    login_api = 'api_login.cgi'
-    weibo_api   = 'api_index.cgi'
-    api_url = "#{base_url}/#{weibo_api}"
-
-    act = 'login'
-    username = 'changhe@163.com'
-    password = 'voc2013'
-    id_cp = 30
-    curl = "#{base_url}/#{login_api}?act=#{act}&username=#{username}&password=#{password}&id_cp=#{id_cp}"
-
-    http = Curl::Easy.new(curl)
-    http.follow_location = true
-    http.enable_cookies = true
-
-
-    if !http.http_get
+    api_url = "#{base_url}/api_index.cgi"
+    http = login_to_remote(session[:current_user][:name], session[:current_user][:password])
+    if http.http_get
       # puts hash_login: 
       # {"code"=>"200", "data"=>{"id_cp"=>30, "id_gp"=>183, "VOC_CenterID"=>"432bee3c62e2dcf01ef76a87b59ba49178", "url"=>"http://imws.voc.com.cn/imetrics/30_183.html"}} 
       hash_login  = json2hash(http.body_str)
@@ -119,32 +105,4 @@ class HomeController < ApplicationController
 
   private
 
-  def get_voc(api_url, act, hash_login, http, other_condition=nil)
-    id_gp = hash_login['data']['id_gp']
-    id_cp = hash_login['data']['id_cp']
-    curl = "#{api_url}?act=#{act}&id_gp=#{id_gp}&id_cp=#{id_cp}"
-    curl += "&#{other_condition}" unless other_condition.nil?
-    http.url = curl
-    if http.http_get
-      result = http.body_str
-    else
-      result = []
-    end
-  end
-
-  def json2hash(obj)
-    result = ActiveSupport::JSON.decode(obj)
-  end
-
-  def puts_to_yaml(hash_obj, filename)
-    File.open(Rails.root.to_s + "/test/yaml_data/#{filename}.yml", 'w') do |f|  
-         f.puts hash_obj.ya2yaml  
-    end  
-  end
-
-  # read yaml file
-  def get_yaml(filename)
-    YAML::load(File.read(Rails.root.to_s + "/test/yaml_data/#{filename}.yml"))  
-  end
-  
 end

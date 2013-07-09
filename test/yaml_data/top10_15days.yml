@@ -7,27 +7,27 @@ data:
       sitename: !binary |
           0teztc34
 
-      value: 708
+      value: 720
     - 
       sitename: !binary |
           0MLAy86isqk=
 
-      value: 411
+      value: 437
     - 
       sitename: !binary |
           zNrRts6isqk=
 
-      value: 109
-    - 
-      sitename: !binary |
-          zfjS186isqk=
-
-      value: 91
+      value: 115
     - 
       sitename: !binary |
           xvuztdauvNLN+A==
 
-      value: 87
+      value: 107
+    - 
+      sitename: !binary |
+          zfjS186isqk=
+
+      value: 96
     - 
       sitename: !binary |
           sNm2yMz5sMk=
@@ -35,14 +35,14 @@ data:
       value: 54
     - 
       sitename: !binary |
-          1tC5+sb7s7XP+7fRzfg=
+          xvuztdauvNI=
 
       value: 29
     - 
       sitename: !binary |
-          xvuztdauvNI=
+          zfjJz7O1ytA=
 
-      value: 24
+      value: 26
     - 
       sitename: !binary |
           y9G6/M6isqk=
@@ -50,6 +50,6 @@ data:
       value: 24
     - 
       sitename: !binary |
-          zfjJz7O1ytA=
+          sK6/qMb7s7XN+A==
 
-      value: 23
+      value: 19

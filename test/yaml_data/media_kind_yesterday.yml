@@ -7,22 +7,22 @@ data:
       name: !binary |
           0MLOxQ==
 
-      value: 146
+      value: 40
     - 
       name: !binary |
           wtvMsw==
 
-      value: 5
+      value: 6
     - 
       name: !binary |
           sqm/zQ==
 
-      value: 0
+      value: 1
     - 
       name: !binary |
           zqKyqQ==
 
-      value: 53
+      value: 29
     - 
       name: !binary |
           zPmwyQ==
