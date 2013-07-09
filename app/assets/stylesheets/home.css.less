@@ -1,6 +1,12 @@
 @import "colorDefine";
 
 /*======================================*/
+/*	var								*/
+/*======================================*/
+
+@blockWidth:790px;
+
+/*======================================*/
 /*	common								*/
 /*======================================*/
 
@@ -126,6 +132,7 @@ figure.dnp
 			.weiboListContent
 			{
 				.floatBlock(left, 620px, 68px);
+				color:@gulfBlue;
 				margin:27px 0 0 25px;
 				height:40px;
 				width:534px;
@@ -163,13 +170,18 @@ figure.dnp
 		margin-top:14px;
 		margin-right:60px;
 		font-size:18px;
-		.iconbar
+		#iconbarWarp
 		{
-			width:16px;
-			height:3px;
-			display: block;
-			background-color: @puertoRico;
-			margin-bottom:2px;	
+			float:right;
+			margin:13px 15px 0 0;
+			.iconbar
+			{
+				width:16px;
+				height:3px;
+				display: block;
+				background-color: @puertoRico;
+				margin-bottom:2px;	
+			}
 		}
 	}
 }
@@ -180,26 +192,33 @@ figure.dnp
 /*===================================*/
 #lastestUpdate
 {
-	.centerBlock(880px, 179px, 35px);
+	.centerBlock(@blockWidth, 179px, 35px);
 	overflow-y:hidden;
+	.tab-items
+	{
+		a
+		{
+			color:@gulfBlue;
+		}
+	}
 	.tab-content
 	{
-		width:880px;
+		width:@blockWidth;
 		clear:both;
 	}
 	div.tab-pane
 	{
-		width:878px;
-		height:120px;
+		width:@blockWidth - 2;
+		height:124px;
 		overflow:hidden;
 		.lastestWeiboArticle
 		{
-			width:780px;
+			width:@blockWidth - 100;
 			margin-left:50px;
 			float: left;
 			header
 			{
-				width:780px;
+				width:@blockWidth - 100;
 				margin-top:10px;	
 				h3
 				{
@@ -209,6 +228,7 @@ figure.dnp
 					line-height:35px;
 					font-family:Arial;
 					font-size:14px;
+					color:@gulfBlue;
 				}
 				span
 				{
@@ -224,10 +244,11 @@ figure.dnp
 				margin:5px 0 0 0 ;
 				overflow:hidden;
 				text-overflow:hidden;
+				a{color:@osloGrey;}
 			}
-			span
+			span.lastestData
 			{
-				.floatBlock(right, 780px, 12px);
+				.floatBlock(right, @blockWidth - 100, 12px);
 				font-size:12px;
 				color:#808080;
 				text-align: right
@@ -235,9 +256,10 @@ figure.dnp
 		}
 		.closeLastestBtn
 		{
-			float:left;
-			margin-top:98px;
-			margin-left:17px;	
+			float:right;
+			margin-left:10px;
+			/*margin-top:98px;
+			margin-left:17px;	*/
 		}
 	}
 }
@@ -248,14 +270,18 @@ figure.dnp
 /*================================*/
 #realTimeChartBlock
 {
-	.centerBlock(878px, 348px, 35px);
+	.centerBlock(@blockWidth - 2, 348px, 35px);
 	border:1px solid @gainsboro;
 	background-color:white;
 	header
 	{
-		width:778px;
+		width:@blockWidth - 100 - 2;
 		margin:0 auto;
 		margin-top:35px;
+		h2
+		{
+			color:@gulfBlue;
+		}
 	}
 	aside
 	{
@@ -273,11 +299,13 @@ figure.dnp
 			}
 			strong
 			{
+				color:@gulfBlue;	
 				font-size:22px;
 				color:#6c7273;
 			}
 			span
 			{
+				color:@osloGrey;
 				font-size:10px;
 			}
 		}
@@ -293,6 +321,7 @@ figure.dnp
 	}
 	h5
 	{
+		color:@osloGrey;
 		font-size:12px;
 		font-weight:normal;
 		letter-spacing:2px;
@@ -308,7 +337,7 @@ figure.dnp
 	
 	#lineChartWarp
 	{
-		.centerBlock(780px, 140px);
+		.centerBlock(690px, 140px);
 		clear:both;
 	}
 }
@@ -321,12 +350,12 @@ figure.dnp
 
 #moreInfoBlock
 {
-	.centerBlock(880px, 1125px);
+	.centerBlock(@blockWidth, 1125px);
 	// display:none;
 	#otherChartBlock,
 	#top10ChartBlock
 	{
-		width:778px;
+		width:@blockWidth - 100 - 2;
 		height:350px;
 		border:1px solid @gainsboro;
 		border-top:none;
@@ -338,7 +367,7 @@ figure.dnp
 	#qbdxChartBlock,
 	#mediaChartBlock
 	{
-		.floatBlock(left, 366px, 350px)
+		.floatBlock(left, 320px, 350px)
 	}
 	#mediaChartBlock
 	{
@@ -355,7 +384,7 @@ figure.dnp
 
 .chartTabs
 {
-	max-width:366px;
+	max-width:320px;
 	ul
 	{
 		margin:0;

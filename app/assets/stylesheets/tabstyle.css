@@ -1,5 +1,5 @@
 .tab-items  {
-	height:55px;
+	height:48px;
 	max-width:362px;
 	margin:0;
 	padding:0;
@@ -19,10 +19,10 @@
 	display:inline-block;
 	margin:0;
 	width:180px;
-	height:55px;
+	height:48px;
 	color:#333;
 	font-size: 18px;
-	line-height:55px;
+	line-height:48px;
 	background-color:#f2f2f2;
 	text-align: center;
 }

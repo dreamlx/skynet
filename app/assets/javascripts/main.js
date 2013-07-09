@@ -163,9 +163,9 @@
         myChart.setAxisValuesNumberX(10);
         myChart.setShowXValues(false);
         myChart.setGridColor('#F8F8F8');
-        myChart.setLineColor('#d4211e');
+        myChart.setLineColor('#e74c3c');
         myChart.setLineWidth(5);
-        myChart.setFlagColor('#d4211e');
+        myChart.setFlagColor('#e74c3c');
         myChart.setFlagRadius(6);
         myChart.setTooltip(["05/12", 'GDP 7.80']);
         myChart.setTooltip(["05/13", 'GDP 4.80']);
@@ -187,7 +187,7 @@
         myChart.setLabelX(["05/19", '05/19']);
         myChart.setLabelX(["05/20", '05/20']);
         myChart.setLabelX(["05/21", '05/21']);
-        myChart.setSize(800, 135);
+        myChart.setSize(700, 135);
         myChart.draw();
 
 
