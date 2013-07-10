@@ -1,20 +1,4 @@
 --- 
-code: "200"
-data: 
-  date: 2
-  dx: 
-    - 
-      name: !binary |
-          1f3D5g==
-
-      value: 128
-    - 
-      name: !binary |
-          1tDQ1A==
-
-      value: 22
-    - 
-      name: !binary |
-          uLrD5g==
-
-      value: 2
+error: 未登录！
+error_code: "10007"
+request: /api/api_index.cgi
