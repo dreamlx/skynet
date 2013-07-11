@@ -1,25 +1,89 @@
-
-    var myChart;//line chart
-    var myData = new Array(["05/12", 7.80], ["05/13", 4.80], ["05/14", 6.50], ["05/15", 6.10], ["05/16", 4.40], ["05/17", 5.80], ["05/18", 4.00], ["05/19", 8.50], ["05/20", 8.90], ["05/21", 9.20]);
+    var realTimeArr = gon.realTimeChartBlock.charts;
+    var realTimeLabels = [];
+    var realTimeData = []
+    for (var i = 0; i < realTimeArr.length; i++)
+    {
+        var dateLabel = realTimeArr[i].date;
+        var month = dateLabel.substring(5,7);
+        var day = dateLabel.substring(8,10);
+        realTimeLabels.push(month+"/"+day);
+        realTimeData.push(realTimeArr[i].value);
+    };
+    var realTimeChartData = 
+    {
+        labels: realTimeLabels,
+        datasets: [{
+            fillColor: "rgba(0,0,0,0)",
+            strokeColor: "#e74c3c",  
+            pointColor: "#FFFFFF",  
+            pointStrokeColor:"#e74c3c",
+            data:realTimeData
+        }]   
+    }
 
     //pie chart
-    var qbdxData1 = new Array(['', 70], ['', 25], ['', 5]);
-    var qbdxData2 = new Array(["",75], ['', 20], ['', 5]);
-    var qbdxData3 = new Array(['',70], ['', 20], ['', 10]);
-    var qbdxDataCollection = new Array(qbdxData1,qbdxData2,qbdxData3);
-    var pieChartOne;
+    var unFmtQbdxArray = [gon.qbdx_today.data.dx,gon.qbdx_yesterday.data.dx,gon.qbdx_15days.data.dx];
+    var qbdxDoughnutColors = ["#e74c3c","#34495e","#5fccff"];
+    var qbdxDataCollection = [];
+    for(var j=0;j<unFmtQbdxArray.length;j++)
+    {
+        var unFmtData = unFmtQbdxArray[j];
+        var dayData = [];
+        for(var jj=0;jj<unFmtData.length;jj++)
+        {
+            dayData.push({
+                value : unFmtData[jj].value,
+                color : qbdxDoughnutColors[jj]
+            });
+        }
+        qbdxDataCollection.push(dayData);
+    }
 
-    var mediaData1 = new Array(['', 45], ['', 35], ['', 10], ['', 5], ['', 5]);
-    var mediaData2 = new Array(['', 45], ['', 25], ['', 15], ['', 10], ['', 5]);
-    var mediaData3 = new Array(['', 40], ['', 30], ['', 15], ['', 8], ['', 7]);
-    var mediaDataCollection = new Array(mediaData1, mediaData2, mediaData3);
-    var pieChartTwo;
+    var unFmtMediaArray = [gon.media_kind_today.data.media,gon.media_kind_yesterday.data.media,gon.media_kind_15days.data.media];
+    var mediaDoughnutColors = ["#e74c3c","#34495e","#00a268","#5fccff","#3498db"];
+    var mediaDataCollection = [];
+    for(var k=0;k<unFmtMediaArray.length;k++)
+    {
+        var unFmtData = unFmtMediaArray[k];
+        var dayData = [];
+        for(var kk=0;kk<unFmtData.length;kk++)
+        {
+            dayData.push({
+                value : unFmtData[kk].value,
+                color : mediaDoughnutColors[kk]
+            });
+        }
+        mediaDataCollection.push(dayData);
+    }
 
-    var top10data1 = new Array(['Asia', 437], ['车易网', 322], ['新浪微博', 233], ['新浪博客', 110], ['网易微博', 54], ['百度贴吧', 33], ['汽车之家', 30], ["auto.youth.cn", 23], ["shijitg.com", 19], ["365jia.cn", 15]);  
-    var top10data2 = new Array(['Asia', 467], ['车易网', 342], ['新浪微博', 234], ['新浪博客', 610], ['网易微博', 44], ['百度贴吧', 23], ['汽车之家', 20], ["auto.youth.cn", 13], ["shijitg.com", 9], ["365jia.cn", 5]);  
-    var top10data3 = new Array(['Asia', 1437], ['车易网', 1322], ['新浪微博', 933], ['新浪博客', 610], ['网易微博', 554], ['百度贴吧', 333], ['汽车之家', 330], ["auto.youth.cn", 223], ["shijitg.com", 119], ["365jia.cn", 115]);  
-    var top10DataCollection = new Array(top10data1,top10data2,top10data3);
-    var barChart;
+    var unFmtTop10 = [gon.top10_today.data.top10,gon.top10_yesterday.data.top10,gon.top10_15days.data.top10];
+    var top10DataCollection = [];
+    // var realTimeArr = gon.realTimeChartBlock.charts;
+    // var realTimeLabels = [];
+    // var realTimeData = []
+    for (var m = 0; m < unFmtTop10.length; m++)
+    {
+        var dayDataArr = unFmtTop10[m];
+        var chartlabels = [];
+        var chartData = [];
+        for(var n=0;n<dayDataArr.length;n++)
+        {
+            chartlabels.push(dayDataArr[n].sitename);
+            chartData.push(dayDataArr[n].value);
+        }
+        var dayData = 
+        {
+            labels:chartlabels,
+            datasets:[
+                {
+                    fillColor:"#e74c3c",
+                    strokeColor:"#e74c3c",
+                    data:chartData
+                }
+            ]
+        }
+        top10DataCollection.push(dayData);
+    };
 
     $(function() {
         $("#pagePrevBtn").click(function(e){ 
@@ -45,7 +109,7 @@
             $("#weiboMiniList li").css("top",curTop-68);
         });
 
-        
+
         $('#lastestUpdate').simpleTabs();
         $('#weiboTable').simpleTabs();
 
@@ -99,33 +163,56 @@
             $(this).parent().parent().remove();
         });
 
-        setCharts();
+        $("#weiboListBtn").click(function(e){
+            var miniHeight = 76;
+            $(".weiboDefaultList").toggleClass("weiboMiniList");
+            if($("#weiboList").height() > miniHeight)
+            {
+                $(".weiboDefaultList").height(miniHeight);
+                $("#weiboList").height(miniHeight);
+                $("#weiboListPageBtnBlock").show();
+            }else
+            {
+                var count = $(".weiboDefaultList li").length;
+                $(".weiboMiniList").height(miniHeight*count);
+                $("#weiboList").height(miniHeight*count);
+                $("#weiboListPageBtnBlock").hide();
+            }
+            e.preventDefault();
+        });
+
+        $(".downloadBtn").click(function(e){
+            savePdf();
+        });
+
+        // setCharts();
+        setDefaultCharts();
+        // savePdf();
     });
 
     function updateChartData(_chart, _id)
     {
         var chartInstance;
         var cData;
+        var index = _id-1;
         switch(_chart)
         {
             case "q":
-                chartInstance = pieChartOne;
                 cData = qbdxDataCollection;
+                setQbdxChart(cData[index]);
                 break;
             case "m":
-                chartInstance = pieChartTwo;
                 cData = mediaDataCollection;
+                setMediaChart(cData[index]);
                 break;
             case "t":
-                chartInstance = barChart;
                 cData = top10DataCollection;
+                setBarChart(cData[index]);
                 break;
             default:
+                console.error("update chart data error!");
                 return;
         }
-
-        chartInstance.setDataArray(cData[(_id-1)]);
-        chartInstance.draw();
     }
 
     function toggleOtherInfo()
@@ -147,100 +234,69 @@
         }
     }
 
-    function setCharts()
+    function setRealTimeChart(_data)
     {
-        
-        myChart = new JSChart('lineChart', 'line');
-        myChart.setDataArray(myData);
-        myChart.setTitle('');
-        myChart.setAxisNameX('');
-        myChart.setAxisNameY('');
-        myChart.setAxisColor('#7e7e7e');
-        myChart.setAxisValuesColor('#949494');
-        myChart.setAxisPaddingLeft(50);
-        myChart.setAxisPaddingRight(20);
-        myChart.setAxisPaddingTop(0);
-        myChart.setAxisPaddingBottom(20);
-        myChart.setAxisValuesDecimals(3);
-        myChart.setAxisValuesNumberX(10);
-        myChart.setShowXValues(false);
-        myChart.setGridColor('#F8F8F8');
-        myChart.setLineColor('#e74c3c');
-        myChart.setLineWidth(5);
-        myChart.setFlagColor('#e74c3c');
-        myChart.setFlagRadius(6);
-        myChart.setTooltip(["05/12", 'GDP 7.80']);
-        myChart.setTooltip(["05/13", 'GDP 4.80']);
-        myChart.setTooltip(["05/14", 'GDP 6.50']);
-        myChart.setTooltip(["05/15", 'GDP 6.10']);
-        myChart.setTooltip(["05/16", 'GDP 4.40']);
-        myChart.setTooltip(["05/17", 'GDP 5.80']);
-        myChart.setTooltip(["05/18", 'GDP 4.00']);
-        myChart.setTooltip(["05/19", 'GDP 8.50']);
-        myChart.setTooltip(["05/20", 'GDP 8.90']);
-        myChart.setTooltip(["05/21", 'GDP 9.20']);
-        myChart.setLabelX(["05/12", '05/12']);
-        myChart.setLabelX(["05/13", '05/13']);
-        myChart.setLabelX(["05/14", '05/14']);
-        myChart.setLabelX(["05/15", '05/15']);
-        myChart.setLabelX(["05/16", '05/16']);
-        myChart.setLabelX(["05/17", '05/17']);
-        myChart.setLabelX(["05/18", '05/18']);
-        myChart.setLabelX(["05/19", '05/19']);
-        myChart.setLabelX(["05/20", '05/20']);
-        myChart.setLabelX(["05/21", '05/21']);
-        myChart.setSize(700, 135);
-        myChart.draw();
+        var lcContext = $("#lineChart").get(0).getContext("2d");
+        var lineChartOpt = 
+        {
+            bezierCurve:false,
+            datasetStrokeWidth:5,
+            pointDotRadius:5,
+            scaleLineColor:"#616161",
+            scaleLineWidth:2
+        };
+        var myLcChart = new Chart(lcContext).Line(_data, lineChartOpt);
+    }
 
+    function setQbdxChart(_data)
+    {
+        var qbdxContext = $("#qbdxDoughnutChart").get(0).getContext("2d");
+        var doughnutChartOpt = {segmentStrokeWidth:1};
+        var myQbdxChart = new Chart(qbdxContext).Doughnut(_data, doughnutChartOpt);
+    }
 
-        
+    function setMediaChart(_data)
+    {
+        var mediaContext = $("#mediaDoughnutChart").get(0).getContext("2d");
+        var doughnutChartOpt = {segmentStrokeWidth:1};
+        var myMediaChart = new Chart(mediaContext).Doughnut(_data, doughnutChartOpt);
+    }
 
-        var qbdxColors = ['#d41810', '#e6e6e6', '#b2140c',];
-        pieChartOne = new JSChart('qbdxPieChart', 'pie');
-        pieChartOne.setDataArray(qbdxData1);
-        pieChartOne.colorizePie(qbdxColors);
-        pieChartOne.setPiePosition(88,88);
-        pieChartOne.setTitle("");
-        pieChartOne.setPieUnitsColor('#9B9B9B');
-        pieChartOne.setPieValuesColor('#FFFFFF');
-        pieChartOne.setSize(325, 325);
-        pieChartOne.draw();
+    function setBarChart(_data)
+    {
+        var barContext = $("#barChart").get(0).getContext("2d");
+        var barChartOpt=
+        {
+            scaleShowLabels:true,
+            barShowStroke:false
+        };
+        var myBarChart = new Chart(barContext).Bar(_data, barChartOpt);
+    }
 
-        
+    function setDefaultCharts()
+    {
+        setRealTimeChart(realTimeChartData);
+        setQbdxChart(qbdxDataCollection[0]);
+        setMediaChart(mediaDataCollection[0]);
+        setBarChart(top10DataCollection[0]);
+    }
 
-        var qbdxColors = ['#d41810', '#e6e6e6', '#6c7273','#4e5457', '#b2140c'];
-        pieChartTwo = new JSChart('mediaPieChart', 'pie');
-        pieChartTwo.setDataArray(mediaData1);
-        pieChartTwo.colorizePie(qbdxColors);
-        pieChartTwo.setPiePosition(88,88);
-        pieChartTwo.setTitle("");
-        pieChartTwo.setPieUnitsColor('#9B9B9B');
-        pieChartTwo.setPieValuesColor('#FFFFFF');
-        pieChartTwo.setSize(325, 325);
-        pieChartTwo.draw();
+    function savePdf()
+    {
+        var dom = $("#realTimeChartBlock");
+        dom.find("figure").hide();
 
-        
+        html2canvas(dom, {
+            onrendered: function(canvas) {
+                data = canvas.toDataURL('image/jpeg').slice('data:image/jpeg;base64,'.length);
+                // Convert the data to binary form
+                data = atob(data)
+                // document.body.appendChild(canvas);
+                var doc = new jsPDF('landscape');
+                doc.addImage(data, 'JPEG', 10, 50, 280, 107);
 
-        barChart = new JSChart('top10Chart', 'bar');
-        barChart.setDataArray(top10data1);
-        barChart.setBarColor("#e74c3c");
-        barChart.setTitle('');
-        barChart.setAxisNameX('');
-        barChart.setAxisNameY('');
-        barChart.setAxisColor('#c6c6c6');
-        barChart.setAxisWidth(1);
-        barChart.setAxisNameColor('#9a9a9a');
-        barChart.setAxisValuesColor('#939393');
-        barChart.setAxisPaddingTop(35);
-        barChart.setAxisPaddingLeft(30);
-        barChart.setAxisPaddingRight(0);
-        barChart.setAxisPaddingBottom(60);
-        barChart.setTextPaddingBottom(20);
-        barChart.setTextPaddingLeft(15);
-        barChart.setTitleFontSize(11);
-        barChart.setBarBorderWidth(0);
-        barChart.setBarSpacingRatio(50);
-        barChart.setBarValuesColor('#737373');
-        barChart.setSize(688, 280);
-        barChart.draw();
+                doc.save('Test.pdf');
+                dom.find("figure").show();
+            }
+        });
     }

@@ -22,7 +22,7 @@
             - @weiboTable[i].each_with_index do |weibo,index|
               %tr{ class: index%2 == 0 ? "" : "evenRow" }
                 %th
-                  %span.weiboIcon16.spritebg= index
+                  %span.weiboIcon16.spritebg= index + 1
                 %td.weiboTableContent
                   = link_to weibo["text"], weibo["url"], target: '_blank'
                 %td.weiboMediaType= weibo["media"]

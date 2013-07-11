@@ -1,5 +1,5 @@
 %section#weiboList
-  %ul#weiboMiniList
+  %ul.weiboDefaultList.weiboMiniList
     - @weibo_list.each do |weibo|
       %li
         %span.weiboIcon24.spritebg
@@ -7,7 +7,7 @@
   #weiboListPageBtnBlock
     %a#pagePrevBtn.spritebg{:href => "#"}
     %a#pageNextBtn.spritebg{:href => "#"}
-  %a#weiboListBtn.radiusBtn
+  %a#weiboListBtn.radiusBtn{:href => '#'}
     微博列表
     %span#iconbarWarp
       %span.iconbar

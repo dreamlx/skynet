@@ -13,10 +13,23 @@
 //= require jquery
 //= require jquery.easing.min
 //= require jquery.simpleTabs
-//= require jscharts
-//= require main
+//= require Chart.min
+//= require html2canvas
+
 //= require plugins
 //= require home
+
+//= require jspdf/jspdf
+//= require jspdf/adler32cs
+//= require jspdf/FileSaver.min
+//= require jspdf/BlobBuilder
+//= require jspdf/jspdf.plugin.addimage
+//= require jspdf/jspdf.plugin.standard_fonts_metrics
+//= require jspdf/jspdf.plugin.split_text_to_size
+//= require jspdf/jspdf.plugin.from_html
+
+
+//= require main
 
 
 
