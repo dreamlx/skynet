@@ -4,52 +4,32 @@ data:
   date: 2
   top10: 
     - 
-      sitename: !binary |
-          0teztc34
-
-      value: 47
+      sitename: 易车网
+      value: 42
     - 
-      sitename: !binary |
-          0MLAy86isqk=
-
-      value: 38
+      sitename: 汽车之家网
+      value: 32
     - 
-      sitename: !binary |
-          xvuztdauvNLN+A==
-
-      value: 34
+      sitename: 新浪微博
+      value: 19
     - 
-      sitename: !binary |
-          zNrRts6isqk=
-
-      value: 5
-    - 
-      sitename: !binary |
-          0MLAy8b7s7XN+A==
-
+      sitename: 新浪汽车网
       value: 4
     - 
-      sitename: !binary |
-          zfjS186isqk=
-
-      value: 4
-    - 
-      sitename: !binary |
-          xvuztdauvNI=
-
+      sitename: 凤凰汽车网
       value: 3
     - 
-      sitename: !binary |
-          sK6/qMb7s7XN+A==
-
+      sitename: 新浪博客
       value: 3
     - 
-      sitename: !binary |
-          t++7y8b7s7XN+A==
-
-      value: 3
+      sitename: 腾讯微博
+      value: 2
     - 
-      sitename: !binary |
-          0MLAy7Kpv80=
-
-      value: 3
+      sitename: 网上车市
+      value: 2
+    - 
+      sitename: 爱卡汽车网
+      value: 2
+    - 
+      sitename: 中国汽车网
+      value: 2

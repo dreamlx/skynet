@@ -4,17 +4,11 @@ data:
   date: 2
   dx: 
     - 
-      name: !binary |
-          1f3D5g==
-
+      name: 正面
       value: 86
     - 
-      name: !binary |
-          1tDQ1A==
-
+      name: 中性
       value: 32
     - 
-      name: !binary |
-          uLrD5g==
-
+      name: 负面
       value: 10

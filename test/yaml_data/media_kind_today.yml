@@ -4,27 +4,17 @@ data:
   date: 1
   media: 
     - 
-      name: !binary |
-          0MLOxQ==
-
+      name: 新闻
+      value: 14
+    - 
+      name: 论坛
+      value: 3
+    - 
+      name: 博客
       value: 0
     - 
-      name: !binary |
-          wtvMsw==
-
-      value: 0
+      name: 微博
+      value: 21
     - 
-      name: !binary |
-          sqm/zQ==
-
+      name: 贴吧
       value: 0
-    - 
-      name: !binary |
-          zqKyqQ==
-
-      value: 0
-    - 
-      name: !binary |
-          zPmwyQ==
-
-      value: 1

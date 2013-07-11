@@ -4,17 +4,11 @@ data:
   date: 1
   dx: 
     - 
-      name: !binary |
-          1f3D5g==
-
-      value: 0
+      name: 正面
+      value: 18
     - 
-      name: !binary |
-          1tDQ1A==
-
-      value: 0
+      name: 中性
+      value: 14
     - 
-      name: !binary |
-          uLrD5g==
-
-      value: 0
+      name: 负面
+      value: 5
