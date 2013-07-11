@@ -44,6 +44,8 @@
             curTop = parseInt(curTop);
             $("#weiboMiniList li").css("top",curTop-68);
         });
+
+        
         $('#lastestUpdate').simpleTabs();
         $('#weiboTable').simpleTabs();
 
@@ -221,7 +223,7 @@
 
         barChart = new JSChart('top10Chart', 'bar');
         barChart.setDataArray(top10data1);
-        barChart.setBarColor("#d3180f");
+        barChart.setBarColor("#e74c3c");
         barChart.setTitle('');
         barChart.setAxisNameX('');
         barChart.setAxisNameY('');
@@ -239,6 +241,6 @@
         barChart.setBarBorderWidth(0);
         barChart.setBarSpacingRatio(50);
         barChart.setBarValuesColor('#737373');
-        barChart.setSize(778, 280);
+        barChart.setSize(688, 280);
         barChart.draw();
     }

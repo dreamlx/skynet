@@ -1,4 +1,7 @@
 --- 
-error: 未登录！
-error_code: "10007"
-request: /api/api_index.cgi
+code: "200"
+data: 
+  today_poor: 1
+  today_total: 77
+  yestoday_poor: 6
+  yestoday_total: 106

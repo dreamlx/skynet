@@ -44,10 +44,12 @@
 			$tabItems.first().addClass(active);
 			$contentPanes.first().addClass(active);
 			$tabItems.on('click', 'a', function(e) {
-				$tabItems.removeClass(active);
-				$contentPanes.removeClass(active);
-				$(this).parent().addClass(active);
-				$contentPanes.filter(this.hash).addClass(active);
+				$contentPanes.find('.active').slideUp(1000,'easeInOutBack', function(){});
+				// $tabItems.removeClass(active);
+				// $contentPanes.removeClass(active);
+				// $contentPanes.filter(this.hash).addClass(active);
+				// $(this).parent().addClass(active);
+				// $contentPanes.slideDown(1000, "easeOutBounce", function(){});
 				e.preventDefault();
 			});
 		}

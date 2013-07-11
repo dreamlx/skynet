@@ -1,4 +1,14 @@
 --- 
-error: 未登录！
-error_code: "10007"
-request: /api/api_index.cgi
+code: "200"
+data: 
+  date: 15
+  dx: 
+    - 
+      name: 正面
+      value: 820
+    - 
+      name: 中性
+      value: 261
+    - 
+      name: 负面
+      value: 86

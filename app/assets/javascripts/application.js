@@ -11,20 +11,14 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require jquery.easing.min
+//= require jquery.simpleTabs
+//= require jscharts
+//= require main
+//= require plugins
+//= require home
 
-$(function(){
-  $(".tab-items a").click(function(){
-   $(".lastestWeiboArticle").hide(10,function(){
-    $(".tab-pane").slideUp(400,function(){
-      $(".tab-pane").slideDown(400,function(){
-        $(".lastestWeiboArticle").show(10);
-      });
-    });
-   });
-  });
-});
+
 
 //gon 的变量
 //动态趋势图
