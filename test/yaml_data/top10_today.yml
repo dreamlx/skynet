@@ -4,32 +4,32 @@ data:
   date: 1
   top10: 
     - 
-      sitename: 易车网
-      value: 14
-    - 
       sitename: 新浪微博
-      value: 9
+      value: 15
     - 
-      sitename: auto.youth.cn
+      sitename: 易车网
+      value: 11
+    - 
+      sitename: 腾讯微博
+      value: 4
+    - 
+      sitename: 翼网论坛
       value: 2
+    - 
+      sitename: 雅虎汽车网
+      value: 1
+    - 
+      sitename: 网易微博
+      value: 1
+    - 
+      sitename: 金融界汽车
+      value: 1
     - 
       sitename: 汽车之家网
-      value: 2
-    - 
-      sitename: 太平洋汽车网
-      value: 2
-    - 
-      sitename: 新浪博客
       value: 1
     - 
-      sitename: 网上车市
+      sitename: 搜狐微博
       value: 1
     - 
-      sitename: 汽车之友网
-      value: 1
-    - 
-      sitename: 搜狐汽车大连站
-      value: 1
-    - 
-      sitename: 银率网-理财论坛
+      sitename: 易车网社区
       value: 1

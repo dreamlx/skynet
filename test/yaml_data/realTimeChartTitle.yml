@@ -1,7 +1,7 @@
 --- 
 code: "200"
 data: 
-  today_poor: 1
-  today_total: 77
-  yestoday_poor: 6
-  yestoday_total: 106
+  today_poor: 5
+  today_total: 68
+  yestoday_poor: 10
+  yestoday_total: 179
