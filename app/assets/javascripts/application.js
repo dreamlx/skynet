@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery.easing.min
 //= require jquery.simpleTabs
+//= require printThis
 //= require Chart.min
 //= require html2canvas
-
 //= require plugins
 //= require home
 
