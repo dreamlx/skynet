@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
 
   def index
+
  
       @weibo_list = get_yaml("weibo_list")
       

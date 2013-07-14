@@ -2,7 +2,7 @@
 class UsersController < ApplicationController
   
   def login
-    render layout: "frontApplication"
+    
   end
 
   def create_session
@@ -13,11 +13,11 @@ class UsersController < ApplicationController
         redirect_to "/home" 
       else
         flash[:alert] = "用户名或者密码错误，登录失败"
-        render :login, layout: false
+        render :login
       end
     else
       flash[:alert] = "网络访问失败，请稍后再试"
-      render :login, layout: false
+      render :login
     end
   end
 
