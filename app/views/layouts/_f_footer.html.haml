@@ -1,0 +1,37 @@
+%footer.pageFooter
+  %section.siteInfo
+    .siteInfoWarper.container
+      .row
+        .span4
+          %img{:src => "assets/frontskynetlogo.png"}
+        .span4
+          %address
+            %h6 联系方式：
+            %p 上海办公室：徐汇区龙华中路600号绿地中心
+            %p 701-702单元
+            %p 邮编：200030
+            %p 电话：86 021-54591660
+          %address
+            %h6 Contact Us
+            %p Shanghai Office:F701-F702 Room No.600 Long Hua
+            %p Road Middle Xuhui area, Shanghai 200030
+            %p Tel:86 021-54591660
+        .span4
+          = flash[:alert]
+          = form_tag :action => :post_consult do
+            %h6 咨询详情
+            %p= text_field :consult, :name, :placeholder => "贵姓"
+            %p= text_field :consult, :emial, :placeholder => "E-Mail"
+            %p
+              = text_field :consult, :phone, :placeholder => "电话号码"
+              = submit_tag "发送", :id => "sendBtn"
+  %section.pageInfo
+    .container
+      %p.icp.clearfix
+        %span.pull-left 京ICP备1203889号
+        %span.pull-right 多信科技产业投资发展有限公司
+      %p.mail
+        %span.pull-left 
+          %img{:src => "assets/companymail.png"}
+          INFO@NETPOM.COM
+        %span.pull-right © COPYRIGHT 2010-2013 DSN TECHNOLOGY INVEST & DEVELOP CO,LTD.

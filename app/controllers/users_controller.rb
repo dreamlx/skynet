@@ -2,7 +2,7 @@
 class UsersController < ApplicationController
   
   def login
-    render layout: false
+    render layout: "frontApplication"
   end
 
   def create_session
@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     http.http_get
     session[:current_user] = nil
     redirect_to "/users/login" 
+  end
+
+  def post_consult
+    
   end
 
 end
