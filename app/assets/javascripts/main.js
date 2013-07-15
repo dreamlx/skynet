@@ -58,9 +58,6 @@
 
     var unFmtTop10 = [gon.top10_today.data.top10,gon.top10_yesterday.data.top10,gon.top10_15days.data.top10];
     var top10DataCollection = [];
-    // var realTimeArr = gon.realTimeChartBlock.charts;
-    // var realTimeLabels = [];
-    // var realTimeData = []
     for (var m = 0; m < unFmtTop10.length; m++)
     {
         var dayDataArr = unFmtTop10[m];
@@ -84,31 +81,104 @@
         }
         top10DataCollection.push(dayData);
     };
-
+    var enableClick = true;
     $(function() {
+
         $("#pagePrevBtn").click(function(e){ 
-            var lastLiTop = $("#weiboMiniList li:first-child").css("top");
+            if(!enableClick)
+            {
+                e.preventDefault();
+                return
+            }
+            var lastLiTop = $(".weiboMiniList ul").css("top");
             
             if(parseInt(lastLiTop)>=0)
             {
+                e.preventDefault();
                 return;
             }
-            var curTop = $("#weiboMiniList li:first-child").css("top");
+            enableClick = false;
+            var curTop = $(".weiboMiniList ul").css("top");
             curTop = parseInt(curTop);
-            $("#weiboMiniList li").css("top",curTop+68);
+            $(".weiboMiniList ul").animate({"top":curTop+76},"normal","swing",function(){
+                enableClick = true;
+            });
+            // $(".weiboMiniList ul").css();
+            e.preventDefault();
         });
         $("#pageNextBtn").click(function(e){
-            var lastLiTop = $("#weiboMiniList li:last-child").css("top");
-            var n = $("#weiboMiniList li").length -1;
-            if(parseInt(lastLiTop)<=(n*-68))
+            if(!enableClick)
             {
+                e.preventDefault();
+                return
+            }
+            var lastLiTop = $(".weiboMiniList ul").css("top");
+            var n = $(".weiboMiniList ul li").length -1;
+            if(parseInt(lastLiTop)<=(n*-76))
+            {
+                e.preventDefault();
                 return;
             }
-            var curTop = $("#weiboMiniList li:first-child").css("top");
+            enableClick = false;
+            var curTop = $(".weiboMiniList ul").css("top");
             curTop = parseInt(curTop);
-            $("#weiboMiniList li").css("top",curTop-68);
+            $(".weiboMiniList ul").animate({"top":curTop-76},"normal","swing",function(){
+                enableClick = true;
+            });
+            e.preventDefault();
         });
 
+        $("#weiboListBtn").click(function(e){
+
+            var miniHeight = 76;
+            $(this).toggleClass("floatWeiboListBtn");
+            $(".weiboDefaultList").toggleClass("weiboMiniList");
+            if($("#weiboList").height() > miniHeight)
+            {
+                $(".weiboDefaultList").height(miniHeight);
+                $("#weiboList").height(miniHeight);
+                $("#weiboListPageBtnBlock").show();
+            }else
+            {
+                $(".weiboDefaultList ul").css("top",0);
+                var count = $(".weiboDefaultList ul li").length;
+                $(".weiboMiniList").height(miniHeight*count);
+                $("#weiboList").height(miniHeight*count);
+                $("#weiboListPageBtnBlock").hide();
+                
+            }
+            e.preventDefault();
+        });
+
+        $(window).scroll(function(){
+            scrollTop = $(this).scrollTop();
+            if(scrollTop>200)
+            {
+                $(".floatMainBanner").show();
+            }else if(scrollTop<200)
+            {
+                $(".floatMainBanner").hide();
+            }
+
+            if(scrollTop<=200)
+            {
+                $(".floatWeiboListBtn").css("top", 250);    
+            }else if(scrollTop > 200 && scrollTop <= 1600)
+            {
+                $(".floatWeiboListBtn").css("top", scrollTop+70);    
+            }
+            var blockOffset = $("#realTimeChartBlock").offset().top - 576;
+            if(scrollTop > 200+blockOffset)
+            {
+                if(!$("#lineChart").hasClass("ChartHasContent"))
+                {
+                    $("#lineChart").addClass("ChartHasContent");
+                    setRealTimeChart(realTimeChartData);     
+                }
+            }
+            
+            
+        });
 
         $('#lastestUpdate').simpleTabs();
         $('#weiboTable').simpleTabs();
@@ -116,6 +186,7 @@
         
         $("#lessInfoBtn").click(function(e){
             e.preventDefault();
+            $("#realTimeChartBlock").toggleClass("whenLess");
             toggleOtherInfo();
             // $("#moreInfoBlock").hide();
         });
@@ -134,10 +205,8 @@
 
         $("#lastestUpdate a.closeLastestBtn").click(function(e){
             e.preventDefault();
-            $("#lastestUpdate").animate({height:"58px"},"normal","swing",function(){
-                myChart.draw();
-                var h = $("#warpHeight").height()
-                $("#warpHeight").height(parseInt(h)-121);
+            $("#lastestUpdate").animate({height:"51px"},"normal","swing",function(){
+                
             });
 
             // $("#lastestUpdate div.tab-pane").removeClass("active");
@@ -146,11 +215,7 @@
         $("#lastestUpdate ul.tab-items a").click(function(e){
             if($("#lastestUpdate").height()<170)
             {
-                $("#lastestUpdate").animate({height:"179px"},"normal","swing",function(){
-                    myChart.draw();
-                    var h = $("#warpHeight").height()
-                $("#warpHeight").height(parseInt(h)+121);
-                });
+                $("#lastestUpdate").height(179);
             }
         });
 
@@ -163,23 +228,6 @@
             $(this).parent().parent().remove();
         });
 
-        $("#weiboListBtn").click(function(e){
-            var miniHeight = 76;
-            $(".weiboDefaultList").toggleClass("weiboMiniList");
-            if($("#weiboList").height() > miniHeight)
-            {
-                $(".weiboDefaultList").height(miniHeight);
-                $("#weiboList").height(miniHeight);
-                $("#weiboListPageBtnBlock").show();
-            }else
-            {
-                var count = $(".weiboDefaultList li").length;
-                $(".weiboMiniList").height(miniHeight*count);
-                $("#weiboList").height(miniHeight*count);
-                $("#weiboListPageBtnBlock").hide();
-            }
-            e.preventDefault();
-        });
 
         $(".downloadBtn").click(function(e){
             var config = this.hash.substr(1,1);
@@ -194,9 +242,7 @@
             e.preventDefault();
         })
 
-        // setCharts();
-        setDefaultCharts();
-        // savePdf();
+        // setDefaultCharts();
     });
 
     function updateChartData(_chart, _id)
@@ -237,9 +283,21 @@
         }else
         {
            $("#moreInfoBlock").slideDown("slow",function(){
-                $("html,body").animate({scrollTop:$("#moreInfoBlock").offset().top})
+                $("html,body").animate({scrollTop:$("#moreInfoBlock").offset().top},
+                    1000,
+                    function(){
+                        if(!$("#moreInfoBlock").hasClass("ChartHasContent"))
+                        {
+                            $("#moreInfoBlock").addClass("ChartHasContent");                    
+                            setQbdxChart(qbdxDataCollection[0]);
+                            setMediaChart(mediaDataCollection[0]);    
+                            setBarChart(top10DataCollection[0]);     
+                        }
+                    });
             });
-            $("#lessInfoBtn").html("<span class='spritebg lessIcon'></span>查看精简信息");     
+            $("#lessInfoBtn").html("<span class='spritebg lessIcon'></span>查看精简信息");
+
+            
         }
     }
 
@@ -284,10 +342,7 @@
 
     function setDefaultCharts()
     {
-        setRealTimeChart(realTimeChartData);
-        setQbdxChart(qbdxDataCollection[0]);
-        setMediaChart(mediaDataCollection[0]);
-        setBarChart(top10DataCollection[0]);
+        
     }
 
     function savePdf(_divId, _config)

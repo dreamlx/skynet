@@ -56,7 +56,7 @@
 $(function(){
 	$('.mainContainer').hide();
 	$('#globalHeader').hide().delay(300).slideDown(1000, function(){
-		$('.mainContainer').slideDown(4500);
+		$('.mainContainer').slideDown(2500);
 	});
 
 });

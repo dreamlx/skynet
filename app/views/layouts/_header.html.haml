@@ -18,10 +18,18 @@
     %input#searchInput.radiusBtn{ type: "search", placeholder: "搜索关键字" }
 
 %section#mainBanner
-  %div#mainBannerWarp
-    %div#avatar
+  %div.mainBannerWarp
+    %div.avatar
       %img{:src => "/assets/smileface.png"}
-    %header#mainArticalHeader
+    %header
+      %hgroup
+        %h1= get_home_title("cn")
+        %h4= get_home_title("en")
+%section.floatMainBanner
+  %div.mainBannerWarp
+    %div.avatar
+      %img{:src => "/assets/smileface.png"}
+    %header
       %hgroup
         %h1= get_home_title("cn")
         %h4= get_home_title("en")

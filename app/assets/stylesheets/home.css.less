@@ -108,13 +108,8 @@ figure.dnp
 	border-bottom:1px solid @gainsboro;
 	.weiboDefaultList
 	{
-		margin:0;
-		padding:0;
-		margin-left:60px;
 		.floatBlock(left,600px,76px);
-		list-style: none;
-		font-size:12px;
-		color:#333;
+		margin-left:60px;
 	}
 	.weiboMiniList
 	{
@@ -122,11 +117,16 @@ figure.dnp
 	}
 	ul
 	{		
+		margin:0;
+		padding:0;
+		color:#333;
+		font-size:12px;
+		list-style: none;
+		position:relative;
+		top:0;
 		li
 		{
-			height:76px;
-			position:relative;
-			top:0;
+			height:76px;			
 			.weiboIcon24
 			{
 				.floatBlock(left, 24px, 24px);
@@ -189,6 +189,13 @@ figure.dnp
 				margin-bottom:2px;	
 			}
 		}
+	}
+	.floatWeiboListBtn
+	{
+		position:absolute;
+		// bottom:100px;
+		right:43px;
+		z-index:20;
 	}
 }
 
@@ -348,6 +355,10 @@ figure.dnp
 		.centerBlock(690px, 140px);
 		clear:both;
 	}
+	&.whenLess
+	{
+		margin-bottom:50px;
+	}
 }
 
 
@@ -358,8 +369,8 @@ figure.dnp
 
 #moreInfoBlock
 {
-	.centerBlock(@blockWidth, 1125px);
-	// display:none;
+	.centerBlock(@blockWidth, 1050px);
+	display:none;
 	#otherChartBlock,
 	#top10ChartBlock
 	{
@@ -707,19 +718,21 @@ figure.dnp
 /*======================================================*/
 .lessMoreBtn
 {
-	width:170px;
-	height:36px;
+	width:175px;
+	height:49px;
+	position:relative;
 	float:right;
-	margin-right:35px;
-	margin-top:31px;
+	top:-35px;
+	right:95px;
+	z-index:5;
 	a
 	{
 		display:block;
-		width:170px;
-		height:36px;
+		width:175px;
+		height:49px;
 		text-align:center;
 		line-height:36px;
-		background-image:url("/assets/lessInfoBtn.png");
+		background-image:url("/assets/lessmorebtnbg.png");
 		font-size:12px;
 		color:#6c7273;
 	}
@@ -733,8 +746,4 @@ figure.dnp
 		display:inline-block;
 		background-position: -99px 0; width: 10px; height: 10px;
 	}
-}
-#globalFooter
-{
-	background:url("/assets/lessInfoBtnBottom.png") no-repeat scroll 1075px 0px;
 }

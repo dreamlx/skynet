@@ -143,6 +143,12 @@ input{outline: none}
     }
 }
 
+.mainBannerWarp
+{
+    width:1200px;    
+    margin:0 auto;
+    background:url("/assets/banner_bg.png") @cinnabar scroll no-repeat;
+}
 
 #mainBanner
 {
@@ -150,14 +156,11 @@ input{outline: none}
     height:148px;
     background-color:@cinnabar ;
     border-bottom:2px solid @venetianRed;
-    #mainBannerWarp
-    {
-        width:1200px;
-        height:100%;
-        margin:0 auto;
-        background:url("/assets/banner_bg.png") @cinnabar scroll no-repeat;
+    .mainBannerWarp
+    {    
+        height:100%;    
         // overflow: hidden;
-        div#avatar
+        div.avatar
         {
             width:100px;
             height:100px;
@@ -177,6 +180,43 @@ input{outline: none}
             {
                 h1{color:@white;margin:0;font-size:36px;padding:0;letter-spacing:8px;}
                 h4{margin:0;font-size:20px;color:@white;opacity:0.6;}
+            }
+        }
+    }
+}
+.floatMainBanner
+{
+    display:none;
+    position: fixed;
+    top:0;
+    z-index:100;
+    opacity: 0.5;
+    background-color:@cinnabar;
+    width:100%;
+    height:70px;
+    .mainBannerWarp
+    {
+        height:70px;
+        div.avatar
+        {
+            margin:10px 0 0 60px;
+            width:50px !important;
+            height:50px !important;
+            float:left;
+            img
+            {
+                width:50px;
+                height:50px;
+            }
+        }
+        header
+        {
+            float:left;
+            margin:20px 0 0 30px;
+            hgroup
+            {
+                h1{color:@white;margin:0;font-size:16px;padding:0;letter-spacing:8px;}
+                h4{margin:0;font-size:12px;color:@white;opacity:0.6;}
             }
         }
     }
@@ -290,29 +330,37 @@ input{outline: none}
     /*height:1966px;*/
 }
 
-#globalFooter
-{
-    width:1280px;
-    height:125px;
-    margin:0 auto;
-    color:@nevada;
-    padding-top:35px;
-    .companyLogo, 
-    .companyInfo
+
+
+footer#globalFooter
+{    
+    border-top:2px solid #d4d9dc;
+    width:100%;
+    padding-top:20px;
+    height:70px;
+    background-color: #ecf0f1;
+    section.pageInfo
     {
-        width:1200px;
-        height:35px;
+        padding-top: 3px;
+        color:#888;
+        font-size:10px;
+        width:940px;
+        height:70px;
         margin:0 auto;
+        .pull-left
+        {
+            float:left;
+        }
+        .pull-right
+        {
+            float:right;
+        }
+        p
+        {
+            height:12px;
+            margin:0;
+        }
     }
-    .companyLogo
-    {
-        border-bottom:1px solid #d8d8d8;
-        img,p{display:inline;}
-    }
-    .dnsLogo{float:right;}
-    .icpNumber{font-size:10px;}
-    .companyInfo{font-size:8px;margin-top:5px;}
-    .companyName, .telAndFax{float:right;margin-left:25px;}
 }
 
 

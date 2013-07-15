@@ -19,4 +19,8 @@
     = render "layouts/ie7_check"
     = render "layouts/header"
     .mainContainer= yield
+    .lessMoreBtn
+      %a#lessInfoBtn{:href => "#"}
+        %span.spritebg.moreIcon
+        展开更多详情
     = render "layouts/footer"

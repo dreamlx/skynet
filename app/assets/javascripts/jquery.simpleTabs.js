@@ -48,10 +48,12 @@
 				$tabItems.removeClass(active);
 				var linkParent = $(this).parent();
 				linkParent.addClass(active);
-				$contentPanes.filter('.active').slideUp(1000,'easeInOutBack', function(){
-					$contentPanes.removeClass(active);
-					$contentPanes.filter(hashStr).addClass(active);
-					$contentPanes.filter('.active').slideDown(1000,'easeOutBounce', function(){});
+				$contentPanes.filter('.active').fadeOut(500,'easeInOutBack', function(){
+					$contentPanes.removeClass(active);			
+					$contentPanes.filter(hashStr).slideDown(1000,'easeOutBounce', function(){
+						$contentPanes.filter(hashStr).addClass(active);		
+
+					});
 				});
 				
 				
