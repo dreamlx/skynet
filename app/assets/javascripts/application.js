@@ -52,3 +52,11 @@
 //      gon.top10_today 
 //      gon.top10_yesterday
 //      gon.top10_15days 
+
+$(function(){
+	$('.mainContainer').hide();
+	$('#globalHeader').hide().delay(300).slideDown(1000, function(){
+		$('.mainContainer').slideDown(4500);
+	});
+
+});

@@ -30,6 +30,10 @@ class HomeController < ApplicationController
 
   end
 
+  def aside
+    render layout: false;
+  end
+
   private
 
 end

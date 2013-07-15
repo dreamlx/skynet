@@ -1,44 +1,42 @@
-/ begin global aside include system menu
-%aside#globalAside
-  %nav.systemNav
-    %ul.systemNavList
-      %li
-        %a{:href => "#"}
-          %span#systemNavIcon1.navIcon.spritebg
-          %svg( version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
-            %path( fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M8.073,1.795L0,8.38h1.759l6.313-4.847l6.083,4.93H16L8.073,1.795z M2.918,8.497v6.506l3.695-0.005l0.005-3.281c0,0-0.055-0.542,0.469-0.542h1.776c0.621,0,0.583,0.542,0.583,0.542l-0.006,3.27h3.694v-6.49l-5.114-3.92L2.918,8.497z M7.587,9.394H6.652V8.459h0.935V9.394z M7.587,7.524H6.652V6.59h0.935V7.524zM8.521,6.59h0.935v0.935H8.521V6.59z M8.521,8.459h0.935v0.935H8.521V8.459z M13.135,0.998h-1.743L11.31,2.778l1.793,1.438L13.135,0.998z")
-          %span.sysNavChn 系统首页
-          %span.sysNavEng Systems Home
-          / %span.infoNum
-      %li
-        %a{:href => "#"}
-          %span#systemNavIcon2.navIcon.spritebg
-          %svg( version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
-            %path( fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M11.506,1.974H2.49c-0.553,0-1.002,0.449-1.002,1.002v12.022C1.488,15.552,1.937,16,2.49,16h6.935l3.084-2.975V2.976C12.508,2.422,12.06,1.974,11.506,1.974z M11.585,12.337l-2.802,2.677c-0.438,0.438-0.344-0.329-0.344-0.329v-1.69c0-1.049,1.158-1.049,1.158-1.049h1.8C12.133,11.93,11.585,12.337,11.585,12.337zM12.508,0.001H5.495c-1.189,0-1.001,0.97-1.001,0.97l7.013-0.031c2.035,0,2.004,2.066,2.004,2.066v10.019c1.002,0,1.002-1.002,1.002-1.002V1.88C14.512-0.124,12.508,0.001,12.508,0.001z")
-          %span.sysNavChn 舆情文章
-          %span.sysNavEng Public Opinion
-          %span.infoNum 23
-      %li
-        %a{:href => "#"}
-          %span#systemNavIcon3.navIcon.spritebg
-          %svg( version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
-            %path( fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M8.042,1C4.153,1,1,4.152,1,8.042C1,11.93,4.153,15,8.042,15C11.931,15,15,11.93,15,8.042C15,4.152,11.931,1,8.042,1z M6.948,4.86c0-0.54,0.539-0.977,1.078-0.977S9.037,4.321,9.037,4.86v4.235c0,0.539-0.573,0.977-1.112,0.977c-0.539,0-0.977-0.438-0.977-0.977V4.86z M7.977,13.057c-0.609,0-1.103-0.494-1.103-1.104c0-0.609,0.494-1.104,1.103-1.104s1.104,0.495,1.104,1.104C9.08,12.563,8.586,13.057,7.977,13.057z")
-          %span.sysNavChn 敏感信息
-          %span.sysNavEng Sensitive Information
-          %span.infoNum 8
-      %li
-        %a{:href => "#"}
-          %span#systemNavIcon4.navIcon.spritebg
-          %svg(version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
-            %path(fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M0.962,1.572c0,0-0.962,0.155-0.962,0.775V12.36c0,0-0.041,2.068,1.943,2.068h13.354c0,0,0.703-0.332,0.703-0.91c0-0.579-0.703-1.034-0.703-1.034l-12.65-0.041c0,0-0.703,0.083-0.703-0.621V9.466l3.916-1.23l4.027,3.16l5.998-5.65l0.051-3.033L9.949,8.451L5.946,5.463L1.965,6.861L1.943,2.265C1.943,2.265,1.582,1.572,0.962,1.572z")
-          %span.sysNavChn 分析报告
-          %span.sysNavEng Feasibility Report
-          / %span.infoNum
-      %li
-        %a{:href => ""}
-          %span#systemNavIcon5.navIcon.spritebg
-          %svg(xmlns="http://www.w3.org/2000/svg" version="1.1" width="16px" height="16px" enable-background="new 0 0 16 16")
-            %path(fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M14.482,7.12c0,0-2.453-4.09-6.523-4.09c-3.758,0-6.523,4.09-6.523,4.09C0.939,7.67,0,8,0,8s0.939,0.331,1.436,0.881c0,0,2.891,4.09,6.773,4.09c3.693,0,6.273-4.09,6.273-4.09C14.979,8.331,16,8,16,8S14.979,7.67,14.482,7.12z M8.001,10.956c-1.656,0-2.999-1.343-2.999-2.999c0-1.655,1.343-2.999,2.999-2.999s3.062,1.344,3.062,2.999C11.062,9.613,9.657,10.956,8.001,10.956z M8.051,6.963c-0.57,0-1.033,0.463-1.033,1.033c0,0.571,0.463,1.034,1.033,1.034c0.571,0,1.034-0.463,1.034-1.034C9.085,7.426,8.622,6.963,8.051,6.963z")
-          %span.sysNavChn 专题监控
-          %span.sysNavEng Customized Monitoring
-          / %span.infoNum
+%nav.systemNav
+  %ul.systemNavList
+    %li
+      %a{:href => "#"}
+        %span#systemNavIcon1.navIcon.spritebg
+        %svg( version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
+          %path( fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M8.073,1.795L0,8.38h1.759l6.313-4.847l6.083,4.93H16L8.073,1.795z M2.918,8.497v6.506l3.695-0.005l0.005-3.281c0,0-0.055-0.542,0.469-0.542h1.776c0.621,0,0.583,0.542,0.583,0.542l-0.006,3.27h3.694v-6.49l-5.114-3.92L2.918,8.497z M7.587,9.394H6.652V8.459h0.935V9.394z M7.587,7.524H6.652V6.59h0.935V7.524zM8.521,6.59h0.935v0.935H8.521V6.59z M8.521,8.459h0.935v0.935H8.521V8.459z M13.135,0.998h-1.743L11.31,2.778l1.793,1.438L13.135,0.998z")
+        %span.sysNavChn 系统首页
+        %span.sysNavEng Systems Home
+        / %span.infoNum
+    %li
+      %a{:href => "#"}
+        %span#systemNavIcon2.navIcon.spritebg
+        %svg( version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
+          %path( fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M11.506,1.974H2.49c-0.553,0-1.002,0.449-1.002,1.002v12.022C1.488,15.552,1.937,16,2.49,16h6.935l3.084-2.975V2.976C12.508,2.422,12.06,1.974,11.506,1.974z M11.585,12.337l-2.802,2.677c-0.438,0.438-0.344-0.329-0.344-0.329v-1.69c0-1.049,1.158-1.049,1.158-1.049h1.8C12.133,11.93,11.585,12.337,11.585,12.337zM12.508,0.001H5.495c-1.189,0-1.001,0.97-1.001,0.97l7.013-0.031c2.035,0,2.004,2.066,2.004,2.066v10.019c1.002,0,1.002-1.002,1.002-1.002V1.88C14.512-0.124,12.508,0.001,12.508,0.001z")
+        %span.sysNavChn 舆情文章
+        %span.sysNavEng Public Opinion
+        %span.infoNum 23
+    %li
+      %a{:href => "#"}
+        %span#systemNavIcon3.navIcon.spritebg
+        %svg( version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
+          %path( fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M8.042,1C4.153,1,1,4.152,1,8.042C1,11.93,4.153,15,8.042,15C11.931,15,15,11.93,15,8.042C15,4.152,11.931,1,8.042,1z M6.948,4.86c0-0.54,0.539-0.977,1.078-0.977S9.037,4.321,9.037,4.86v4.235c0,0.539-0.573,0.977-1.112,0.977c-0.539,0-0.977-0.438-0.977-0.977V4.86z M7.977,13.057c-0.609,0-1.103-0.494-1.103-1.104c0-0.609,0.494-1.104,1.103-1.104s1.104,0.495,1.104,1.104C9.08,12.563,8.586,13.057,7.977,13.057z")
+        %span.sysNavChn 敏感信息
+        %span.sysNavEng Sensitive Information
+        %span.infoNum 8
+    %li
+      %a{:href => "#"}
+        %span#systemNavIcon4.navIcon.spritebg
+        %svg(version="1.1" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16")
+          %path(fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M0.962,1.572c0,0-0.962,0.155-0.962,0.775V12.36c0,0-0.041,2.068,1.943,2.068h13.354c0,0,0.703-0.332,0.703-0.91c0-0.579-0.703-1.034-0.703-1.034l-12.65-0.041c0,0-0.703,0.083-0.703-0.621V9.466l3.916-1.23l4.027,3.16l5.998-5.65l0.051-3.033L9.949,8.451L5.946,5.463L1.965,6.861L1.943,2.265C1.943,2.265,1.582,1.572,0.962,1.572z")
+        %span.sysNavChn 分析报告
+        %span.sysNavEng Feasibility Report
+        / %span.infoNum
+    %li
+      %a{:href => ""}
+        %span#systemNavIcon5.navIcon.spritebg
+        %svg(xmlns="http://www.w3.org/2000/svg" version="1.1" width="16px" height="16px" enable-background="new 0 0 16 16")
+          %path(fill-rule="evenodd" clip-rule="evenodd" fill-opacity="0.7" fill="#FFFFFF" d="M14.482,7.12c0,0-2.453-4.09-6.523-4.09c-3.758,0-6.523,4.09-6.523,4.09C0.939,7.67,0,8,0,8s0.939,0.331,1.436,0.881c0,0,2.891,4.09,6.773,4.09c3.693,0,6.273-4.09,6.273-4.09C14.979,8.331,16,8,16,8S14.979,7.67,14.482,7.12z M8.001,10.956c-1.656,0-2.999-1.343-2.999-2.999c0-1.655,1.343-2.999,2.999-2.999s3.062,1.344,3.062,2.999C11.062,9.613,9.657,10.956,8.001,10.956z M8.051,6.963c-0.57,0-1.033,0.463-1.033,1.033c0,0.571,0.463,1.034,1.033,1.034c0.571,0,1.034-0.463,1.034-1.034C9.085,7.426,8.622,6.963,8.051,6.963z")
+        %span.sysNavChn 专题监控
+        %span.sysNavEng Customized Monitoring
+        / %span.infoNum

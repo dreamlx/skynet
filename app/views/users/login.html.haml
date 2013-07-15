@@ -3,7 +3,7 @@
 %section.loginFormBlock.container
   .span8.offset2
     #loginLogo
-      %img{:src => "assets/login/loginlogo.png"}
+      %img{:src => "/assets/login/loginlogo.png"}
     #loginFormWarper
       = form_tag :action => :create_session do
         %p= text_field :user,:name, :placeholder => "用户名"
@@ -14,7 +14,7 @@
           = link_to "忘记了自己的密码？"
 %section.pwdInfo.container 
   %h3.span10.offset1
-    %img{:src => "assets/login/icon_reset.png"}
+    %img{:src => "/assets/login/icon_reset.png"}
     如何重置密码
 
   %p.span10.offset1 如果由于忘记了密码而无法访问系统管理控制台，您可以重置密码。请注意，您必须向password@netpom.com发送丢失密码申请重置邮件，我们会发送重置邮件至系统注册邮箱（拒绝发送至非系统注册邮箱）。收到重置邮件后根据邮件内容步骤进行操作。如果您的无法收到重置邮件请拨打我们的热线电话寻求帮助。

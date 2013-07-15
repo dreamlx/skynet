@@ -10,7 +10,7 @@
         %header
           %h3= @weibo_yq.last['text']
           %span
-            %img{:alt => "", :src => "assets/weiboLogo.png"}/
+            %img{:alt => "", :src => "/assets/weiboLogo.png"}/
         %p= link_to @weibo_yq.last['content'], @weibo_yq.last['url'], target: '_blank'
         %span.lastestData
           =@weibo_yq.last['published_at']
@@ -22,7 +22,7 @@
         %header
           %h3= @weibo_yj.last['text']
           %span
-            %img{:alt => "", :src => "assets/weiboLogo.png"}/
+            %img{:alt => "", :src => "/assets/weiboLogo.png"}/
         %p= link_to @weibo_yj.last['content'], @weibo_yj.last['url'], target: '_blank'
         %span.lastestData
           =@weibo_yj.last['published_at']

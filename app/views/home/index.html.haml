@@ -1,7 +1,8 @@
-= render "aside"
+/ begin global aside include system menu
+%aside#globalAside
+  = render 'aside'
 / begin page right warp
 .rightWarp
-
   = render 'weiboList', object: @weibo_items
   = render 'lastestUpdate'
   = render 'realTimeChartBlock'
