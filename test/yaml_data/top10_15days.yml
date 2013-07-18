@@ -5,31 +5,31 @@ data:
   top10: 
     - 
       sitename: 易车网
-      value: 529
+      value: 1351
     - 
       sitename: 新浪微博
-      value: 206
+      value: 313
     - 
       sitename: 汽车之家网
-      value: 95
-    - 
-      sitename: 网易微博
-      value: 44
-    - 
-      sitename: 腾讯微博
-      value: 41
+      value: 219
     - 
       sitename: 汽车之家
-      value: 17
+      value: 90
     - 
-      sitename: 新浪博客
-      value: 13
+      sitename: 腾讯微博
+      value: 80
     - 
-      sitename: auto.youth.cn
-      value: 12
-    - 
-      sitename: 网易汽车
-      value: 12
+      sitename: 爱卡汽车网
+      value: 44
     - 
       sitename: 太平洋汽车网
-      value: 11
+      value: 41
+    - 
+      sitename: 中国青年网
+      value: 38
+    - 
+      sitename: 网上车市
+      value: 35
+    - 
+      sitename: 新浪博客
+      value: 34

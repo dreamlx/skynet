@@ -5,16 +5,16 @@ data:
   media: 
     - 
       name: 新闻
-      value: 101
+      value: 412
     - 
       name: 论坛
-      value: 3
+      value: 25
     - 
       name: 博客
-      value: 3
+      value: 1
     - 
       name: 微博
-      value: 22
+      value: 29
     - 
       name: 贴吧
-      value: 0
+      value: 3
