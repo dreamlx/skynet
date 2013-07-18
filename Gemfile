@@ -11,6 +11,7 @@ gem 'gon'
 gem 'psych'
 gem 'ya2yaml'  
 gem 'haml'
+gem 'delayed_job_active_record'
 
 # deploy
 gem "rvm-capistrano"

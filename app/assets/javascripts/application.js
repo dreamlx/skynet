@@ -59,4 +59,7 @@ $(function(){
 		$('.mainContainer').slideDown(2500);
 	});
 
+	$("#weiboList").load('/home/weiboList');
+	$("#lastestUpdate").load('/home/lastestUpdate');
+	$("#realTimeChartBlock").load('/home/realTimeChartBlock');
 });
