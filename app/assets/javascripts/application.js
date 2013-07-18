@@ -59,7 +59,7 @@ $(function(){
 		$('.mainContainer').slideDown(2500);
 	});
 
-	$("#weiboList").load('/home/weiboList');
-	$("#lastestUpdate").load('/home/lastestUpdate');
-	$("#realTimeChartBlock").load('/home/realTimeChartBlock');
+	$("#weiboList").html('<img src="/assets/ajax_loader.gif" class="loading">').load('/home/weiboList');
+	$("#lastestUpdate").html('<img src="/assets/ajax_loader.gif" class="loading">').load('/home/lastestUpdate');
+	$("#realTimeChartBlock").html('<img src="/assets/ajax_loader.gif" class="loading">').load('/home/realTimeChartBlock');
 });
