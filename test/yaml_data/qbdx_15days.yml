@@ -5,10 +5,10 @@ data:
   dx: 
     - 
       name: 正面
-      value: 816
+      value: 1979
     - 
       name: 中性
-      value: 263
+      value: 594
     - 
       name: 负面
-      value: 87
+      value: 126

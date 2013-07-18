@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     http = login_to_remote(params["user"]["name"], params["user"]["password"])
     if http.http_get
       if json2hash(http.body_str)["code"] == "200"
-        session[:current_user] = params[:user]
+        session["current_user"] = params[:user]
+        session["user_data"] = json2hash(http.body_str)["data"]
         redirect_to "/home" 
       else
         flash[:alert] = "用户名或者密码错误，登录失败"
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
     http = login_to_remote(session["current_user"]["name"], session["current_user"]["password"], "logout")
     http.http_get
     session[:current_user] = nil
+    session[:VOC_CenterID] = nil
     redirect_to "/users/login" 
   end
 

@@ -2,22 +2,25 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   def auth_user!
-    redirect_to "/users/login" if session[:current_user].nil?
+    redirect_to "/users/login" if session['current_user'].nil?
   end
   
   private
 
-  def get_voc(api_url, act, hash_login, http, other_condition=nil)
-    id_gp = hash_login['data']['id_gp']
-    id_cp = hash_login['data']['id_cp']
-    curl = "#{api_url}?act=#{act}&id_gp=#{id_gp}&id_cp=#{id_cp}"
+  def get_voc(api_port, act, other_condition=nil)
+    base_url = 'http://imws.voc.com.cn/cgi-bin/imetrics/api'
+    curl = "#{base_url}/#{api_port}?act=#{act}"
+    curl += "&VOC_CenterID=#{ session['user_data']['VOC_CenterID'] }&id_cp=#{ session['user_data']['id_cp'] }&id_gp=#{ session['user_data']['id_gp'] }"
     curl += "&#{other_condition}" unless other_condition.nil?
+    http = Curl::Easy.new(curl)
     http.url = curl
+
     if http.http_get
-      result = http.body_str
+      result = json2hash(http.body_str)
     else
       result = []
     end
+   
   end
 
   def json2hash(obj)
