@@ -6,20 +6,20 @@
   bInfo: false
   bWarning: false
   bWeight: false
-  baobiao_num: 112
+  baobiao_num: 1
   click: 0
-  content: "本届车展昌河铃木携北斗星、利亚纳和派喜系列主销车型,及年度跨界新车---利亚纳...北斗星X5节油极限赛起点..."
+  content: "近日,来自昌河铃木的官方消息称,“星耀沙漠 游刃油余”2013年第四届北斗星节油挑战赛即将拉开战幕,正式向全国范围内的北斗星X5以及北斗星K14B用户发起节油挑战号召,..."
   dx: 1
-  id: 157636778
+  id: 157723797
   level: "1"
   media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:34:27"
+  pic: /imetrics/upload/2013-03-04/1362393105.jpg
+  published_at: "2013-07-19 00:07:07"
   reply: 0
   rz: 普通
-  site: 易车网
-  text: 昌河铃木六车型亮相长春车展
-  url: "http://dealer.bitauto.com/100018981/news/2013/07/5744643.html"
+  site: 汽车之家网
+  text: 2013第四届北斗星节油挑战赛鸣锣启动
+  url: "http://www.autohome.com.cn/dealer/201307/4635350.html"
 - 
   author: ""
   bDelete: false
@@ -27,22 +27,22 @@
   bInfo: false
   bWarning: false
   bWeight: false
-  baobiao_num: 37
+  baobiao_num: 10
   click: 0
-  content: "星耀沙漠 游刃油余…星耀沙漠游刃油余――2013年第四届北斗星节油挑战赛鸣锣启动近日,来自昌河铃木的官方消息称,“星耀沙漠游刃油余”2013年第四届..."
+  content: "近日,来自昌河铃木的官方消息称,“星耀沙漠 游刃油余”2013年第四届北斗星节油挑战赛即将拉开战幕,正式向全国范围内的北斗星X5以及北斗星K14B用户发起节油挑战号召,..."
   dx: 1
-  id: 157636765
+  id: 157723798
   level: "1"
   media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:34:24"
+  pic: /imetrics/upload/2013-03-18/1363588057.jpg
+  published_at: "2013-07-19 00:07:07"
   reply: 0
   rz: 普通
-  site: 易车网
-  text: "星耀沙漠 游刃油余"
-  url: "http://dealer.bitauto.com/501163/news/201307/5776695.html"
+  site: 东方网
+  text: 2013年第四届北斗星节油挑战赛鸣锣启动
+  url: "http://auto.eastday.com/gd/2013/0718/643169429.html"
 - 
-  author: ""
+  author: 魅力先森Lyx
   bDelete: false
   bHot: false
   bInfo: false
@@ -50,39 +50,60 @@
   bWeight: false
   baobiao_num: 1
   click: 0
-  content: "10月26日北斗星X5万达我们不见不散…万众期待的X5(你懂的)终于闪亮上市了,10月26日石家庄万达广场我们不见不散。上市活动内容多多!激情舞蹈、益智游戏、人体..."
-  dx: 1
-  id: 157636767
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:34:24"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: 10月26日北斗星X5万达我们不见不散
-  url: "http://dealer.bitauto.com/100018981/news/201210/3315929.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 1
-  click: 0
-  content: "试乘试驾全新北斗星X5加长的不只是车身…=加长对于高级轿车来说屡见不鲜,对于后排空间的更高提升以及用户的体验需求使得众多厂商纷纷对自己的原有车型进行“拉伸”,..."
+  content: "第一名@北斗星e妖尾 39.5@*#我是魅力的小伙伴,我为大家报时,现在时刻:2013年07月18日周四20时25分05秒736毫秒。 ..."
   dx: 3
-  id: 157636766
+  id: 157723299
+  level: "1"
+  media: 贴吧
+  pic: /imetrics/upload/2013-03-07/1362621857.jpg
+  published_at: "2013-07-19 00:02:03"
+  reply: 0
+  rz: 普通
+  site: 百度贴吧
+  text: 魅力丶第一届桌面大赛最终结果。
+  url: "http://tieba.baidu.com/p/2467382141"
+- 
+  author: ""
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 3
+  click: 0
+  content: "置换派喜正在优惠…遵义鑫和昌河置换派喜正在优惠,感兴趣的朋友可以到店咨询购买,具体优惠信息请见下表:"
+  dx: 1
+  id: 157722429
   level: "1"
   media: 新闻
   pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:34:24"
+  published_at: "2013-07-18 23:33:38"
   reply: 0
   rz: 普通
   site: 易车网
-  text: 试乘试驾全新北斗星X5加长的不只是车身
-  url: "http://dealer.bitauto.com/100018981/news/201212/3685719.html"
+  text: 置换派喜正在优惠
+  url: "http://dealer.bitauto.com/100045388/news/201307/5792274.html"
+- 
+  author: 651O
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 1
+  click: 0
+  content: 作为世界微车之王，铃木K系列发动机带来的动力性和经济性一直有口皆碑，搭载K系列发动机的产品更是关注度和热销度居高不下，市场占有率名列前茅，彰显了王者之“芯”的实力与自信
+  dx: 1
+  id: 157721154
+  level: "1"
+  media: 论坛
+  pic: /imetrics/upload/2013-03-18/1363599859.jpg
+  published_at: "2013-07-18 23:13:11"
+  reply: 0
+  rz: 普通
+  site: 汽车之家
+  text: "转帖： 王者之“芯” 看小排量发动机如何征服市场 .....昌河梦"
+  url: "http://club.autohome.com.cn/bbs/thread-c-2534-23912505-1.html"
 - 
   author: ""
   bDelete: false
@@ -92,18 +113,18 @@
   bWeight: false
   baobiao_num: 2
   click: 0
-  content: "置换北斗星X5最高优惠0.3万元…洛阳亿国昌铃置换北斗星X5最高优惠0.3万元,感兴趣的朋友可以到店咨询购买,具体优惠信息请见下表:"
+  content: "昌河铃木穿越沙漠油刃有余…穿越沙漠、油刃有余――2013年第四届北斗星节油挑战赛鸣锣启动近日,来自昌河铃木的官方消息称,“星耀沙漠游刃油余”2013年第四..."
   dx: 1
-  id: 157636762
+  id: 157721023
   level: "1"
   media: 新闻
   pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:34:22"
+  published_at: "2013-07-18 23:04:11"
   reply: 0
   rz: 普通
   site: 易车网
-  text: 置换北斗星X5最高优惠0.3万元
-  url: "http://dealer.bitauto.com/100020509/news/201307/5779869.html"
+  text: 昌河铃木穿越沙漠油刃有余
+  url: "http://dealer.bitauto.com/100043513/news/201307/5790409.html"
 - 
   author: ""
   bDelete: false
@@ -111,20 +132,41 @@
   bInfo: false
   bWarning: false
   bWeight: false
-  baobiao_num: 37
+  baobiao_num: 53
   click: 0
-  content: "星耀沙漠 游刃油余…星耀沙漠游刃油余――2013年第四届北斗星节油挑战赛鸣锣启动近日,来自昌河铃木的官方消息称,“星耀沙漠游刃油余”2013年第四届..."
+  content: "尤其在第三批入围名录中,昌河铃木更是以9款车型的成绩成为最大的赢家,充分展现了昌河铃木K系列发动机在节能性能上获得的市场认可。 作为铃木旗下的全球战略发动机,K..."
   dx: 1
-  id: 157635274
+  id: 157721024
   level: "1"
   media: 新闻
   pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:04:27"
+  published_at: "2013-07-18 23:04:11"
   reply: 0
   rz: 普通
   site: 易车网
-  text: "星耀沙漠 游刃油余"
-  url: "http://dealer.bitauto.com/100047283/news/201307/5776790.html"
+  text: 看小排量发动机如何征服市场
+  url: "http://dealer.bitauto.com/100020544/news/201307/5776602.html"
+- 
+  author: murphy473
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 1
+  click: 0
+  content: "我是开QQ的; 利亚纳屁股不好看，外观倾向野马;品质这就不用了说了毕竟是合资品牌;但是日系某些时候还是不保险，会成为某些人发泄理由还是野马;不用说，买野马撒;利亚纳啊  野马售后不行我倾向于利亚纳买个2013年改款的野马F12，挺不错的"
+  dx: 1
+  id: 157711038
+  level: "1"
+  media: 论坛
+  pic: /imetrics/upload/2013-03-18/1363599859.jpg
+  published_at: "2013-07-18 22:13:11"
+  reply: 0
+  rz: 普通
+  site: 汽车之家
+  text: 大家觉得6万多买野马好还是买利亚纳好！有图啊！进来看看
+  url: "http://club.autohome.com.cn/bbs/thread-c-2445-23212227-1.html"
 - 
   author: ""
   bDelete: false
@@ -132,20 +174,20 @@
   bInfo: false
   bWarning: false
   bWeight: false
-  baobiao_num: 37
+  baobiao_num: 31
   click: 0
-  content: "星耀沙漠 游刃油余…星耀沙漠游刃油余――2013年第四届北斗星节油挑战赛鸣锣启动近日,来自昌河铃木的官方消息称,“星耀沙漠游刃油余”2013年第四届..."
+  content: "本次优惠促销活动,利亚纳a+名列其中,凡购买利亚纳a+系列车款,最高可获得7000元的优惠,所属车型56800元起,真正做到实惠与实力并重。 清凉特供礼 派喜作为昌河铃木..."
   dx: 1
-  id: 157635273
+  id: 157710406
   level: "1"
   media: 新闻
   pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:04:26"
+  published_at: "2013-07-18 22:03:45"
   reply: 0
   rz: 普通
   site: 易车网
-  text: "星耀沙漠 游刃油余"
-  url: "http://dealer.bitauto.com/100037440/news/201307/5776757.html"
+  text: "清凉夏日欢乐购 百万“油礼”天天送"
+  url: "http://dealer.bitauto.com/100043515/news/201307/5710433.html"
 - 
   author: ""
   bDelete: false
@@ -155,18 +197,18 @@
   bWeight: false
   baobiao_num: 1
   click: 0
-  content: "昌河利亚纳a+打造城市家轿超值之选…低油耗高品质利亚纳a+打造城市家轿超值之选随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市..."
+  content: "其中昌河铃木利亚纳a+就是这样一款现代化城市小车,不仅外观靓丽,空间、安全具有绝对优势,节油性能更有着技高一筹的表现,日渐成为注重实用性消费者的首选车型。 经济..."
   dx: 1
-  id: 157635270
+  id: 157710404
   level: "1"
   media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:04:24"
+  pic: /imetrics/upload/2013-03-04/1362393105.jpg
+  published_at: "2013-07-18 22:03:44"
   reply: 0
   rz: 普通
-  site: 易车网
-  text: 昌河利亚纳a+打造城市家轿超值之选
-  url: "http://dealer.bitauto.com/100020506/news/201307/5784101.html"
+  site: 汽车之家网
+  text: "利亚纳a 打造城市家轿超值之选值得拥有"
+  url: "http://www.autohome.com.cn/dealer/201307/4624793.html"
 - 
   author: ""
   bDelete: false
@@ -176,20 +218,20 @@
   bWeight: false
   baobiao_num: 1
   click: 0
-  content: "昌河铃木北斗星- 星耀沙漠 游刃油余…星耀沙漠游刃油余――2013年第四届北斗星节油挑战赛鸣锣启动“星耀沙漠游刃油余”2013年第四届北斗星节油挑战赛即将拉开战幕..."
+  content: "利亚纳a 打造城市家轿超值之选…随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市家轿备受追捧。各大车企为能在此领域占得先机,..."
   dx: 1
-  id: 157635271
+  id: 157710405
   level: "1"
   media: 新闻
   pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:04:24"
+  published_at: "2013-07-18 22:03:44"
   reply: 0
   rz: 普通
   site: 易车网
-  text: "【昌河铃木北斗星- 星耀沙漠 游刃油余_柳州鸿润昌河新闻】-易车网"
-  url: "http://dealer.bitauto.com/100020506/news/201307/5779092.html"
+  text: "利亚纳a 打造城市家轿超值之选"
+  url: "http://dealer.bitauto.com/100043527/news/201307/5790749.html"
 - 
-  author: ""
+  author: 骑铃木开风云
   bDelete: false
   bHot: false
   bInfo: false
@@ -197,186 +239,18 @@
   bWeight: false
   baobiao_num: 1
   click: 0
-  content: "星耀沙漠 游刃油余…星耀沙漠游刃油余――2013年第四届北斗星节油挑战赛鸣锣启动近日,来自昌河铃木的官方消息称,“星耀沙漠游刃油余”2013年第四届..."
-  dx: 1
-  id: 157635272
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:04:24"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: "【星耀沙漠 游刃油余_陕西天锐新闻】-易车网"
-  url: "http://dealer.bitauto.com/100000035/news/201307/5776699.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 112
-  click: 0
-  content: 江西昌河汽车公司主要产品品种有派喜(Splash)、北斗星、北斗星e+、浪迪S-MPV、利亚纳两厢/三厢经济型轿车、福瑞达微型客车、福瑞达微型单/双排货车、爱迪尔、爱迪尔...
-  dx: 1
-  id: 157635263
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-14/1363239256.jpg
-  published_at: "2013-07-18 11:04:17"
-  reply: 0
-  rz: 普通
-  site: 中国经济网
-  text: 昌河铃木六车型亮相长春车展
-  url: "http://12365.ce.cn/zlpd/jsxx/201307/18/t20130718_984037.shtml"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 9
-  click: 0
-  content: "近于SUV 长安铃木全新一代天语SX4曝光…铃木汽车是进入中国市场开倒车的典型代表之一,来了个大早,却没有取得多大增长和成绩。同时长安汽车和昌河汽车之间的恩怨纠缠,..."
+  content: 今天早上，泰安下大雨;走了约300米积水路段;下午发动着车说什么也挂不上档了;怎么办啊;我就熄火后挂上3档，踩着离合发动车，然后车猛的往前一窜（跟没踩离合似的）;然后放空挡再重新打火，故障就消失了;现在14000公里，综合油耗每公里0.5元
   dx: 3
-  id: 157635264
+  id: 157709657
   level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 11:04:17"
+  media: 论坛
+  pic: /imetrics/upload/2013-03-18/1363599859.jpg
+  published_at: "2013-07-18 21:53:13"
   reply: 0
   rz: 普通
-  site: 易车网
-  text: "近于SUV 长安铃木全新一代天语SX4曝光"
-  url: "http://dealer.bitauto.com/100047036/news/201307/5779613.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 61
-  click: 0
-  content: "利亚纳a+打造城市家轿超值之选…低油耗高品质利亚纳a+打造城市家轿超值之选随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市家轿..."
-  dx: 1
-  id: 157633559
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:40"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: 利亚纳a+打造城市家轿超值之选
-  url: "http://dealer.bitauto.com/100006380/news/201307/5776478.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 61
-  click: 0
-  content: "利亚纳a+打造城市家轿超值之选…低油耗高品质利亚纳a+打造城市家轿超值之选随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市家轿..."
-  dx: 1
-  id: 157633560
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:40"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: 利亚纳a+打造城市家轿超值之选
-  url: "http://dealer.bitauto.com/100018893/news/201307/5776480.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 61
-  click: 0
-  content: "利亚纳a+打造城市家轿超值之选…低油耗高品质利亚纳a+打造城市家轿超值之选随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市家轿..."
-  dx: 1
-  id: 157633561
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:40"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: 利亚纳a+打造城市家轿超值之选
-  url: "http://dealer.bitauto.com/100030709/news/201307/5776521.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 61
-  click: 0
-  content: "利亚纳a+打造城市家轿超值之选…低油耗高品质利亚纳a+打造城市家轿超值之选随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市家轿..."
-  dx: 1
-  id: 157633562
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:40"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: 利亚纳a+打造城市家轿超值之选
-  url: "http://dealer.bitauto.com/100047281/news/201307/5776563.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 61
-  click: 0
-  content: "利亚纳a+打造城市家轿超值之选…低油耗高品质利亚纳a+打造城市家轿超值之选随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市家轿..."
-  dx: 1
-  id: 157633563
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:40"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: 利亚纳a+打造城市家轿超值之选
-  url: "http://dealer.bitauto.com/100020611/news/201307/5776499.html"
-- 
-  author: ""
-  bDelete: false
-  bHot: false
-  bInfo: false
-  bWarning: false
-  bWeight: false
-  baobiao_num: 37
-  click: 0
-  content: "星耀沙漠 游刃油余…星耀沙漠游刃油余――2013年第四届北斗星节油挑战赛鸣锣启动近日,来自昌河铃木的官方消息称,“星耀沙漠游刃油余”2013年第四届..."
-  dx: 1
-  id: 157633564
-  level: "1"
-  media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:40"
-  reply: 0
-  rz: 普通
-  site: 易车网
-  text: "星耀沙漠 游刃油余"
-  url: "http://dealer.bitauto.com/100020628/news/201307/5776728.html"
+  site: 汽车之家
+  text: 涉水后利亚纳挂不上档。
+  url: "http://club.autohome.com.cn/bbs/thread-c-432-23909326-1.html"
 - 
   author: ""
   bDelete: false
@@ -386,18 +260,18 @@
   bWeight: false
   baobiao_num: 1
   click: 0
-  content: "利亚纳原价63800 促销价56800 福瑞达 原价29800 促销价26900 看到如此幅度的钜惠您是否心动呢?不过以上车型活动当天每款车型限购三台,额满为止,先到先得,优惠..."
+  content: "【太平洋汽车网 济宁车市 济宁昌河铃木 济宁昌河铃木北斗星济宁昌河铃木北斗星团购 济宁昌达4S店 济宁汽车网】你是节油达人吗?你敢晒出自己的百公里油耗吗?“星..."
   dx: 1
-  id: 157633538
+  id: 157709085
   level: "1"
   media: 新闻
-  pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:36"
+  pic: /imetrics/upload/2013-03-05/1362449167.jpg
+  published_at: "2013-07-18 21:34:54"
   reply: 0
   rz: 普通
-  site: 易车网
-  text: 青岛中豪达十周年感恩回馈已进入倒计时
-  url: "http://dealer.bitauto.com/50005026/news/201307/5781086.html"
+  site: 太平洋汽车网
+  text: 第四届北斗星节油挑战赛现火热招募中!
+  url: "http://www.pcauto.com.cn/qcbj/270/2703450.html"
 - 
   author: ""
   bDelete: false
@@ -405,17 +279,143 @@
   bInfo: false
   bWarning: false
   bWeight: false
-  baobiao_num: 61
+  baobiao_num: 1
   click: 0
-  content: "利亚纳a+打造城市家轿超值之选…低油耗高品质利亚纳a+打造城市家轿超值之选随着家庭购车用户的增加,对车辆节油的考量成为影响购买行为的重要砝码,经济实惠的城市家轿..."
+  content: "精彩的暑期生活已经开始了,远通集团临沂昌华昌河铃木4S店的夏季狂欢购也拉开了帷幕!北斗星、利亚纳、派喜时尚车型快乐放大“价”,给您最意想不到的实惠!!!7月20日..."
   dx: 1
-  id: 157633541
+  id: 157709082
+  level: "1"
+  media: 新闻
+  pic: /imetrics/upload/2013-03-04/1362393488.jpg
+  published_at: "2013-07-18 21:34:45"
+  reply: 0
+  rz: 普通
+  site: 网上车市
+  text: "昌河铃木 清凉一夏 周末放大价"
+  url: "http://news.cheshi.com/20130718/1029418.shtml"
+- 
+  author: ""
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 1
+  click: 0
+  content: "『北斗星』以上为车型资料信息,本店提供了很多附加增值性服务,感兴趣的朋友欢迎咨询本店资讯详细信息。..."
+  dx: 1
+  id: 157709081
+  level: "1"
+  media: 新闻
+  pic: /imetrics/upload/2013-03-04/1362393105.jpg
+  published_at: "2013-07-18 21:34:42"
+  reply: 0
+  rz: 普通
+  site: 汽车之家网
+  text: "北斗星x5现车充足 送2000元大礼包"
+  url: "http://www.autohome.com.cn/dealer/201307/4634685.html"
+- 
+  author: 野生宅男
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 1
+  click: 0
+  content: ""
+  dx: 3
+  id: 157708366
+  level: "1"
+  media: 论坛
+  pic: /imetrics/upload/2013-03-18/1363599859.jpg
+  published_at: "2013-07-18 21:13:11"
+  reply: 0
+  rz: 普通
+  site: 汽车之家
+  text: 求助！明白人帮选一下，二选一，家里第二台车，主要老爷子开
+  url: "http://club.autohome.com.cn/bbs/thread-a-100011-23910112-1.html"
+- 
+  author: ""
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 118
+  click: 0
+  content: "本届车展昌河铃木携北斗星、利亚纳和派喜系列主销车型,及年度跨界新车---利亚纳...北斗星X5节油极限赛起点..."
+  dx: 1
+  id: 157708205
   level: "1"
   media: 新闻
   pic: /imetrics/upload/2013-03-04/1362393243.jpg
-  published_at: "2013-07-18 10:34:36"
+  published_at: "2013-07-18 21:04:07"
   reply: 0
   rz: 普通
   site: 易车网
-  text: 利亚纳a+打造城市家轿超值之选
-  url: "http://dealer.bitauto.com/100045285/news/201307/5776552.html"
+  text: 昌河铃木六车型亮相长春车展
+  url: "http://dealer.bitauto.com/100040554/news/2013/07/5744700.html"
+- 
+  author: ""
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 118
+  click: 0
+  content: "本届车展昌河铃木携北斗星、利亚纳和派喜系列主销车型,及年度跨界新车---利亚纳...北斗星X5节油极限赛起点..."
+  dx: 1
+  id: 157708206
+  level: "1"
+  media: 新闻
+  pic: /imetrics/upload/2013-03-04/1362393243.jpg
+  published_at: "2013-07-18 21:04:07"
+  reply: 0
+  rz: 普通
+  site: 易车网
+  text: 昌河铃木六车型亮相长春车展
+  url: "http://dealer.bitauto.com/100027788/news/2013/07/5744667.html"
+- 
+  author: ""
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 118
+  click: 0
+  content: "本届车展昌河铃木携北斗星、利亚纳和派喜系列主销车型,及年度跨界新车---利亚纳...北斗星X5节油极限赛起点..."
+  dx: 1
+  id: 157708207
+  level: "1"
+  media: 新闻
+  pic: /imetrics/upload/2013-03-04/1362393243.jpg
+  published_at: "2013-07-18 21:04:07"
+  reply: 0
+  rz: 普通
+  site: 易车网
+  text: 昌河铃木六车型亮相长春车展
+  url: "http://dealer.bitauto.com/100020627/news/2013/07/5744663.html"
+- 
+  author: ""
+  bDelete: false
+  bHot: false
+  bInfo: false
+  bWarning: false
+  bWeight: false
+  baobiao_num: 1
+  click: 0
+  content: "[爱卡汽车 济宁 行情]济宁昌达推出金融信贷购车项目,即日起购昌河铃木利亚纳,首付最低只需12800元,另外赠送6次免费保养。作为顺应节能减排大趋势而生的一款实用型..."
+  dx: 1
+  id: 157708203
+  level: "1"
+  media: 新闻
+  pic: /imetrics/upload/2013-03-05/1362450680.jpg
+  published_at: "2013-07-18 21:04:02"
+  reply: 0
+  rz: 普通
+  site: 爱卡汽车网
+  text: 购昌河铃木利亚纳首付最低只需1.28万
+  url: "http://newcar.xcar.com.cn/jining/201307/news_1125237_1.html"

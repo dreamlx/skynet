@@ -1,9 +1,6 @@
 --- 
 charts: 
   - 
-    date: "2013-07-04"
-    value: 383
-  - 
     date: "2013-07-05"
     value: 409
   - 
@@ -44,5 +41,8 @@ charts:
     value: 181
   - 
     date: "2013-07-18"
-    value: 308
+    value: 472
+  - 
+    date: "2013-07-19"
+    value: 3
 title: 最近15天监测总量走势

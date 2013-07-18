@@ -15,10 +15,10 @@
 //= require home
 //= require frontmain
 
-$(function(){
-	$('.mainContainer').hide();
-	$('.navbar').hide().delay(300).fadeIn(600, function(){
-		$('.mainContainer').slideDown(2000);
-	});
+// $(function(){
+// 	$('.mainContainer').hide();
+// 	$('.navbar').hide().delay(300).fadeIn(600, function(){
+// 		$('.mainContainer').slideDown(2000);
+// 	});
 
-});
+// });

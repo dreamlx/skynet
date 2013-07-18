@@ -13,6 +13,5 @@
  *= require bootstrap/bootstrap
  *= require bootstrap/responsive
  *= require frontmain
- *= require frontlogin
  */
 a {blr:expression(this.onFocus=this.blur())}

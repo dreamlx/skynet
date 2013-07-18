@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     render layout: "frontApplication"
   end
 
+  def homepage
+    render layout: "frontApplication"
+  end
+
   def create_session
     http = login_to_remote(params["user"]["name"], params["user"]["password"])
     if http.http_get
