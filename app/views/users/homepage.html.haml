@@ -1,56 +1,52 @@
 %section.mainBanner
   %div#mainCarousel.container
-    %div.carousel-inner
-      .item.active
-        %article
-          %header
-            %h2 天网舆情系统介绍
+    .slide
+      %article
+        %header
+          %h2 天网舆情系统介绍
+        %p
+          天网舆情监测系统一站式、第一时间、稳准狠快地，从海量互联网数据中，把您所关注的互联网读薄读懂。其3大采集、5大分析、2个平台、2项报告、3种预警、1套导测，满足您网络舆情检测工作所需。现在为268多家政府客户、51家企业客户实施网络舆情监测。
+        %figure
+          %img{:src=>"/assets/homepage/9997.png"}
           %p
-            天网舆情监测系统一站式、第一时间、稳准狠快地，从海量互联网数据中，把您所关注的互联网读薄读懂。其3大采集、5大分析、2个平台、2项报告、3种预警、1套导测，满足您网络舆情检测工作所需。现在为268多家政府客户、51家企业客户实施网络舆情监测。
-          %figure
-            %img{:src=>"/assets/homepage/9997.png"}
-            %p
-              成功抓取率达到99.97%
-            %p
-              24小时不间断监测全互联网络，第一时间抓取正负面信息
-        %section
-          %img{:src=>"/assets/homepage/macscreen.png"}
-      .item
-        %img{:src=>"/assets/homepage/homebanner_bg.png"}
-      .item
-        %img{:src=>"/assets/homepage/homebanner_bg.png"}
-      .item
-        %img{:src=>"/assets/homepage/homebanner_bg.png"}
-    %ol.carousel-indicators
-      %li.active(data-target="#mainCarousel" data-slide-to="0")
-      %li(data-target="#mainCarousel" data-slide-to="1")
-      %li(data-target="#mainCarousel" data-slide-to="2")
-      %li(data-target="#mainCarousel" data-slide-to="3")
+            成功抓取率达到99.97%
+          %p
+            24小时不间断监测全互联网络，第一时间抓取正负面信息
+      %section
+        %img{:src=>"/assets/homepage/macscreen.png"}
+    .slide
+      %img{:src=>"/assets/homepage/homebanner_bg.png"}
+    .slide
+      %img{:src=>"/assets/homepage/homebanner_bg.png"}
+    .slide
+      %img{:src=>"/assets/homepage/homebanner_bg.png"}
 
+%section#carouselPagesWarper
+  #carouselPages
 .features.row.container
   %article.span3
     %figure
       %img{:src=>"/assets/homepage/f1.png"}
     %header
-      %h3 强大的信息采集系统
+      %h3.text-center 强大的信息采集系统
     %p 强大的信息采集和数据挖掘功能，为网络舆情监测、网络舆情监测提供重要数据保障。
   %article.span3
     %figure
       %img{:src=>"/assets/homepage/f2.png"}
     %header
-      %h3 多载体全网监测
+      %h3.text-center 多载体全网监测
     %p 可监测搜索引擎、新闻门户、论坛、博客、留言版、微博、QQ群、电子报、SNS载体的舆情。
   %article.span3
     %figure
       %img{:src=>"/assets/homepage/f3.png"}
     %header
-      %h3 全天候不间断监测
+      %h3.text-center 全天候不间断监测
     %p 可定时监测，也可7*24全天候监测，不放过每一条网络舆情信息，第一时间发现网络舆情。
   %article.span3
     %figure
       %img{:src=>"/assets/homepage/f4.png"}
     %header
-      %h3 自动生成舆情报告
+      %h3.text-center 自动生成舆情报告
     %p 以文字和图表的形式直观的生成各种舆情趋势图表，定期生成舆情简报和舆情专报。
 
 #functionList.container
@@ -66,7 +62,7 @@
       =link_to "丰富的数据接口"
     %li
       =link_to "舆情预警功能"
-  %a.radiusBtn{:href=>"#"}
+  %a.text-center.radiusBtn{:href=>"#"}
     查看更多
 
 #services.container.row
@@ -77,7 +73,7 @@
         2 0000 +
     %p
       利用尖端搜索引擎机制，全面监测纸媒、网媒新闻、论坛、股吧、博客、微博，超过200000个信息源的互联网信息，每间隔15分钟把所有信息更新一次，是国内最强大的舆情监测系统
-    %figure
+    %figure#mtime
       %img{:src=>"/assets/homepage/figure_15m.png"}
   %article.span5.offset2
     %header
