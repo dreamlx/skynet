@@ -3,9 +3,9 @@
   = render 'aside'
 / begin page right warp
 .rightWarp
-  %section#weiboList
-  #lastestUpdate
-  %section#realTimeChartBlock.whenLess
+  = render 'weiboList', object: @weibo_items
+  = render 'lastestUpdate'
+  = render 'realTimeChartBlock'
   
   #moreInfoBlock
     = render 'otherChart'
