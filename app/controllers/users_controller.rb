@@ -2,15 +2,12 @@
 class UsersController < ApplicationController
   layout "frontApplication"
   def login
-    # render layout: "frontApplication"
   end
 
   def homepage
-    # render layout: "frontApplication"
   end
 
   def experience
-    # render layout: "frontApplication"
   end
 
   def create_session

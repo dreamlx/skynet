@@ -15,3 +15,10 @@
  *= require tabstyle
  */
 a {blr:expression(this.onFocus=this.blur())}
+
+@font-face {
+  font-family: 'Din';
+  src: url('assets/fonts/DIN-Bold.oft');
+  font-weight: normal;
+  font-style: normal;
+}
