@@ -6,11 +6,6 @@ class HomeController < ApplicationController
     if !session[:current_user]
       api_port     = "api_index.cgi"
 
-      #get weibo_list
-      act         = 'get_wb_list'
-      @weibo_list = get_voc(api_port, act)['arts']
-      puts_to_yaml(@weibo_list, "weibo_list")
-
       #舆情
       act         = 'get_yq_list'
       @weibo_yq   = get_voc(api_port, act)['arts']
@@ -101,8 +96,14 @@ class HomeController < ApplicationController
     end
   end
 
-  def aside
-    render layout: false;
+  def weiboList
+    #get weibo_list
+    @weibo_list = get_voc('api_index.cgi', 'get_wb_list')['arts']
+    puts_to_yaml(@weibo_list, "weibo_list")
+    
+    respond_to do |format|
+      format.json { render json: @weibo_list }
+    end
   end
 
   private
