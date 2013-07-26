@@ -166,9 +166,7 @@ class HomeController < ApplicationController
   def index
     if !session[:current_user]
 
-
     else
-
       @weibo_list = get_yaml("weibo_list")
       
       @weibo_yq   = get_yaml("weibo_yq")
