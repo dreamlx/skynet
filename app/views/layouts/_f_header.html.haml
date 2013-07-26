@@ -8,14 +8,14 @@
       %ul.nav
         %li.text-center{ class: action_name == "homepage" ? "active" : "" }
           %a{:href => "/users/homepage"} 首页
-        %li.text-center{ class: action_name == "" ? "active" : "" }
-          %a{:href => "#"} 产品和服务
+        %li.text-center{ class: action_name == "services" ? "active" : "" }
+          %a{:href => "/users/services"} 产品和服务
         %li.text-center{ class: action_name == "experience" ? "active" : "" }
           %a{:href => "/users/experience"} 体验中心
-        %li.text-center{ class: action_name == "" ? "active" : "" }
-          %a{:href => "#"} 成功案例
-        %li.text-center{ class: action_name == "" ? "active" : "" }
-          %a{:href => "#"} 关于我们
+        %li.text-center{ class: action_name == "cases" ? "active" : "" }
+          %a{:href => "/users/cases"} 成功案例
+        %li.text-center{ class: action_name == "about" ? "active" : "" }
+          %a{:href => "/users/about"} 关于我们
         %li.text-center{ class: action_name == "login" ? "active" : "" }
           %a{:href => "/users/login"} 
             系统登陆

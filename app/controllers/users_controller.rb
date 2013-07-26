@@ -10,6 +10,15 @@ class UsersController < ApplicationController
   def experience
   end
 
+  def services
+  end
+
+  def cases
+  end
+
+  def about
+  end
+
   def create_session
     http = login_to_remote(params["user"]["name"], params["user"]["password"])
     if http.http_get

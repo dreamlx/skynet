@@ -2,72 +2,170 @@
 class HomeController < ApplicationController
   #before_filter :auth_user!
 
+  @@api_port     = "api_index.cgi"
+  def getVoc(act, params=nil)
+    return get_voc(@@api_port, act, params)['arts']
+  end
+
+  def weiboList
+    #get weibo_list
+    @weibo_list = getVoc('get_wb_list')
+    puts_to_yaml(@weibo_list, "weibo_list")
+    
+    respond_to do |format|
+      format.json { render json: @weibo_list }
+    end
+  end
+
+  #舆情
+  def weibo_yq
+    act         = 'get_yq_list'
+    @weibo_yq   = getVoc(act)
+    puts_to_yaml(@weibo_yq, "weibo_yq")
+
+    respond_to do |format|
+      format.json { render json: @weibo_yq}
+    end
+  end
+
+  #预警
+  def weibo_yj
+    
+    act         = 'get_yj_list'
+    @weibo_yj   = getVoc(act)
+    puts_to_yaml(@weibo_yj, "weibo_yj")
+
+    respond_to do |format|
+      format.json { render json: @weibo_yj}
+    end
+  end
+
+  def weiboTable
+    #微博舆情
+    #0为正面微博，1为负面微博，2为最热传播，3为最热评论，缺省为0
+    act         = 'get_wb_yq'
+    @weiboTable = []
+    @weiboTable[0] = getVoc(act, "index=0")
+    @weiboTable[1] = getVoc(act, "index=1")
+    @weiboTable[2] = getVoc(act, "index=2")
+    @weiboTable[3] = getVoc(act, "index=3")
+    puts_to_yaml(@weiboTable, "weiboTable")  
+
+    respond_to do |format|
+      format.json { render json: @weiboTable}
+    end  
+  end
+
+  def realTimeChart
+    #图表部分
+    #[动态趋势图]
+    act = 'get_dtqs_list'
+    @realTimeChart =  getVoc(act)
+    puts_to_yaml(@realTimeChart, "realTimeChartBlock")
+
+    respond_to do |format|
+      format.json { render json: @realTimeChart}
+    end  
+  end
+
+  def realTimeChartTitle
+    #动态趋势图，title部分
+    act = 'get_tit_num'
+    @realTimeChartTitle = getVoc(api_port, act)
+    puts_to_yaml(@realTimeChartTitle, "realTimeChartTitle")
+    
+    respond_to do |format|
+      format.json { render json: @realTimeChartTitle}
+    end
+  end
+
+  def qbdx_today
+    #[全部调性]
+    #date 整型，值为 1：当天，2：昨天，15：15天，缺省为1。
+    act = 'get_dx'
+    @qbdx_today      = getVoc(act, "date=1")
+    puts_to_yaml(@qbdx_today, "qbdx_today")
+    respond_to do |format|
+      format.json { render json: @qbdx_today}
+    end
+  end
+
+  def qbdx_yesterday
+    act = 'get_dx'
+    @qbdx_yesterday  = getVoc(act, "date=2")
+    puts_to_yaml(@qbdx_yesterday, "qbdx_yesterday")
+    
+    respond_to do |format|
+      format.json { render json: @qbdx_yesterday}
+    end
+  end
+
+  def qbdx_15days
+    act = 'get_dx'
+    @qbdx_15days     = getVoc(act, "date=15")
+    puts_to_yaml(@qbdx_15days, "qbdx_15days")
+    respond_to do |format|
+      format.json { render json: @qbdx_15days}
+    end
+  end
+
+  def media_today
+    act = 'get_media_kind'
+    @media_kind_today      = getVoc(act, "date=1")
+    puts_to_yaml(@media_kind_today, "media_kind_today")
+    respond_to do |format|
+      format.json { render json: @media_kind_today}
+    end
+  end
+
+  def media_yesterday
+    act = 'get_media_kind'
+    @media_kind_today      = getVoc(act, "date=2")
+    puts_to_yaml(@media_kind_today, "media_kind_yesterday")
+    respond_to do |format|
+      format.json { render json: @media_kind_today}
+    end
+  end
+
+  def media_15days
+    act = 'get_media_kind'
+    @media_kind_today      = getVoc(act, "date=15")
+    puts_to_yaml(@media_kind_today, "media_kind_15days")
+    respond_to do |format|
+      format.json { render json: @media_kind_today}
+    end
+  end
+
+  def top10_today
+    act = 'get_web_top10'
+    @top10_today     = getVoc(act, "date=1")
+    puts_to_yaml(@top10_today, "top10_today")
+    respond_to do |format|
+      format.json { render json: @top10_today}
+    end    
+  end
+
+  def top10_yesterday
+    act = 'get_web_top10'
+    @top10_today     = getVoc(act, "date=1")
+    puts_to_yaml(@top10_today, "top10_today")
+    respond_to do |format|
+      format.json { render json: @top10_today}
+    end    
+  end
+
+  def top10_15days
+    act = 'get_web_top10'
+    @top10_today     = getVoc(act, "date=1")
+    puts_to_yaml(@top10_today, "top10_today")
+    respond_to do |format|
+      format.json { render json: @top10_today}
+    end    
+  end
+
   def index
     if !session[:current_user]
-      api_port     = "api_index.cgi"
 
-      #舆情
-      act         = 'get_yq_list'
-      @weibo_yq   = get_voc(api_port, act)['arts']
-      puts_to_yaml(@weibo_yq, "weibo_yq")
-
-      #预警
-      act         = 'get_yj_list'
-      @weibo_yj   = get_voc(api_port, act)['arts']
-      puts_to_yaml(@weibo_yj, "weibo_yj")
-
-      #微博舆情
-      #0为正面微博，1为负面微博，2为最热传播，3为最热评论，缺省为0
-      act         = 'get_wb_yq'
-      @weiboTable = []
-      @weiboTable[0] = get_voc(api_port, act, "index=0")['arts']
-      @weiboTable[1] = get_voc(api_port, act, "index=1")['arts']
-      @weiboTable[2] = get_voc(api_port, act, "index=2")['arts']
-      @weiboTable[3] = get_voc(api_port, act, "index=3")['arts']
-      puts_to_yaml(@weiboTable, "weiboTable")
-
-
-      #图表部分
-      #[动态趋势图]
-      act = 'get_dtqs_list'
-      gon.realTimeChartBlock =  get_voc(api_port, act)
-      puts_to_yaml(gon.realTimeChartBlock, "realTimeChartBlock")
-
-      #动态趋势图，title部分
-      act = 'get_tit_num'
-      gon.realTimeChartTitle = get_voc(api_port, act)
-      puts_to_yaml(gon.realTimeChartTitle, "realTimeChartTitle")
-      
-      #[全部调性]
-      #date 整型，值为 1：当天，2：昨天，15：15天，缺省为1。
-      act = 'get_dx'
-      gon.qbdx_today      = get_voc(api_port, act, "date=1")
-      gon.qbdx_yesterday  = get_voc(api_port, act, "date=2")
-      gon.qbdx_15days     = get_voc(api_port, act, "date=15")
-
-      puts_to_yaml(gon.qbdx_today, "qbdx_today")
-      puts_to_yaml(gon.qbdx_yesterday, "qbdx_yesterday")
-      puts_to_yaml(gon.qbdx_15days, "qbdx_15days")
-
-      #[媒体类型]
-      act = 'get_media_kind'
-      gon.media_kind_today      = get_voc(api_port, act, "date=1")
-      gon.media_kind_yesterday  = get_voc(api_port, act, "date=2")
-      gon.media_kind_15days     = get_voc(api_port, act, "date=15")
-
-      puts_to_yaml(gon.media_kind_today, "media_kind_today")
-      puts_to_yaml(gon.media_kind_yesterday, "media_kind_yesterday")
-      puts_to_yaml(gon.media_kind_15days, "media_kind_15days")
-
-      #top10
-      act = 'get_web_top10'
-      gon.top10_today     = get_voc(api_port, act, "date=1")
-      gon.top10_yesterday = get_voc(api_port, act, "date=2")
-      gon.top10_15days    = get_voc(api_port, act, "date=15")
-
-      puts_to_yaml(gon.top10_today, "top10_today")
-      puts_to_yaml(gon.top10_yesterday, "top10_yesterday")
-      puts_to_yaml(gon.top10_15days, "top10_15days")
 
     else
 
@@ -96,15 +194,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def weiboList
-    #get weibo_list
-    @weibo_list = get_voc('api_index.cgi', 'get_wb_list')['arts']
-    puts_to_yaml(@weibo_list, "weibo_list")
-    
-    respond_to do |format|
-      format.json { render json: @weibo_list }
-    end
-  end
+  
 
   private
 
