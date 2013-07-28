@@ -40,15 +40,41 @@ class HomeController < ApplicationController
     end
   end
 
-  def weiboTable
+  def weiboTable_0
     #微博舆情
     #0为正面微博，1为负面微博，2为最热传播，3为最热评论，缺省为0
     act         = 'get_wb_yq'
-    @weiboTable = []
-    @weiboTable[0] = getVoc(act, "index=0")
-    @weiboTable[1] = getVoc(act, "index=1")
-    @weiboTable[2] = getVoc(act, "index=2")
-    @weiboTable[3] = getVoc(act, "index=3")
+    @weiboTable = getVoc(act, "index=0")
+    puts_to_yaml(@weiboTable, "weiboTable")  
+
+    respond_to do |format|
+      format.json { render json: @weiboTable}
+    end  
+  end
+
+  def weiboTable_1
+    act         = 'get_wb_yq'
+    @weiboTable = getVoc(act, "index=1")
+    puts_to_yaml(@weiboTable, "weiboTable")  
+
+    respond_to do |format|
+      format.json { render json: @weiboTable}
+    end  
+  end
+
+  def weiboTable_2
+    act         = 'get_wb_yq'
+    @weiboTable = getVoc(act, "index=2")
+    puts_to_yaml(@weiboTable, "weiboTable")  
+
+    respond_to do |format|
+      format.json { render json: @weiboTable}
+    end  
+  end
+
+  def weiboTable_3
+    act         = 'get_wb_yq'
+    @weiboTable = getVoc(act, "index=3")
     puts_to_yaml(@weiboTable, "weiboTable")  
 
     respond_to do |format|
