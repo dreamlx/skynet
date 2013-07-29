@@ -53,10 +53,143 @@
 //      gon.top10_yesterday
 //      gon.top10_15days 
 
+// $(function(){
+// 	$('.mainContainer').hide();
+// 	$('#globalHeader').hide().delay(300).slideDown(1000, function(){
+// 		$('.mainContainer').slideDown(2500);
+// 	});
+
+// });
+var enableClick = false;
 $(function(){
-	$('.mainContainer').hide();
-	$('#globalHeader').hide().delay(300).slideDown(1000, function(){
-		$('.mainContainer').slideDown(2500);
+	$.get("/home/weiboList.json",function(data){
+		var arrLen = data.arts.length;
+		for(var i=0; i<arrLen; i++)
+		{
+			var nc = $(".weiboDefaultList ul>li:first-child").clone();
+			var content = data.arts[i].text;
+			var site = data.arts[i].site;
+			var url = data.arts[i].url;
+			nc.find("p.weiboListContent").text(content);
+			nc.appendTo(".weiboDefaultList ul");
+		}
+		$(".weiboDefaultList ul>li:first-child").remove();
+		enableClick = true;
 	});
 
+
+	$.get("/home/weibo_yq.json", function(data){
+		// console.info(data);
+		// console.log(data.arts.length);
+		var arrLen = data.length;
+		var lastest = data.pop();
+		buildLastest("YQ", lastest);
+	});
+
+	$.get("/home/weibo_yj.json", function(data){
+		// console.log(data.arts.length);
+		var arrLen = data.length;
+		var lastest = data.pop();
+		buildLastest("YJ", lastest);
+	});
+
+	$.get("/home/realTimeChartTitle.json", function(data){
+		// console.info(data);
+	});
+
+	$("#pagePrevBtn").click(function(e){ 
+        if(!enableClick)
+        {
+            e.preventDefault();
+            return;
+        }
+        var lastLiTop = $(".weiboMiniList ul").css("top");
+        
+        if(parseInt(lastLiTop)>=0)
+        {
+            e.preventDefault();
+            return;
+        }
+        enableClick = false;
+        var curTop = $(".weiboMiniList ul").css("top");
+        curTop = parseInt(curTop);
+        $(".weiboMiniList ul").animate({"top":curTop+76},"normal","swing",function(){
+            enableClick = true;
+        });
+        // $(".weiboMiniList ul").css();
+        e.preventDefault();
+    });
+    $("#pageNextBtn").click(function(e){
+        if(!enableClick)
+        {
+            e.preventDefault();
+            return;
+        }
+        var lastLiTop = $(".weiboMiniList ul").css("top");
+        var n = $(".weiboMiniList ul li").length -1;
+        if(parseInt(lastLiTop)<=(n*-76))
+        {
+            e.preventDefault();
+            return;
+        }
+        enableClick = false;
+        var curTop = $(".weiboMiniList ul").css("top");
+        curTop = parseInt(curTop);
+        $(".weiboMiniList ul").animate({"top":curTop-76},"normal","swing",function(){
+            enableClick = true;
+        });
+        e.preventDefault();
+    });
+
+    $("#weiboListBtn").click(function(e){
+    	if(!enableClick)
+        {
+            e.preventDefault();
+            return;
+        }
+        var miniHeight = 76;
+        $(this).toggleClass("floatWeiboListBtn");
+        $(".weiboDefaultList").toggleClass("weiboMiniList");
+        if($("#weiboList").height() > miniHeight)
+        {
+            $(".weiboDefaultList").height(miniHeight);
+            $("#weiboList").height(miniHeight);
+            $("#weiboListPageBtnBlock").show();
+        }else
+        {
+            $(".weiboDefaultList ul").css("top",0);
+            var count = $(".weiboDefaultList ul li").length;
+            $(".weiboMiniList").height(miniHeight*count);
+            $("#weiboList").height(miniHeight*count);
+            $("#weiboListPageBtnBlock").hide();
+            
+        }
+        e.preventDefault();
+    });
+
+    $('#lastestUpdate').simpleTabs();
+    $('#weiboTable').simpleTabs();
+
 });
+
+function buildLastest(type, data)
+{
+	$("#lastest"+type+" h3").html(data.text);
+	$("#lastest"+type+">p").html("<a href='"+data.url+"' target='_blank'>"+data['content']+"</a>");
+	$("#lastest"+type+" span.lastestData").html(data.published_at);
+
+}
+
+function setRealTimeChart(_data)
+{
+    var lcContext = $("#lineChart").get(0).getContext("2d");
+    var lineChartOpt = 
+    {
+        bezierCurve:false,
+        datasetStrokeWidth:5,
+        pointDotRadius:5,
+        scaleLineColor:"#616161",
+        scaleLineWidth:2
+    };
+    var myLcChart = new Chart(lcContext).Line(_data, lineChartOpt);
+}

@@ -1,10 +1,9 @@
 %section#weiboList
   .weiboDefaultList.weiboMiniList
     %ul
-      - @weibo_list.each do |weibo|
-        %li
-          %span.weiboIcon24.spritebg
-          %p.weiboListContent= weibo['text']
+      %li
+        %span.weiboIcon24.spritebg
+        %p.weiboListContent
   #weiboListPageBtnBlock
     %a#pagePrevBtn.spritebg{:href => "#"}
     %a#pageNextBtn.spritebg{:href => "#"}
