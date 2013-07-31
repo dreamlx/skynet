@@ -74,7 +74,8 @@ class HomeController < ApplicationController
     end
   end
 
-  def qbdx_today
+  # today
+  def qbdx_t
     #[全部调性]
     #date 整型，值为 1：当天，2：昨天，15：15天，缺省为1。
     act = 'get_dx'
@@ -85,7 +86,8 @@ class HomeController < ApplicationController
     end
   end
 
-  def qbdx_yesterday
+  # yesterday
+  def qbdx_y
     act = 'get_dx'
     @qbdx_yesterday  = getVoc("qbdx_yesterday", act, "date=2")
     puts_to_yaml(@qbdx_yesterday, "qbdx_yesterday")
@@ -95,7 +97,8 @@ class HomeController < ApplicationController
     end
   end
 
-  def qbdx_15days
+  # 15days
+  def qbdx_w
     act = 'get_dx'
     @qbdx_15days     = getVoc("qbdx_15days", act, "date=15")
     puts_to_yaml(@qbdx_15days, "qbdx_15days")
@@ -104,7 +107,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def media_today
+  def media_t
     act = 'get_media_kind'
     @media_kind_today      = getVoc("media_kind_today", act, "date=1")
     puts_to_yaml(@media_kind_today, "media_kind_today")
@@ -113,7 +116,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def media_yesterday
+  def media_y
     act = 'get_media_kind'
     @media_kind_today      = getVoc("media_kind_yesterday", act, "date=2")
     puts_to_yaml(@media_kind_today, "media_kind_yesterday")
@@ -122,7 +125,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def media_15days
+  def media_w
     act = 'get_media_kind'
     @media_kind_today      = getVoc("media_kind_15days", act, "date=15")
     puts_to_yaml(@media_kind_today, "media_kind_15days")
@@ -131,7 +134,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def top10_today
+  def top10_t
     act = 'get_web_top10'
     @top10_today     = getVoc("top10_today", act, "date=1")
     puts_to_yaml(@top10_today, "top10_today")
@@ -140,7 +143,7 @@ class HomeController < ApplicationController
     end    
   end
 
-  def top10_yesterday
+  def top10_y
     act = 'get_web_top10'
     @top10_today     = getVoc("top10_yesterday", act, "date=1")
     puts_to_yaml(@top10_today, "top10_yesterday")
@@ -149,7 +152,7 @@ class HomeController < ApplicationController
     end    
   end
 
-  def top10_15days
+  def top10_w
     act = 'get_web_top10'
     @top10_today     = getVoc("top10_15days", act, "date=1")
     puts_to_yaml(@top10_today, "top10_15days")

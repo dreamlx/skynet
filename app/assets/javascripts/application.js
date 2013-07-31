@@ -170,6 +170,40 @@ $(function(){
     $('#lastestUpdate').simpleTabs();
     $('#weiboTable').simpleTabs();
 
+
+
+    $("#lastestUpdate a.closeLastestBtn").click(function(e){
+        e.preventDefault();
+        $("#lastestUpdate").animate({height:"51px"},"normal","swing",function(){
+            
+        });
+
+        // $("#lastestUpdate div.tab-pane").removeClass("active");
+    });
+
+    $("#lastestUpdate ul.tab-items a").click(function(e){
+        if($("#lastestUpdate").height()<170)
+        {
+            $("#lastestUpdate").height(179);
+        }
+    }); 
+
+    $("#homePageBtn").click(function(e){
+        openHomePage();
+    });
+    $("#publicPageBtn").click(function(e){
+        openPublicPage();
+    });
+    $("#sensitivePageBtn").click(function(e){
+        openSensitivePage();
+    });
+    $("#reportPageBtn").click(function(e){
+        openReportPage();
+    });
+    $("#monitoringPageBtn").click(function(e){
+        openMonitoringPage();
+    });
+
 });
 
 function buildLastest(type, data)
@@ -192,4 +226,120 @@ function setRealTimeChart(_data)
         scaleLineWidth:2
     };
     var myLcChart = new Chart(lcContext).Line(_data, lineChartOpt);
+}
+
+var nowPage = "";
+function openHomePage()
+{
+    $("#weiboList").show();
+    $("#lastestUpdate").show();
+    $("#realTimeChartBlock").show();
+    if($("#realTimeChartBlock").hasClass("whenLess"))
+    {
+        $("#moreInfoBlock").hide();        
+    }else
+    {
+        $("#moreInfoBlock").show();  
+        if($("#otherChartBlock").css("display") == "none")
+        {
+            $("#otherChartBlock").show();
+            $("#top10ChartBlock").show(); 
+        }
+        if($("#weiboTable").css("display") == "none")
+        {
+            $("#weiboTable").show();
+        }      
+    }
+
+    
+    $(".lessMoreBtn").show();
+
+    var miniHeight = 76;
+    $("#weiboListBtn").removeClass("floatWeiboListBtn")
+    $(".weiboDefaultList").addClass("weiboMiniList");
+    $(".weiboDefaultList").height(miniHeight);
+    $("#weiboList").height(miniHeight);
+    $("#weiboListPageBtnBlock").show();
+    
+}
+
+function openPublicPage()
+{
+    $("#weiboList").show();
+    $("#lastestUpdate").hide();
+    $("#realTimeChartBlock").hide();
+    $("#moreInfoBlock").hide();    
+    $(".lessMoreBtn").hide();
+
+    var miniHeight = 76;
+    if(!$("#weiboListBtn").hasClass("floatWeiboListBtn"))
+    {
+        $("#weiboListBtn").addClass("floatWeiboListBtn");
+        $(".weiboDefaultList").removeClass("weiboMiniList");
+        $(".weiboDefaultList ul").css("top",0);
+        var count = $(".weiboDefaultList ul li").length;
+        $(".weiboMiniList").height(miniHeight*count);
+        $("#weiboList").height(miniHeight*count);
+        $("#weiboListPageBtnBlock").hide();
+    }
+}
+
+function openSensitivePage()
+{
+    $("#weiboList").hide();
+    $("#lastestUpdate").show();
+    $("#realTimeChartBlock").hide();
+    $("#moreInfoBlock").hide();    
+    $(".lessMoreBtn").hide();
+}
+
+function openReportPage()
+{
+    $("#weiboList").hide();
+    $("#lastestUpdate").hide();
+    $("#realTimeChartBlock").show();
+    $("#moreInfoBlock").show();
+    $("#otherChartBlock").show();
+    $("#top10ChartBlock").show();    
+    $("#weiboTable").hide();   
+    $(".lessMoreBtn").hide();
+
+    if(!$("#moreInfoBlock").hasClass("ChartHasContent"))
+    {
+        $("#moreInfoBlock").addClass("ChartHasContent");
+        $.get("/home/qbdx_t.json", function(data){
+            makeQbdxData("t", data.data.dx);
+            setQbdxChart(qbdxDataCollection.t);
+        }); 
+        $.get("/home/media_t.json", function(data){
+            makeMediaData("t", data.data.media);
+            setMediaChart(mediaDataCollection.t);    
+        }); 
+        $.get("/home/top10_t.json", function(data){
+            makeTop10Data("t", data.data.top10);
+            setBarChart(top10DataCollection.t);    
+        }); 
+               
+    }
+
+}
+
+function openMonitoringPage()
+{
+    $("#weiboList").hide();
+    $("#lastestUpdate").hide();
+    $("#realTimeChartBlock").hide();
+    $("#moreInfoBlock").show(); 
+    $("#otherChartBlock").hide();
+    $("#top10ChartBlock").hide();   
+    $("#weiboTable").show();   
+    $(".lessMoreBtn").hide();
+
+    if(!$("#weiboTable").hasClass("weiboTableHasData"))
+    {
+        $("#weiboTable").addClass("weiboTableHasData");
+        $.get("/home/weiboTable", function(data){
+            buildWeiboTable(data);
+        });  
+    }
 }
