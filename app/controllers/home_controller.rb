@@ -1,6 +1,6 @@
 # coding: utf-8
 class HomeController < ApplicationController
-  #before_filter :auth_user!
+  before_filter :auth_user!
 
   @@api_port     = "api_index.cgi"
 
