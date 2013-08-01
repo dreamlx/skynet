@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       if json2hash(http.body_str)["code"] == "200"
         session["current_user"] = params[:user]
         session["user_data"] = json2hash(http.body_str)["data"]
-        cookies["last_sigin"] = (Time.now + 600).strftime("%Y-%m-%d")
+        cookies["last_sigin"] = (Time.now + 600).strftime("%Y-%m-%d %H:%M")
         redirect_to "/home" 
       else
         flash[:alert] = "用户名或者密码错误，登录失败"
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     http.http_get
     session[:current_user] = nil
     session[:VOC_CenterID] = nil
-    cookies["last_sigin"] = Time.now.strftime("%Y-%m-%d")
+    cookies["last_sigin"] = Time.now.strftime("%Y-%m-%d ")
     redirect_to "/users/login" 
   end
 
