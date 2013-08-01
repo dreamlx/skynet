@@ -19,7 +19,7 @@ function makeQbdxData(day, data)
 
 // var unFmtMediaArray = [gon.media_kind_today.data.media,gon.media_kind_yesterday.data.media,gon.media_kind_15days.data.media];
 var mediaDoughnutColors = ["#e74c3c","#34495e","#00a268","#5fccff","#3498db"];
-var mediaDataCollection = [];
+var mediaDataCollection = {};
 function makeMediaData(day, data)
 {
     var unFmtData = data;
@@ -36,7 +36,7 @@ function makeMediaData(day, data)
 }
 
 // var unFmtTop10 = [gon.top10_today.data.top10,gon.top10_yesterday.data.top10,gon.top10_15days.data.top10];
-var top10DataCollection = [];
+var top10DataCollection = {};
 function makeTop10Data(day, data)
 {
     var dayDataArr = data;
@@ -91,14 +91,7 @@ $(function() {
                 }); 
             }
         }
-    });
-    
-    $("#lessInfoBtn").click(function(e){
-        e.preventDefault();
-        $("#realTimeChartBlock").toggleClass("whenLess");
-        toggleOtherInfo();
-        // $("#moreInfoBlock").hide();
-    });
+    });   
 
     $(".chartTabs ul li").click(function(e){
         e.preventDefault();
@@ -107,26 +100,17 @@ $(function() {
         $(this).find("a").addClass("currentChartTabBtn");
             
         var chart = $(this).find("a").attr("id").substr(0,1);
-        var id = $(this).find("a").attr("id").substr(-1,1);
-        console.log(chart,id);
-        updateChartData(chart, id)
+        var day = $(this).find("a").attr("id").substr(-1,1);
+        // console.log(chart,day);
+        updateChartData(chart, day);
     })
 
-    $("#lastestUpdate a.closeLastestBtn").click(function(e){
+    $("#lessInfoBtn").click(function(e){
         e.preventDefault();
-        $("#lastestUpdate").animate({height:"51px"},"normal","swing",function(){
-            
-        });
-
-        // $("#lastestUpdate div.tab-pane").removeClass("active");
+        $("#realTimeChartBlock").toggleClass("whenLess");
+        toggleOtherInfo();
+        // $("#moreInfoBlock").hide();
     });
-
-    $("#lastestUpdate ul.tab-items a").click(function(e){
-        if($("#lastestUpdate").height()<170)
-        {
-            $("#lastestUpdate").height(179);
-        }
-    }); 
 
 
     $(".downloadBtn").click(function(e){
@@ -144,24 +128,47 @@ $(function() {
     // setDefaultCharts();
 });
 
-function updateChartData(_chart, _id)
+function updateChartData(_chart, _day)
 {
     var chartInstance;
-    var cData;
-    var index = _id-1;
+    var cData;    
     switch(_chart)
     {
-        case "q":
-            cData = qbdxDataCollection;
-            setQbdxChart(cData[index]);
+        case "q":            
+            if(qbdxDataCollection[_day] == null)
+            {
+                $.get("/home/qbdx_"+_day+".json", function(data){
+                    makeQbdxData(_day, data.data.dx);
+                    setQbdxChart(qbdxDataCollection[_day]);
+                }); 
+            } else
+            {
+                setQbdxChart(qbdxDataCollection[_day]);
+            }
             break;
         case "m":
-            cData = mediaDataCollection;
-            setMediaChart(cData[index]);
+            if(mediaDataCollection[_day] == null)
+            {
+                $.get("/home/media_"+_day+".json", function(data){
+                    makeMediaData(_day, data.data.media);
+                    setMediaChart(mediaDataCollection[_day]);
+                }); 
+            }else
+            {
+                setMediaChart(mediaDataCollection[_day]);
+            }
             break;
         case "t":
-            cData = top10DataCollection;
-            setBarChart(cData[index]);
+            if(top10DataCollection[_day] == null)
+            {
+                $.get("/home/top10_"+_day+".json", function(data){
+                    makeTop10Data(_day, data.data.top10);
+                    setBarChart(top10DataCollection[_day]);
+                }); 
+            }else
+            {
+                setBarChart(top10DataCollection[_day]);
+            }
             break;
         default:
             console.error("update chart data error!");
@@ -188,25 +195,25 @@ function toggleOtherInfo()
                     if(!$("#moreInfoBlock").hasClass("ChartHasContent"))
                     {
                         $("#moreInfoBlock").addClass("ChartHasContent");
-                        $.get("/home/qbdx_today.json", function(data){
+                        $.get("/home/qbdx_t.json", function(data){
                             makeQbdxData("t", data.data.dx);
                             setQbdxChart(qbdxDataCollection.t);
                         }); 
-                        $.get("/home/media_today.json", function(data){
+                        $.get("/home/media_t.json", function(data){
                             makeMediaData("t", data.data.media);
                             setMediaChart(mediaDataCollection.t);    
                         }); 
-                        $.get("/home/top10_today.json", function(data){
+                        $.get("/home/top10_t.json", function(data){
                             makeTop10Data("t", data.data.top10);
                             setBarChart(top10DataCollection.t);    
                         }); 
-
+                    }
+                    if(!$("#weiboTable").hasClass("weiboTableHasData"))
+                    {
+                        $("#weiboTable").addClass("weiboTableHasData");
                         $.get("/home/weiboTable", function(data){
-                            // console.info(data);
                             buildWeiboTable(data);
                         });  
-
-                        
                     }
                 });
         });
