@@ -5,40 +5,6 @@ class HomeController < ApplicationController
 	def index
 	end
 
-	def articleParams
-		# 文章分类， pid：父分类
-		@article_kinds = getArtlist("article_kinds", "get_kind")
-		puts_to_yaml(@article_kinds, "article_kinds")
-
-		#data:  JSON格式，返回信息，status：信息状态，media_kind：媒介类型，date：时间，dx：调性
-		@article_filters = getArtlist("article_filters", "get_filter")
-		puts_to_yaml(@article_filters, 'article_filters')
-
-		render json: { article_kinds: @article_kinds, article_filters:@article_filters }
-	end
-
-	def articleList
-		condtions = ""
-		condtions += "&id_kind=#{params[id_kind]}"
-		condtions += "&orderby=#{params[orderby]}"
-		condtions += "&state=#{params[state]}"
-		condtions += "&sorcetype=#{params[sourcetype]}"
-		condtions += "&isgood=#{params[isgood]}"
-		condtions += "&starttime=#{params[starttime]}"
-		condtions += "&endtime=#{params[endtime]}"
-		condtions += "&searchtype=#{params[searchtype]}"
-		condtions += "&searchkeyword=#{params[searchkeyword]}"
-		condtions += "&day_count=#{params[day_count]}"
-		condtions += "&num=#{params[num]}"
-		condtions += "&from=#{params[from]}"
-
-		final_condtions = condtions[1, condtions.length] if condtions[0] == "&"
-		@article_list = getArtlist("article_list", "get_art_list", final_condtions)
-		puts_to_yaml(@article_list, "article_list")
-
-		render json: @article_list
-	end
-
 	def unreadItems
 		@unread_items = getArtlist("unread_items", "get_new_num", "starttime=#{cookies['last_sigin']}")
 		puts_to_yaml(@unread_items, "unread_items")
