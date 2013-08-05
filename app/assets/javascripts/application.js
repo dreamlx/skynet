@@ -61,6 +61,8 @@
 
 // });
 var enableClick = false;
+var lastestYQ = [];
+var lastestYJ = [];
 $(function(){
     $.get("/home/unreadItems.json", function(data){
         var obj = data.data;
@@ -103,21 +105,46 @@ $(function(){
 	$.get("/home/weibo_yq.json", function(data){
 		// console.info(data);
 		// console.log(data.arts.length);
-		var arrLen = data.length;
-		var lastest = data.pop();
-		buildLastest("YQ", lastest);
+        lastestYQ = data;
+        if(nowPage == "home")
+        {
+    		var arrLen = data.length;
+    		var lastest = data[arrLen - 1];
+            var lastestDom = $(".lastestYQ:first");
+            buildLastest(lastestDom, lastest);
+        }else
+        {
+            
+            var allHeight = buildAllLastest(data, "YQ", 1);
+            if(allHeight+49 > $("#lastestUpdate").height())
+            {
+                $("#lastestUpdate").height(allHeight+49);                
+            }
+        }
+    });
+
+    $.get("/home/weibo_yj.json", function(data){
+        // console.log(data.arts.length);
+        lastestYJ = data;
+        if(nowPage == "home")
+        {
+            var arrLen = data.length;
+            var lastest = data[arrLen - 1];
+            var lastestDom = $(".lastestYJ:first");
+    		buildLastest(lastestDom, lastest);
+        }else
+        {
+            var allHeight = buildAllLastest(data, "YJ", 2);
+            if(allHeight+49 > $("#lastestUpdate").height())
+            {
+                $("#lastestUpdate").height(allHeight+49);                
+            }
+        }
 	});
 
-	$.get("/home/weibo_yj.json", function(data){
-		// console.log(data.arts.length);
-		var arrLen = data.length;
-		var lastest = data.pop();
-		buildLastest("YJ", lastest);
-	});
-
-	$.get("/home/realTimeChartTitle.json", function(data){
+	// $.get("/home/realTimeChartTitle.json", function(data){
 		// console.info(data);
-	});
+	// });
 
 	$("#pagePrevBtn").click(function(e){ 
         if(!enableClick)
@@ -228,12 +255,26 @@ $(function(){
 
 });
 
-function buildLastest(type, data)
+function buildAllLastest(data, type, tab)
 {
-	$("#lastest"+type+" h3").html(data.text);
-	$("#lastest"+type+">p").html("<a href='"+data.url+"' target='_blank'>"+data['content']+"</a>");
-	$("#lastest"+type+" span.lastestData").html(data.published_at);
+    var tpl = $(".lastest"+type+":first");
+    for(var i=0;i<data.length;i++)
+    {
+        var dom = tpl.clone();
+        buildLastest(dom, data[i]);
+        dom.appendTo("#lastestUpdate #tab"+tab);
+    }
+    tpl.remove();
+    var allHeight = 107*data.length;
+    $("#lastestUpdate #tab"+tab).height(allHeight);
+    return allHeight;
+}
 
+function buildLastest(dom, data)
+{
+	dom.find("h3").html(data.text);
+	dom.find(">p").html("<a href='"+data.url+"' target='_blank'>"+data['content']+"</a>");
+	dom.find("span.lastestData").html(data.published_at);
 }
 
 function setRealTimeChart(_data)
@@ -250,27 +291,42 @@ function setRealTimeChart(_data)
     var myLcChart = new Chart(lcContext).Line(_data, lineChartOpt);
 }
 
-var nowPage = "";
+var nowPage = "home";
 function openHomePage()
 {
+    nowPage = "home";
     $("#weiboList").show();
     $("#lastestUpdate").show();
+    $("#lastestUpdate .lastestYQ").each(function(i, h){
+        if(i!=0)
+        {
+            h.remove();
+        }
+    });
+    $("#lastestUpdate .lastestYJ").each(function(i, h){
+        if(i!=0)
+        {
+            h.remove();
+        }
+    });
+    $("#lastestUpdate #tab1").height(126);
+    $("#lastestUpdate #tab2").height(126);
+    $("#lastestUpdate").height(179);
+
     $("#realTimeChartBlock").show();
+    $("#otherChartBlock").show();
+    $("#top10ChartBlock").show();                 
+    $("#weiboTable").show();    
+    $("#weiboTable .tab-pane").height(260);
+    $("#weiboTable .tab-pane").css("overflow","hidden");
+    $("#weiboTable table").css("overflow","hidden");
+    $("#weiboTable table tbody").css("overflow","hidden");
     if($("#realTimeChartBlock").hasClass("whenLess"))
     {
         $("#moreInfoBlock").hide();        
     }else
     {
         $("#moreInfoBlock").show();  
-        if($("#otherChartBlock").css("display") == "none")
-        {
-            $("#otherChartBlock").show();
-            $("#top10ChartBlock").show(); 
-        }
-        if($("#weiboTable").css("display") == "none")
-        {
-            $("#weiboTable").show();
-        }      
     }
 
     
@@ -287,6 +343,7 @@ function openHomePage()
 
 function openPublicPage()
 {
+    nowPage = "public";
     $("#weiboList").show();
     $("#lastestUpdate").hide();
     $("#realTimeChartBlock").hide();
@@ -308,15 +365,34 @@ function openPublicPage()
 
 function openSensitivePage()
 {
+    nowPage = "sensitive";
     $("#weiboList").hide();
     $("#lastestUpdate").show();
     $("#realTimeChartBlock").hide();
     $("#moreInfoBlock").hide();    
     $(".lessMoreBtn").hide();
+
+    var h1=0;
+    var h2=0
+    if(lastestYQ.length>0)
+    {
+        h1 = buildAllLastest(lastestYQ, "YQ", 1);   
+    }
+    if(lastestYJ.length>0)
+    {
+        h2 = buildAllLastest(lastestYJ, "YJ", 2);
+    }
+    if(h1>0 || h2>0)
+    {
+        var allHeight = h1>h2?h1:h2
+        $("#lastestUpdate").height(allHeight+49);        
+    }
+    
 }
 
 function openReportPage()
 {
+    nowPage = "report";
     $("#weiboList").hide();
     $("#lastestUpdate").hide();
     $("#realTimeChartBlock").show();
@@ -348,6 +424,7 @@ function openReportPage()
 
 function openMonitoringPage()
 {
+    nowPage = "monitoring";
     $("#weiboList").hide();
     $("#lastestUpdate").hide();
     $("#realTimeChartBlock").hide();
@@ -357,11 +434,30 @@ function openMonitoringPage()
     $("#weiboTable").show();   
     $(".lessMoreBtn").hide();
 
+    var tabHeight = $("#weiboTable .tab-pane").height();
+    var trLength = $("#weiboTable #table0 tbody tr").size();
+
     if(!$("#weiboTable").hasClass("weiboTableHasData"))
     {
         $("#weiboTable").addClass("weiboTableHasData");
         $.get("/home/weiboTable", function(data){
             buildWeiboTable(data);
+            trLength = $("#weiboTable #table0 tbody tr").size();
+            if(trLength>5)
+            {
+                tabHeight += (39*(trLength - 5));
+                $("#weiboTable .tab-pane").height(tabHeight); 
+            }
         });  
     }
+
+    if(trLength>5)
+    {
+        tabHeight += (39*(trLength - 5));
+        $("#weiboTable .tab-pane").height(tabHeight); 
+    }
+    
+    $("#weiboTable .tab-pane").css("overflow","visible");
+    $("#weiboTable table").css("overflow","visible");
+    $("#weiboTable table tbody").css("overflow","visible");
 }
