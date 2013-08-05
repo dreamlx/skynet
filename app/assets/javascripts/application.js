@@ -62,6 +62,28 @@
 // });
 var enableClick = false;
 $(function(){
+    $.get("/home/unreadItems.json", function(data){
+        var obj = data.data;
+
+        if(obj.yq_num>0)
+        {
+            $("#yqNum").show();
+            $("#yqNum").text(obj.yq_num);
+        }
+
+        if(obj.yj_num>0)
+        {
+            $("yjNum").show();
+            $("#yjNum").text(obj.yj_num);
+        }
+        if(obj.wb_num>0)
+        {
+            $("#wbNum").show();
+            $("#wbNum").text(obj.wb_num);
+        }
+    });
+    
+
 	$.get("/home/weiboList.json",function(data){
 		var arrLen = data.arts.length;
 		for(var i=0; i<arrLen; i++)
