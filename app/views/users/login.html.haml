@@ -5,12 +5,14 @@
     #loginLogo
       %img{:src => "/assets/login/loginlogo.png"}
     #loginFormWarper
+      -if flash[:alert] != nil
+        .alert.alert-error
+          = flash[:alert]
       = form_tag :action => :create_session do
         %p= text_field :user,:name, :placeholder => "用户名"
         %p= password_field :user,:password, :placeholder => "密码"
         %p= submit_tag "登录系统"
         %p
-          = flash[:alert]
           = link_to "忘记了自己的密码？"
 %section.pwdInfo.container 
   %h3.span10.offset1
