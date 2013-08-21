@@ -204,6 +204,7 @@ $(function(){
             $(".weiboDefaultList").height(miniHeight);
             $("#weiboList").height(miniHeight);
             $("#weiboListPageBtnBlock").show();
+            $("#weiboListBtn").css("margin-top",14);
         }else
         {
             $(".weiboDefaultList ul").css("top",0);
