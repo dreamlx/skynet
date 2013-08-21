@@ -18,12 +18,12 @@
             %p Tel:86 021-54591660
         .span4
           = flash[:alert]
-          = form_tag :action => :post_consult do
+          = form_tag({:action => 'post_consult'}, :id=>'consult_form', :name=>'consult_form') do
             %h6 咨询详情
-            %p= text_field :consult, :name, :placeholder => "贵姓"
-            %p= text_field :consult, :emial, :placeholder => "E-Mail"
+            %p= text_field :consult, :name, :placeholder => "贵姓", :maxlength=>'20'
+            %p= text_field :consult, :email, :placeholder => "E-Mail", :maxlength=>'50'
             %p
-              = text_field :consult, :phone, :placeholder => "电话号码"
+              = text_field :consult, :phone, :placeholder => "电话号码", :maxlength=>'20'
               = submit_tag "发送", :id => "sendBtn"
   %section.pageInfo
     .container

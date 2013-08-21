@@ -9,53 +9,45 @@
         试用申请
         %small
           （请填写您的真实信息以便我们尽快能和您取得联系）
-    %form.form-horizontal
+    = form_tag({:action => 'post_experience'}, :id=>'experience_form', :name=>'experience_form', :class=>'form-horizontal') do
       .control-group
-        %label.control-label{:for=>"inputName"}
-          请留下您的姓名：
+        = label_tag "inputName", "请留下您的姓名：", :class=>'control-label'          
         .controls
-          %input.require#inputName{:type=>"text"}
+          = text_field :experience, :name, :class=>'require', :id=>'inputName'
           %span.help-inline
             如果您想申请使用天网舆情系统 ，标注
             %img{:src=>"/assets/experience/greenDot.png"}
             的栏目请务必正确填写。
       .control-group
-        %label.control-label{:for=>"inputMail"}
-          您的电子邮件：
+        = label_tag "inputMail", "您的电子邮件：", :class=>'control-label'           
         .controls
-          %input.require#inputMail{:type=>"text"}
+          = text_field :experience, :mail, :class=>'require', :id=>'inputMail'
       .control-group
-        %label.control-label{:for=>"inputQQ"}
-          QQ：
+        = label_tag "inputQQ", "QQ：", :class=>'control-label'
         .controls
-          %input#inputQQ{:type=>"text"}
+          = text_field :experience, :qq, :id=>'QQ：', :maxlength=>'20'
       .control-group
-        %label.control-label{:for=>"inputCompany"}
-          单位名称：
+        = label_tag "inputCompany", "单位名称：", :class=>'control-label'
         .controls
-          %input.require#inputCompany{:type=>"text"}
+          = text_field :experience, :company, :class=>'require', :id=>'inputCompany'
       .control-group
-        %label.control-label{:for=>"inputMobile"}
-          您的手机号码：
+        = label_tag "inputMobile", "您的手机号码：", :class=>'control-label'
         .controls
-          %input.require#inputMobile{:type=>"text"}
+          = text_field :experience, :mobile, :class=>'require', :id=>'inputMobile'
       .control-group
-        %label.control-label{:for=>"inputPhone"}
-          座机（留下区号）：
+        = label_tag "inputPhone", "座机（留下区号）：", :class=>'control-label'          
         .controls
-          %input#inputPhone{:type=>"text"}
+          = text_field :experience, :phone, :id=>'inputPhone'
       .control-group
-        %label.control-label{:for=>"inputMsg"}
-          留言信息：
+        = label_tag "experience_msg", "留言信息：", :class=>'control-label'
         .controls
-          %textarea#inputMsg{:type=>"text"}
+          = text_area_tag 'experience[msg]'
           %span#msg.help-inline
             您提交正确资料后，我们将在第一时间和你取得联系，客服将会帮助您开通系统提供试用。
             %br
             %small
               您可以指定一个关键词进行舆情体验。
       .form-actions
-        %button#resetBtn{:type=>"reset"}
-          重置内容
-        %button#submitBtn{:type=>"submit"}
-          提交资料
+        =button_tag "重置内容", :type=>"reset", :id=>'resetBtn'          
+        =submit_tag "提交资料", :id=>"submitBtn"
+= javascript_include_tag "frontexperience"

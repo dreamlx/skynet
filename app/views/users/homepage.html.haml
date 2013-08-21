@@ -12,8 +12,10 @@
             成功抓取率达到99.97%
           %p
             24小时不间断监测全互联网络，第一时间抓取正负面信息
-      %section
-        %img{:src=>"/assets/homepage/macscreen.png"}
+      %section#macScreen
+        %img{:id=>"playBtn", :src=>"/assets/homepage/videoplay.png"}
+        %video(id="my_video_1" class="video-js vjs-default-skin" controls preload="false" width="419" height="266")
+          %source(src="" type='video/mp4')
     .slide
       %img{:src=>"/assets/homepage/homebanner_bg.png"}
     .slide
@@ -67,20 +69,19 @@
 
 #services.container.row
   %article.span5
-    %header
-      %h1 
-        %img{:src=>"/assets/homepage/icon_eye.png"}
+    %header#eyeHeader      
+      %h1
         2 0000 +
     %p
       利用尖端搜索引擎机制，全面监测纸媒、网媒新闻、论坛、股吧、博客、微博，超过200000个信息源的互联网信息，每间隔15分钟把所有信息更新一次，是国内最强大的舆情监测系统
     %figure#mtime
       %img{:src=>"/assets/homepage/figure_15m.png"}
   %article.span5.offset2
-    %header
+    %header#chatHeader
       %h1 
-        %img{:src=>"/assets/homepage/qipao.png"}
         人工服务
     %p
       采用计算机与专业人员相结合的资讯分拣模式，并与“一对一跟进”的客户服务相结合，能够及时满足客户的合理需求。
     %figure
       %img{:src=>"/assets/homepage/figure_24hr.png"}
+=javascript_include_tag "fronthomepage"
