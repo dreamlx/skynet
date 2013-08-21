@@ -79,7 +79,7 @@ $(function() {
         {
             $(".floatWeiboListBtn").css("top", scrollTop+70);    
         }
-        var blockOffset = $("#realTimeChartBlock").offset().top - 576;
+        var blockOffset = $("#realTimeChartBlock").offset().top - $(window).height();
         if(scrollTop > 200+blockOffset)
         {
             if(!$("#lineChart").hasClass("ChartHasContent"))
@@ -92,6 +92,20 @@ $(function() {
             }
         }
     });   
+
+    var blockOffset = $("#realTimeChartBlock").offset().top - $(window).height();
+    var blockTitleHeight = 124;
+    if(blockOffset+blockTitleHeight<0)
+    {
+        if(!$("#lineChart").hasClass("ChartHasContent"))
+        {
+            $("#lineChart").addClass("ChartHasContent");
+            $.get("/home/realTimeChart.json", function(data){
+                var realTimeChartData = makeRealTimeArr(data);
+                setRealTimeChart(realTimeChartData);     
+            }); 
+        }
+    }
 
     $(".chartTabs ul li").click(function(e){
         e.preventDefault();
