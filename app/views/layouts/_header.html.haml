@@ -25,6 +25,20 @@
       %hgroup
         %h1= get_home_title("cn")
         %h4= get_home_title("en")
+    #userSettingBtn
+      %a.dropDown-collaspe{:href=>"#"} 
+        用户设置&nbsp;&nbsp;
+        %span#dropDownBtnArrow
+      %ul#userSettingDropDown
+        %li#dropDownArrow
+          %span &#9670;
+        %li
+          %a.dropDown-setting{:href=>"#"} 系统设置
+        %li
+          %a.dropDown-updatePwd{:href=>"#"} 更改密码
+        %li
+          %a.dropDown-logout{:href=>"#"} 退出登陆
+
 / %section.floatMainBanner
 /   %div.mainBannerWarp
 /     %div.avatar
