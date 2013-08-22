@@ -5,6 +5,9 @@ class HomeController < ApplicationController
 	def index
 	end
 
+	def filterArticle
+	end
+
 	def articleParams
 		# 文章分类， pid：父分类
 		@article_kinds = getArtlist("article_kinds", "get_kind")
