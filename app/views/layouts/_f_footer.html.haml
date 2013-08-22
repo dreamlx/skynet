@@ -21,7 +21,7 @@
           = form_tag :action => :post_consult do
             %h6 咨询详情
             %p= text_field :consult, :name, :placeholder => "贵姓"
-            %p= text_field :consult, :emial, :placeholder => "E-Mail"
+            %p= text_field :consult, :email, :placeholder => "E-Mail"
             %p
               = text_field :consult, :phone, :placeholder => "电话号码"
               = submit_tag "发送", :id => "sendBtn"

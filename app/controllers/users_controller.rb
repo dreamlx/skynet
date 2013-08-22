@@ -47,7 +47,28 @@ class UsersController < ApplicationController
   end
 
   def post_consult
-    
+    @consult = Consult.new(params[:consult]) 
+    respond_to do |format|
+      if @consult.save
+        UserMailer.consult(@consult).deliver
+        format.html{redirect_to root_path, notice:'This email has aready send'} 
+        format.json{render :json => {:response => "success"}}
+      else
+        format.json{render :json => {:response => "failed"}}
+      end
+    end
   end
 
+  def try_out
+    @user = User.new(params[:user])
+    respond_to do |format|
+      if @user.save
+        UserMailer.try_out(@user).deliver
+        format.html{redirect_to root_path, notice:'This email has aready send'} 
+        format.json{render :json => {:response => "success"}}
+      else
+        format.json{render :json => {:response => "failed"}}
+      end
+    end
+  end
 end

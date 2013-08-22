@@ -51,4 +51,31 @@ $(function(){
 			pageLoaded: pageLoaded
 		}
 	);
+
+	$("#sendBtn").parent().parent().submit(function(){
+		$.ajax({
+                cache: true,
+                type: "POST",
+                dataType:"json",
+             	url: $(this).attr('action'),
+            	data: $(this).serializeArray(),  async: false,
+                success: function(data) {
+                    alert(data.response)
+                }
+            });
+	})
+
+	$("#submitBtn").parent().parent().submit(function(){
+		$.ajax({
+                cache: true,
+                type: "POST",
+                dataType:"json",
+             	url: $(this).attr('action'),
+            	data: $(this).serializeArray(),  async: false,
+                success: function(data) {
+                    alert(data.response)
+                }
+            });
+	})
+	
 });

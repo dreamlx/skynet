@@ -9,12 +9,12 @@
         试用申请
         %small
           （请填写您的真实信息以便我们尽快能和您取得联系）
-    %form.form-horizontal
+    %form.form-horizontal{:action => :try_out}
       .control-group
         %label.control-label{:for=>"inputName"}
           请留下您的姓名：
         .controls
-          %input.require#inputName{:type=>"text"}
+          %input.require#inputName{:type=>"text",:name => "user[name]"}
           %span.help-inline
             如果您想申请使用天网舆情系统 ，标注
             %img{:src=>"/assets/experience/greenDot.png"}
@@ -23,32 +23,32 @@
         %label.control-label{:for=>"inputMail"}
           您的电子邮件：
         .controls
-          %input.require#inputMail{:type=>"text"}
+          %input.require#inputMail{:type=>"text",:name => "user[email]"}
       .control-group
         %label.control-label{:for=>"inputQQ"}
           QQ：
         .controls
-          %input#inputQQ{:type=>"text"}
+          %input#inputQQ{:type=>"text",:name => "user[qq]"}
       .control-group
         %label.control-label{:for=>"inputCompany"}
           单位名称：
         .controls
-          %input.require#inputCompany{:type=>"text"}
+          %input.require#inputCompany{:type=>"text",:name => "user[unit]"}
       .control-group
         %label.control-label{:for=>"inputMobile"}
           您的手机号码：
         .controls
-          %input.require#inputMobile{:type=>"text"}
+          %input.require#inputMobile{:type=>"text",:name => "user[mobile_phone]"}
       .control-group
         %label.control-label{:for=>"inputPhone"}
           座机（留下区号）：
         .controls
-          %input#inputPhone{:type=>"text"}
+          %input#inputPhone{:type=>"text",:name => "user[phone]"}
       .control-group
         %label.control-label{:for=>"inputMsg"}
           留言信息：
         .controls
-          %textarea#inputMsg{:type=>"text"}
+          %textarea#inputMsg{:type=>"text",:name => "user[leave_message_string]"}
           %span#msg.help-inline
             您提交正确资料后，我们将在第一时间和你取得联系，客服将会帮助您开通系统提供试用。
             %br
