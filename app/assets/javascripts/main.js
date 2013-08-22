@@ -64,22 +64,21 @@ function makeTop10Data(day, data)
 $(function() {
     $(window).scroll(function(){
         scrollTop = $(this).scrollTop();
-        if(scrollTop>200)
+        if(scrollTop>100)
         {
-            $(".floatMainBanner").show();
-        }else if(scrollTop<200)
+            $("#globalHeader").addClass("fixedHeader");
+        }else if(scrollTop<100)
         {
-            $(".floatMainBanner").hide();
+            $("#globalHeader").removeClass("fixedHeader");
+        }
+        console.log(scrollTop)
+        
+        if(scrollTop<=1400 && $("#weiboListBtn").hasClass("floatWeiboListBtn"))
+        {
+            $("#weiboListBtn").css("margin-top", 14+scrollTop);    
         }
 
-        if(scrollTop<=200)
-        {
-            $(".floatWeiboListBtn").css("top", 250);    
-        }else if(scrollTop > 200 && scrollTop <= 1600)
-        {
-            $(".floatWeiboListBtn").css("top", scrollTop+70);    
-        }
-        var blockOffset = $("#realTimeChartBlock").offset().top - 576;
+        var blockOffset = $("#realTimeChartBlock").offset().top - $(window).height();
         if(scrollTop > 200+blockOffset)
         {
             if(!$("#lineChart").hasClass("ChartHasContent"))
@@ -92,6 +91,20 @@ $(function() {
             }
         }
     });   
+
+    var blockOffset = $("#realTimeChartBlock").offset().top - $(window).height();
+    var blockTitleHeight = 124;
+    if(blockOffset+blockTitleHeight<0)
+    {
+        if(!$("#lineChart").hasClass("ChartHasContent"))
+        {
+            $("#lineChart").addClass("ChartHasContent");
+            $.get("/home/realTimeChart.json", function(data){
+                var realTimeChartData = makeRealTimeArr(data);
+                setRealTimeChart(realTimeChartData);     
+            }); 
+        }
+    }
 
     $(".chartTabs ul li").click(function(e){
         e.preventDefault();
@@ -108,7 +121,7 @@ $(function() {
     $("#lessInfoBtn").click(function(e){
         e.preventDefault();
         $("#realTimeChartBlock").toggleClass("whenLess");
-        toggleOtherInfo();
+        toggleOtherInfo(!$("#realTimeChartBlock").hasClass("whenLess"));
         // $("#moreInfoBlock").hide();
     });
 
@@ -176,11 +189,11 @@ function updateChartData(_chart, _day)
     }
 }
 
-function toggleOtherInfo()
+function toggleOtherInfo(open)
 {
     var warpHeight = $(".rightWarp").height();
 
-    if(warpHeight>841)
+    if(!open)
     {
         //close the more info block
         $("#moreInfoBlock").hide();
@@ -188,35 +201,39 @@ function toggleOtherInfo()
         $("#lessInfoBtn").html("<span class='spritebg moreIcon'></span>展开更多详情");
     }else
     {
-       $("#moreInfoBlock").slideDown("slow",function(){
-            $("html,body").animate({scrollTop:$("#moreInfoBlock").offset().top},
-                1000,
-                function(){
-                    if(!$("#moreInfoBlock").hasClass("ChartHasContent"))
-                    {
-                        $("#moreInfoBlock").addClass("ChartHasContent");
-                        $.get("/home/qbdx_t.json", function(data){
-                            makeQbdxData("t", data.data.dx);
-                            setQbdxChart(qbdxDataCollection.t);
-                        }); 
-                        $.get("/home/media_t.json", function(data){
-                            makeMediaData("t", data.data.media);
-                            setMediaChart(mediaDataCollection.t);    
-                        }); 
-                        $.get("/home/top10_t.json", function(data){
-                            makeTop10Data("t", data.data.top10);
-                            setBarChart(top10DataCollection.t);    
-                        }); 
+       $("#moreInfoBlock").slideDown("slow",
+            function(){
+                $("body").animate(
+                    {scrollTop:$("#moreInfoBlock").offset().top},
+                    1000,
+                    function(){
+                        if(!$("#moreInfoBlock").hasClass("ChartHasContent"))
+                        {
+                            $("#moreInfoBlock").addClass("ChartHasContent");
+                            $.get("/home/qbdx_t.json", function(data){
+                                makeQbdxData("t", data.data.dx);
+                                setQbdxChart(qbdxDataCollection.t);
+                            }); 
+                            $.get("/home/media_t.json", function(data){
+                                makeMediaData("t", data.data.media);
+                                setMediaChart(mediaDataCollection.t);    
+                            }); 
+                            $.get("/home/top10_t.json", function(data){
+                                makeTop10Data("t", data.data.top10);
+                                setBarChart(top10DataCollection.t);    
+                            }); 
+                        }
+                        if(!$("#weiboTable").hasClass("weiboTableHasData"))
+                        {
+                            $("#weiboTable").addClass("weiboTableHasData");
+                            $.get("/home/weiboTable", function(data){
+                                buildWeiboTable(data);
+                            });  
+                        }
                     }
-                    if(!$("#weiboTable").hasClass("weiboTableHasData"))
-                    {
-                        $("#weiboTable").addClass("weiboTableHasData");
-                        $.get("/home/weiboTable", function(data){
-                            buildWeiboTable(data);
-                        });  
-                    }
-                });
-        });
+                );
+            }
+        );
         $("#lessInfoBtn").html("<span class='spritebg lessIcon'></span>查看精简信息");        
     }
 }
