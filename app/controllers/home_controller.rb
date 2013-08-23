@@ -200,6 +200,107 @@ class HomeController < ApplicationController
 		end    
 	end
 
+	##操作##
+	#发送预警，批量发送（如果只有一个id，那么aid=id；如果有多个aid=id1,id2,id3）
+	def send_warning
+		act = 'send_warning'
+		if params[:aids].blank?
+			render status: 400, json: {:message=>"需要参数ids，格式'id1,id2,id3...'"}
+     else
+			@send_warning = getProcess("send_warning", act, "aid=#{params[:aids]}")
+			puts_to_yaml(@send_warning, "send_warning")
+			render json: @send_warning
+		end
+	end
+
+	#收藏，批量收藏（如果只有一个id，那么aid=id；如果有多个aid=id1,id2,id3）
+	def add_favorite
+		act = 'add_favorite'
+		if params[:aids].blank?
+			render status: 400, json: {:message=>"需要参数aids，格式'id1,id2,id3...'"}
+     else
+			@add_favorite = getProcess("add_favorite", act, "aid=#{params[:aids]}")
+			puts_to_yaml(@add_favorite, "add_favorite")
+			render json: @add_favorite
+		end
+	end
+
+	#添加备注，批量添加（如果只有一个id，那么aid=id；如果有多个aid=id1,id2,id3）
+	def add_info
+		act = 'add_info'
+		if params[:aids].blank? or params[:info].blank?
+			render status: 400, json: {:message=>"需要参数aids：格式'id1,id2,id3...', 参数：info"}
+     else
+			@add_info = getProcess("add_info", act, "aid=#{params[:aids]}&info=#{params[:info]}")
+			puts_to_yaml(@add_info, "add_info")
+			render json: @add_info
+		end
+	end
+
+  #删除，批量删除
+	def del_article
+		act = 'del_article'
+		if params[:aids].blank?
+			render status: 400, json: {:message=>"需要参数aids，格式'id1,id2,id3...'"}
+     else
+			@del_article = getProcess("del_article", act, "aid=#{params[:aids]}")
+			puts_to_yaml(@del_article, "del_article")
+			render json: @del_article
+		end
+	end
+
+	# 置顶
+	#aid 字符型，文章Id。  [必选]
+  #val 字符型，更改的值，1：置顶，0：取消置顶，缺省为1。[可选]
+	def set_top
+		act = 'set_top'
+		if params[:aid].blank? or params[:val].blank?
+			render status: 400, json: {:message=>"需要参数id,val"}
+     else
+			@set_top = getProcess("set_top", act, "aid=#{params[:aid]}&val=#{params[:val]}")
+			puts_to_yaml(@set_top, "set_top")
+			render json: @set_top
+		end
+	end
+
+	# 设置热门
+	#aid 字符型，文章Id。  [必选]
+  #val 字符型，更改的值，1：热门，0：取消热门，缺省为1。[可选]
+	def set_hot
+		act = 'set_hot'
+		if params[:aid].blank? or params[:val].blank?
+			render status: 400, json: {:message=>"需要参数id,val"}
+     else
+			@set_hot = getProcess("set_hot", act, "aid=#{params[:aid]}&val=#{params[:val]}")
+			puts_to_yaml(@set_hot, "set_hot")
+			render json: @set_hot
+		end
+	end
+
+  #获取命中关键字
+	def get_hit_word
+		act = 'get_hit_word'
+		if params[:aid].blank?
+			render status: 400, json: {:message=>"需要参数id"}
+     else
+			@get_hit_word = getProcess("get_hit_word", act, "aid=#{params[:aid]}")
+			puts_to_yaml(@get_hit_word, "get_hit_word")
+			render json: @get_hit_word
+		end
+	end
+
+  #设置预警级别，val：0-4，缺省 1
+	def set_level
+		act = 'get_hit_word'
+		if params[:aid].blank? or params[:val].blank?
+			render status: 400, json: {:message=>"需要参数id,val"}
+     else
+			@set_level = getProcess("set_level", act, "aid=#{params[:aid]}&val=params[:val]")
+			puts_to_yaml(@set_level, "set_level")
+			render json: @set_level
+		end
+	end
+
 	private
 	def getVoc(yaml,act, params=nil)
 		if !session[:current_user]
@@ -212,6 +313,14 @@ class HomeController < ApplicationController
 	def getArtlist(yaml, act, params=nil)
 		if session[:current_user]
 			return get_voc("api_artlist.cgi", act, params)
+		else
+			return get_yaml(yaml)
+		end
+	end
+
+		def getProcess(yaml,act, params=nil)
+		if !session[:current_user]
+			return get_voc("api_proccess.cgi", act, params)
 		else
 			return get_yaml(yaml)
 		end
