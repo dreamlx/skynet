@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 	end
 
 	def filterArticle
+		
 	end
 
 	def articleParams
