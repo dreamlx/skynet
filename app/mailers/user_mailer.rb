@@ -18,8 +18,8 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.tryout.subject
   #
-  def post_experience(user)
-    @user = user
-    mail to: "#{@user.mail}", subject: 'user'
+  def post_experience(experience)
+    @experience = experience
+    mail to: "#{@experience.mail}", subject: 'experience'
   end
 end
