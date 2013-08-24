@@ -141,6 +141,12 @@ input{outline: none}
             margin:31px 60px 0 0;
         }
     }
+    &.fixedHeader
+    {
+        position:fixed;
+        background-color:#FFF;
+        z-index: 500;
+    }
 }
 
 .mainBannerWarp
@@ -181,6 +187,117 @@ input{outline: none}
                 h1{color:@white;margin:0;font-size:36px;padding:0;letter-spacing:8px;}
                 h4{margin:0;font-size:20px;color:@white;opacity:0.6;font-family:"DIN"}
             }
+        }
+        #userSettingBtn
+        {
+            width:150px;
+            height:39px;
+            position:relative;
+            z-index:100;
+            margin-left:988px;
+            padding-top:66px;
+            &:hover
+            {
+                height:188px;
+                #userSettingDropDown
+                {
+                    display: block;
+                }
+            }
+            a
+            {
+                width:150px;
+                height:39px;
+                display:block;
+                background:url("/assets/icon_user.png") @jade scroll no-repeat 18px center;                
+                border-style:solid;
+                border-width: 1px;
+                border-color:@jade;
+                text-align: center;
+                line-height: 39px;
+                color:white;
+                font-size:13px;
+                &.dropDown-collaspe
+                {
+                    -moz-border-radius: 2px;
+                    -webkit-border-radius: 2px;
+                    border-radius: 2px;
+                    text-align:left;
+                    text-indent:50px;
+                }
+                &.dropDown-setting
+                {
+                    background-image: url("/assets/icon_setting.png");
+                    -moz-border-top-left-radius:2px;
+                    -moz-border-top-right-radius:2px;
+                    -webkit-border-top-left-radius:2px;
+                    -webkit-border-top-right-radius:2px;
+                    border-top-left-radius: 2px;
+                    border-top-right-radius: 2px;
+                }
+                &.dropDown-updatePwd
+                {
+                    background-image:url("/assets/icon_pwd.png");
+                }
+                &.dropDown-logout
+                {
+                    background-image:url("/assets/icon_logout.png");
+                    -moz-border-bottom-left-radius:2px;
+                    -moz-border-bottom-right-radius:2px;
+                    -webkit-border-bottom-left-radius:2px;
+                    -webkit-border-bottom-right-radius:2px;
+                    border-bottom-left-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                }
+                &:hover
+                {   
+                    border-color:@gulfBlue;
+                    background-color:@gulfBlue;
+                    #dropDownBtnArrow
+                    {
+                        border-color:@gulfBlue;
+                        border-top-color:white;
+
+                    }
+
+                }
+                #dropDownBtnArrow
+                {
+                    border:6px solid @jade;
+                    border-top-color:#01684d;
+                    width:0px;
+                    height:0px;
+                    display: inline-block;
+                    vertical-align: -12%;
+                }
+
+            }
+            #userSettingDropDown
+            {
+                display: none;
+                position: absolute;
+                z-index:300;
+                list-style: none;
+                color:@jade;
+                padding: 0;
+                margin:0;
+                margin-top:17px;
+                #dropDownArrow
+                {
+                    text-align:right;
+                    width:100%;
+                    height:8px;
+                    overflow:hidden;
+                    span
+                    {
+                        margin-right:25px;
+                    }
+                }
+            }
+        }
+        #userSettingDropDown
+        {
+            /*display: none;*/
         }
     }
 }
@@ -259,7 +376,7 @@ input{outline: none}
                 font-size:14px;
                 &:hover
                 {
-                    background-color:@nevada;
+                    background-color:@cinnabar;
                     -moz-box-shadow:0 5px 6px 0px rgba(0,0,0,0.55) inset;
                     -webkit-box-shadow:0 5px 6px 0px rgba(0,0,0,0.3) inset;
                     -box-shadow:0 5px 6px 0px rgba(0,0,0,0.65) inset;
@@ -273,6 +390,10 @@ input{outline: none}
             {
                 border-top:2px solid @madison;
                 // border-top:none;
+                &:hover
+                {
+                    border-color:@cinnabar;
+                }
             }
             svg{margin-left:60px;vertical-align:middle;}
             .navIcon

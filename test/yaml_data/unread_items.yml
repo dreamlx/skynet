@@ -1,6 +1,4 @@
 --- 
-code: "200"
-data: 
-  wb_num: 10
-  yj_num: 0
-  yq_num: 123
+error: 未登录！
+error_code: "10007"
+request: /api/api_artlist.cgi

@@ -65,12 +65,25 @@
 					}
 				}
 			}
-			section
+			section#macScreen
 			{
 				margin-top:52px;
 				width:560px;
 				height:100%;
 				float:right;
+				background: url(homepage/macscreen.png) scroll no-repeat;
+				#my_video_1
+				{
+					margin-top:16px;
+					margin-left:71px;
+					display:none;
+				}
+				img#playBtn
+				{
+					margin-top:106px;
+					margin-left:234px;
+					cursor:pointer;
+				}
 			}
 		}
 	}
@@ -117,6 +130,7 @@
 
 	article
 	{
+		-moz-box-sizing:border-box;
 		box-sizing:border-box;
 		border:1px solid #ecf0f1;
 		background-color: #f9fafb;
@@ -200,16 +214,30 @@
 		{
 			margin-left:0;
 		}
+		header#eyeHeader
+		{
+			background:url("homepage/icon_eye.png") scroll no-repeat left center;
+			h1{line-height:45px}
+		}
+		header#chatHeader
+		{
+			background:url("homepage/qipao.png") scroll no-repeat left center;
+			h1{line-height: 49px}
+		}
 		header > h1
 		{
 			height:51px;
-			line-height:51px; 
 			color:#34495E;
-			font-size:36pt;
+			font-size:36px;
+			letter-spacing: 2px;
 			font-weight: normal;
+			display:inline-block;
+			margin:0;
+			margin-left:80px;
 		}
 		p
 		{
+			margin-top:22px;
 			font-size:10.5pt;
 			color:#7f8c8d;
 		}

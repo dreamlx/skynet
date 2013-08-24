@@ -13,9 +13,11 @@
 //= require jquery
 //= require plugins
 //= require home
+//= require video
 //= require carousel/jquery.ui.core.min
 //= require carousel/jquery.ui.widget.min
 //= require carousel/jquery.ui.rcarousel.min
+//= require validate
 //= require frontmain
 
 // $(function(){

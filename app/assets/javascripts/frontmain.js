@@ -43,7 +43,7 @@ $(function(){
 			step: 1,
 			speed: 700,
 			auto: {
-				enabled: true
+				enabled: false
 			},
 			width: 940,
 			height: 425,
@@ -78,4 +78,36 @@ $(function(){
             });
 	})
 	
+	/*$("#consult_form").submit(function(e){
+
+		console.log('!!!');
+		
+		e.preventDefault();
+	})*/
+	var validator = new FormValidator('consult_form', [{
+	    name: 'consult[name]',
+	    display: 'required',    
+	    rules: 'required|max_length[10]'
+	}, {
+	    name: 'consult[email]',
+	    rules: 'required|valid_email'
+	}, {
+	    name: 'consult[phone]',
+	    rules: 'required|max_length[11]'
+	}], function(errors) {
+	    if (errors.length > 0) {
+			console.info(errors);
+			$('#consult_form input').removeClass('error');
+			$('.formerrspan').remove();
+			for(var err in errors)
+			{
+				var input = $("#"+errors[err].id);
+				input.attr('value','').addClass('error').after('<span class=formerrspan>'+errors[err].message+'</span>');
+			}
+	    }
+	});
+	validator.setMessage('required','请填必填项！');
+	validator.setMessage('max_length','字符长度过长！');
+	validator.setMessage('valid_email','邮箱格式错误！');
+
 });
