@@ -26,7 +26,7 @@ class HomeController < ApplicationController
 		condtions += "&id_kind=#{params[id_kind]}"
 		condtions += "&orderby=#{params[orderby]}"
 		condtions += "&state=#{params[state]}"
-		condtions += "&sorcetype=#{params[sourcetype]}"
+		condtions += "&sourcetype=#{params[sourcetype]}"
 		condtions += "&isgood=#{params[isgood]}"
 		condtions += "&starttime=#{params[starttime]}"
 		condtions += "&endtime=#{params[endtime]}"
