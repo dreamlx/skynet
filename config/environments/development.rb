@@ -27,11 +27,23 @@ Skynet::Application.configure do
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
-  config.active_record.auto_explain_threshold_in_seconds = 0.5
+config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
   config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #Email config load email_config.yml
+  email_config = YAML::load(File.read(Rails.root.to_s + '/config/email_config.yml'))
+  config.action_mailer.smtp_settings = {
+    :address => email_config['address'],
+    :port => email_config['port'],
+    :domain => email_config['domain'],
+    :authentication => email_config['authentication'],
+    :user_name => email_config['email'],
+    :password => email_config['password'],
+    :enable_starttls_auto => email_config['enable_starttls_auto']
+  }
 end
