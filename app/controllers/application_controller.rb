@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     curl = "#{base_url}/#{api_port}?act=#{act}"
     curl += "&VOC_CenterID=#{ session['user_data']['VOC_CenterID'] }&id_cp=#{ session['user_data']['id_cp'] }&id_gp=#{ session['user_data']['id_gp'] }"
     curl += "&#{other_condition}" unless other_condition.nil?
+    binding.pry
     http = Curl::Easy.new(curl)
     http.url = curl
 
