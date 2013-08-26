@@ -17,7 +17,6 @@
 //= require Chart.min
 //= require html2canvas
 //= require plugins
-//= require home
 
 //= require jspdf/jspdf
 //= require jspdf/adler32cs
@@ -28,8 +27,6 @@
 //= require jspdf/jspdf.plugin.split_text_to_size
 //= require jspdf/jspdf.plugin.from_html
 
-
-//= require main
 
 
 
@@ -239,22 +236,37 @@ $(function(){
     }); 
 
     $("#homePageBtn").click(function(e){
+        clickNav();
+        $(this).parent().addClass("selected");
         openHomePage();
     });
     $("#publicPageBtn").click(function(e){
+        clickNav();
+        $(this).parent().addClass("selected");
         openPublicPage();
     });
     $("#sensitivePageBtn").click(function(e){
+        clickNav();
+        $(this).parent().addClass("selected");
         openSensitivePage();
     });
     $("#reportPageBtn").click(function(e){
+        clickNav();
+        $(this).parent().addClass("selected");
         openReportPage();
     });
     $("#monitoringPageBtn").click(function(e){
+        clickNav();
+        $(this).parent().addClass("selected");
         openMonitoringPage();
     });
 
 });
+
+function clickNav()
+{
+    $(".systemNav ul li").removeClass("selected")
+}
 
 function buildAllLastest(data, type, tab)
 {

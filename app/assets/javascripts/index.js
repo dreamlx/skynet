@@ -64,14 +64,7 @@ function makeTop10Data(day, data)
 $(function() {
     $(window).scroll(function(){
         scrollTop = $(this).scrollTop();
-        if(scrollTop>100)
-        {
-            $("#globalHeader").addClass("fixedHeader");
-        }else if(scrollTop<100)
-        {
-            $("#globalHeader").removeClass("fixedHeader");
-        }
-        console.log(scrollTop)
+        
         
         if(scrollTop<=1400 && $("#weiboListBtn").hasClass("floatWeiboListBtn"))
         {

@@ -80,6 +80,11 @@ input{outline: none}
     width:100%;
     height:100px;
     background-color: @white;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:#FFF;
+    z-index: 900;
     #headerWarp
     {
         width:1200px;
@@ -141,12 +146,6 @@ input{outline: none}
             margin:31px 60px 0 0;
         }
     }
-    &.fixedHeader
-    {
-        position:fixed;
-        background-color:#FFF;
-        z-index: 500;
-    }
 }
 
 .mainBannerWarp
@@ -162,6 +161,7 @@ input{outline: none}
     height:148px;
     background-color:@cinnabar ;
     border-bottom:2px solid @venetianRed;
+    margin-top: 100px;
     .mainBannerWarp
     {    
         height:100%;    
@@ -385,6 +385,13 @@ input{outline: none}
                 {
                     display:inline-block;
                 }
+            }
+            &.selected
+            {
+                background-color:@cinnabar;
+                -moz-box-shadow:0 5px 6px 0px rgba(0,0,0,0.55) inset;
+                -webkit-box-shadow:0 5px 6px 0px rgba(0,0,0,0.3) inset;
+                -box-shadow:0 5px 6px 0px rgba(0,0,0,0.65) inset;
             }
             &:first-child
             {

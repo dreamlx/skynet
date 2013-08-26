@@ -500,11 +500,12 @@ section#customizedMonitoringBlock
 }
 .floatPageSelector
 {
-	display:block;
+	display:none;
 	position: absolute;
 	width:42px;
-	height:64px;
+	height:74px;
 	z-index: 700;
+	cursor: pointer;
 	li
 	{
 		border:1px solid #d7dcde;
@@ -545,7 +546,9 @@ section#customizedMonitoringBlock
 		&.noBorderAndBG
 		{
 			border:none !important;
-			background-color:transparent !important
+			background-color:transparent !important;
+			height:5px;
+			vertical-align: top;
 		}
 		a
 		{
@@ -566,6 +569,7 @@ section#customizedMonitoringBlock
 
 #floatTableOperateDiv
 {
+	display: none;
 	position: absolute;
 	width:332px;
 	height:89px;
