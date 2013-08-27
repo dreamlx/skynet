@@ -26,7 +26,7 @@ class HomeController < ApplicationController
     condtions += "&id_kind=#{params[:id_kind]}"         unless params[:id_kind].blank?
     condtions += "&orderby=#{params[:orderby]}"         unless params[:orderby].blank?
     condtions += "&state=#{params[:state]}"             unless params[:state].blank?
-    condtions += "&sorcetype=#{params[:sourcetype]}"    unless params[:sourcetype].blank?
+    condtions += "&sourcetype=#{params[:sourcetype]}"    unless params[:sourcetype].blank?
     condtions += "&isgood=#{params[:isgood]}"           unless params[:isgood].blank?
     condtions += "&starttime=#{params[:starttime]}"     unless params[:starttime].blank?
     condtions += "&endtime=#{params[:endtime]}"         unless params[:endtime].blank?
@@ -36,6 +36,8 @@ class HomeController < ApplicationController
     condtions += "&num=#{params[:num]}"                       unless params[:num].blank?
     condtions += "&from=#{params[:from]}"                     unless params[:from].blank?
 
+    # params[:con] = condtions
+    # render json: params
     final_condtions = condtions[1, condtions.length] if condtions[0] == "&"
     @article_list = getArtlist("article_list", "get_art_list", final_condtions)
     puts_to_yaml(@article_list, "article_list")

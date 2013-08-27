@@ -1,25 +1,49 @@
-define(['jquery'],function($){
+define(['jquery', 'filterModel'],function($, model){
 
 	var _mainDivs;
 	var _float;
 	var _triggers;
 	var _data;
 	var config = {
-		triggerId:"a.next10PageBtn"
+		triggerId : "a.next10PageBtn",
+		mainDivWarpperId : ".tablePaginationBlock", 
+		floatPageWarpperId : ".floatPageSelector",
+		pageLiDom : "<li><a href=''></a></li>"
 	};
 
-	var set = function(dom, pageFloat, data)
+	var init = function()
 	{
-		_mainDivs = $(dom);
-		_float = $(pageFloat);
+		_mainDivs = $(config.mainDivWarpperId);
+		_float = $(config.floatPageWarpperId);
 		_float.mouseleave(function(e){
-			console.log("leave!!")
+			// console.log("leave!!");
 			$(this).hide();
 		});
 		_triggers = _mainDivs.find(config.triggerId);
 		// console.log("left : "+_triggers.position().left);
 		main();
-		//console.log($(dom).width());
+
+		$(document).bind("listDataCompleted", function(evt){
+			var total = model.totalPages;
+			var cur = model.currentPage;
+			_mainDivs.find("span em").text(model.totalArticle);
+			_mainDivs.find("span b").text(total);
+			var pageArrLen = total > 10 ? 10 : total;
+			if(cur > 10 && (total % 10) > 0)
+			{
+				pageArrLen = total % 10;
+			}
+			var pageArr = [];
+			for (var i = pageArrLen; i > 0 ; i--) {
+				var li = $(config.pageLiDom);
+				li.find("a").attr("href", "#querypage="+i).text(i).click(function(e){
+					console.log(this.hash);
+				});
+
+				_mainDivs.find("ul li:first-child").after(li);
+			};
+
+		});
 	};
 
 	function main()
@@ -54,7 +78,7 @@ define(['jquery'],function($){
 	};
 
 	return {
-		set: set
+		init: init
 
 	};
 });

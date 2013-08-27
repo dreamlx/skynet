@@ -12,12 +12,9 @@
   #filterConditionBlock
     %section#selectedCondition
       %h5 您的筛选条件：
-      %ul#brandList
-        %li 待审状态
-        %li 全部类型
-        %li 3天
-        %li 全部调性
-        %li 清空
+      %ul
+        %li#clearConditionBtn
+          %a{:href=>"#"} 清空
 
     #conditionList
       %article
@@ -77,10 +74,6 @@
       %li
         %a.prevPageBtn{:href=>"#"}
       %li
-        %a{:href=>"#"} 1
-      %li
-        %a{:href=>"#"} 2
-      %li
         %a.next10PageBtn{:href=>"#"}
           %span.pageUpArrow
       %li
@@ -103,112 +96,7 @@
       %th#th8 发帖时间
       %th#th9 操作
     %tbody
-      %tr
-        %td
-          %span.chartIcon
-          %input{:type=>"checkbox"}
-        %td
-          1
-        %td
-          %p.dataTitle
-            Out of the same door, but personality is different,
-          %span.textNum 245
-        %td
-          无
-        %td
-          0
-        %td
-          0
-        %td
-          汽车之家
-        %td.postTime
-          2006-6-1 12:36:00 PM
-        %td
-          %a.tableOperate{:href=>"#"}
-      %tr.evenline
-        %td
-          %span.chartIcon
-          %input{:type=>"checkbox"}
-        %td
-          2
-        %td
-          %p.dataTitle
-            Out of the same door, but personality is different,
-        %td
-          无
-        %td
-          0
-        %td
-          0
-        %td
-          汽车之家
-        %td.postTime
-          2006-6-1 12:36:00 PM
-        %td
-          %a.tableOperate{:href=>"#"}
-      %tr
-        %td
-          %span.chartIcon
-          %input{:type=>"checkbox"}
-        %td
-          3
-        %td
-          %p.dataTitle
-            Out of the same door, but personality is different,
-        %td
-          无
-        %td
-          0
-        %td
-          0
-        %td
-          汽车之家
-        %td.postTime
-          2006-6-1 12:36:00 PM
-        %td
-          %a.tableOperate{:href=>"#"}
-      %tr.evenline
-        %td
-          %span.chartIcon
-          %input{:type=>"checkbox"}
-        %td
-          4
-        %td
-          %p.dataTitle
-            Out of the same door, but personality is different,
-        %td
-          无
-        %td
-          0
-        %td
-          0
-        %td
-          汽车之家
-        %td.postTime
-          2006-6-1 12:36:00 PM
-        %td
-          %a.tableOperate{:href=>"#"}
-      %tr
-        %td
-          %span.chartIcon
-          %input{:type=>"checkbox"}
-        %td
-          5
-        %td
-          %p.dataTitle
-            Out of the same door, but personality is different,
-        %td
-          无
-        %td
-          0
-        %td
-          0
-        %td
-          汽车之家
-        %td.postTime
-          2006-6-1 12:36:00 PM
-        %td
-          %a.tableOperate{:href=>"#"}
+      
   .dateOperateBlock
     %span
       %input{:type=>"checkbox"}
@@ -233,10 +121,6 @@
     %ul
       %li
         %a.prevPageBtn{:href=>"#"}
-      %li
-        %a{:href=>"#"} 1
-      %li
-        %a{:href=>"#"} 2
       %li
         %a.next10PageBtn{:href=>"#"}
           %span.pageUpArrow

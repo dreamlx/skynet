@@ -1,8 +1,19 @@
-require(["jquery", "pagination", "domReady", "tableOperateFloat","dataFilter"],function($, p, domReady, table, filter){
-	// var paginationArr = $(".tablePaginationBlock");
-	domReady(function(){
-		p.set(".tablePaginationBlock", ".floatPageSelector");
-		table.init();
-		filter.init();
-	});
-});
+require(["jquery", 
+	"domReady", 
+	"filterModel", 
+	"pagination",
+	"dataFilter",
+	"tableOperateFloat", 
+	"tableDataList"],
+	function($, domReady, model, page, filter, tableOperate, table){
+		// var paginationArr = $(".tablePaginationBlock");
+		domReady(function(){
+			page.init();
+			filter.init(model);
+			table.init(model);
+			tableOperate.init();
+			model.queryListByFilter();
+
+		});
+	}
+);

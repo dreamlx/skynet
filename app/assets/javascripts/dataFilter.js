@@ -1,33 +1,20 @@
-define(["jquery"],function($){
+define(["jquery", "filterModel"],function($, model){
 	var _all_article_kinds, _all_article_filters;
 
 	var _liArr={};
 
 	var config = {
 		mainDiv : "#brandTitleBlock",
-		selectedListId : "#selectedCondition", 
+		selectedListWarpperId : "#selectedCondition ul", 
+		clearConditionBtnId : "#clearConditionBtn",
 		filterDiv: "#filterConditionBlock",
-		statusListWarperId : "#statusList",
-		mediaTypeListWarperId : "#mediaTypeList",
-		dateListWarperId : "#dateList",
-		isGoodListWarperId : "#isGoodList",
+		statusListWarpperId : "#statusList",
+		mediaTypeListWarpperId : "#mediaTypeList",
+		dateListWarpperId : "#dateList",
+		isGoodListWarpperId : "#isGoodList",
 		slideUpBtnId : "#slideUpBtn"
 	}
 
-	var params = {
-		id_kind : -1,		//公司id
-		orderby : "",		//排序
-		state : 0,			//信息状态
-		sourcetype : -1,	//媒介类型mediaType
-		isgood:-1,			//调性
-		starttime:"",		//自定义开始时间
-		endtime:"",			//自定义结束时间
-		searchtype:0,		//搜索类型
-		searchkeyword:"",	//搜索词
-		day_count:30,		//时间
-		num:20,				//条数
-		from:0				//起始条数
-	};
 
 	var init = function()
 	{
@@ -43,6 +30,8 @@ define(["jquery"],function($){
 
 			setupKinds();
 			setupFilterList();
+
+			setDefaultSelected();
 		});
 
 		$(config.slideUpBtnId).click(function(e){
@@ -62,7 +51,16 @@ define(["jquery"],function($){
 	}
 
 	var select = function(id){
+		
+	};
 
+	function findSelectedLi(warpper, selectedValue){
+		$(warpper).find("li").each(function(index){
+			if($(this).attr("value") == selectedValue)
+			{
+				$(this).find("a").addClass("selected");
+			}
+		});
 	};
 
 	function setupKinds()
@@ -86,29 +84,57 @@ define(["jquery"],function($){
 		var dateArr = _all_article_filters.date;
 		var isGoodArr = _all_article_filters.dx;
 
-		buildFilterList("status", statusArr, $(config.statusListWarperId));
-		buildFilterList("mediaType", mediaTypeArr, $(config.mediaTypeListWarperId));
-		buildFilterList("date", dateArr, $(config.dateListWarperId));
-		buildFilterList("isGood", isGoodArr, $(config.isGoodListWarperId));
+		buildFilterList("status", statusArr, $(config.statusListWarpperId));
+		buildFilterList("mediaType", mediaTypeArr, $(config.mediaTypeListWarpperId));
+		buildFilterList("date", dateArr, $(config.dateListWarpperId));
+		buildFilterList("isGood", isGoodArr, $(config.isGoodListWarpperId));
 	};
 
-	function buildFilterList(filterType, arr, warper)
+	function buildFilterList(filterType, arr, warpper)
 	{
 		for(var i=0, len=arr.length; i<len; i++){
 			var obj = arr[i];
 			var id = obj.value, name = obj.name;
-			var liDom = $("<li><a href='#q"+filterType+"="+id+"'>"+name+"</a></li>");
-			warper.append(liDom);
+			var liDom = $("<li value='"+id+"'><a href='#q"+filterType+"="+id+"'>"+name+"</a></li>");
+			liDom.find("a").click(function(e){
+				console.log(this.hash);
+			});
+			warpper.append(liDom);
 		}
 	};
 
 	function setDefaultSelected()
 	{
+		var defaults = model.defaultFilterParams;
+		if(_liArr[defaults.id_kind])
+		{
+			_liArr[defaults.id_kind].find("a").addClass("selected");
+		}
 
+		findSelectedLi(config.statusListWarpperId, defaults.state);
+		findSelectedLi(config.mediaTypeListWarpperId, defaults.sourcetype);
+		findSelectedLi(config.dateListWarpperId, defaults.day_count);
+		findSelectedLi(config.isGoodListWarpperId, defaults.isgood);
+
+		insertSeletedCondition(_all_article_filters.status, defaults.state, "状态");
+		insertSeletedCondition(_all_article_filters.media_kind, defaults.sourcetype, "类型");
+		insertSeletedCondition(_all_article_filters.date, defaults.day_count, "");
+		insertSeletedCondition(_all_article_filters.dx, defaults.isgood, "调性");
+	};
+
+	function insertSeletedCondition(arr, id, word){
+		for(var i=0,len=arr.length; i<len;i++)
+		{
+			if(arr[i].value == id)
+			{
+				$(config.clearConditionBtnId).before("<li>"+arr[i].name+word+"</li>");
+			}
+		}
 	};
 
 	return {
 		init:init,
-		select:select
+		select:select,
+
 	}
 });

@@ -255,11 +255,11 @@ $(function(){
         $(this).parent().addClass("selected");
         openReportPage();
     });
-    $("#monitoringPageBtn").click(function(e){
-        clickNav();
-        $(this).parent().addClass("selected");
-        openMonitoringPage();
-    });
+    // $("#monitoringPageBtn").click(function(e){
+    //     clickNav();
+    //     $(this).parent().addClass("selected");
+    //     openMonitoringPage();
+    // });
 
 });
 
