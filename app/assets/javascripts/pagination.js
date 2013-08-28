@@ -8,7 +8,7 @@ define(['jquery', 'filterModel'],function($, model){
 		triggerId : "a.next10PageBtn",
 		mainDivWarpperId : ".tablePaginationBlock", 
 		floatPageWarpperId : ".floatPageSelector",
-		pageLiDom : "<li><a href=''></a></li>"
+		pageLiDom : "<li class='create'><a href=''></a></li>"
 	};
 
 	var init = function()
@@ -16,48 +16,61 @@ define(['jquery', 'filterModel'],function($, model){
 		_mainDivs = $(config.mainDivWarpperId);
 		_float = $(config.floatPageWarpperId);
 		_float.mouseleave(function(e){
-			// console.log("leave!!");
 			$(this).hide();
 		});
+
 		_triggers = _mainDivs.find(config.triggerId);
-		// console.log("left : "+_triggers.position().left);
-		main();
+		bindShowFloatEvt();
 
 		$(document).bind("listDataCompleted", function(evt){
-			var total = model.totalPages;
-			var cur = model.currentPage;
-			_mainDivs.find("span em").text(model.totalArticle);
-			_mainDivs.find("span b").text(total);
-			var pageArrLen = total > 10 ? 10 : total;
-			if(cur > 10 && (total % 10) > 0)
+			if( _mainDivs.find(".create").length > 0 )
 			{
-				pageArrLen = total % 10;
-			}
-			var pageArr = [];
-			for (var i = pageArrLen; i > 0 ; i--) {
-				var li = $(config.pageLiDom);
-				li.find("a").attr("href", "#querypage="+i).text(i).click(function(e){
-					console.log(this.hash);
-				});
-
-				_mainDivs.find("ul li:first-child").after(li);
+				clearPageList();
 			};
-
+			buildPageList();
 		});
 	};
 
-	function main()
+	function buildPageList()
 	{
+		var total = model.totalPages;
+		var cur = model.currentPage;
+		_mainDivs.find("span em").text(model.totalArticle);
+		_mainDivs.find("span b").text(total);
+		var pageArrLen = total > 10 ? 10 : total;
+		if(cur > 10 && (total % 10) > 0)
+		{
+			pageArrLen = total % 10;
+		}
+		var pageArr = [];
+		for (var i = pageArrLen; i > 0 ; i--) {
+			var li = $(config.pageLiDom);
+			li.find("a").attr("href", "#querypage="+i).text(i).click(function(e){
+				// console.log(this.hash);
+				$(document).trigger("queryfilter", [this.hash]);
+			});
+			if(i == cur)
+			{
+				li.find("a").addClass("selected");
+			}
+
+			_mainDivs.find("ul li:first-child").after(li);
+		};
 		initFloatSelector();
-		bindEvt();
-	};
+	}
+
+	function clearPageList()
+	{
+		$(".create").remove();
+	}
+
 
 	function initFloatSelector()
 	{
 		// _float.hide();
 	};
 
-	function bindEvt()
+	function bindShowFloatEvt()
 	{
 		if(_triggers)
 		{

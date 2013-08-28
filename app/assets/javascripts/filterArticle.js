@@ -1,11 +1,12 @@
 require(["jquery", 
 	"domReady", 
+	"filterController",
 	"filterModel", 
 	"pagination",
 	"dataFilter",
 	"tableOperateFloat", 
 	"tableDataList"],
-	function($, domReady, model, page, filter, tableOperate, table){
+	function($, domReady, controller,model, page, filter, tableOperate, table){
 		// var paginationArr = $(".tablePaginationBlock");
 		domReady(function(){
 			page.init();
