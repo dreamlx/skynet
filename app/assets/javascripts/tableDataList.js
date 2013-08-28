@@ -20,6 +20,10 @@ define(["jquery", "filterModel"], function($, model){
 
 	var init = function(){
 		$(document).bind("listDataCompleted", function(evt){
+			if($(config.listWarpperSelector).find("tr").length > 0)
+			{
+				$(config.listWarpperSelector).find("tr").remove();
+			}
 			var arr = model.listData;
 			var articleIndex = (model.currentPage - 1) * 20 + 1;
 			for (var i = arr.length - 1; i >= 0; i--) {

@@ -39,34 +39,37 @@
   #tableFilterBlock
     %ul
       %li
-        %a.selected{:href=>"#"} 
+        %a.acttime_down{:href=>"#qorder=acttime_down"} 
           时间          
           %span.dropDownArrow
       %li
-        %a{:href=>"#"} 
+        %a.title_down{:href=>"#qorder=title_down"} 
           标题          
           %span.dropDownArrow
       %li
-        %a{:href=>"#"}
+        %a.click_down{:href=>"#qorder=click_down"}
           点击
           %span.dropDownArrow
       %li
-        %a{:href=>"#"}
+        %a.reply_down{:href=>"#qorder=reply_down"}
           评论
           %span.dropDownArrow
       %li
-        %a.longLink{:href=>"#"}
+        %a.level_down.longLink{:href=>"#qorder=level_down"}
           预警级别
           %span.dropDownArrow
       %li
-        %a{:href=>"#"}
+        %a.sitename_down{:href=>"#qorder=sitename_down"}
           网站
           %span.dropDownArrow
     %form#searchForm
       %label{:for=>"searchCondition"} 搜索条件：
       %select#searchCondition{:name=>"searchCondition"}
-        %option Sydney
-        %option Shanghai
+        %option{:value=>0} 标题
+        %option{:value=>2} 网站域名
+        %option{:value=>3} 文章URL
+        %option{:value=>4} 作者
+
       %input#searchInput{:name=>"searchKeyword"}
 
   .tablePaginationBlock

@@ -36,11 +36,26 @@ define(["jquery"], function($){
             this.filterParam = cloneObject(_defaultFilterParams);
             this.defaultFilterParams = _defaultFilterParams;
         },
+        setDefault:function(){
+        	this.filterParam = cloneObject(_defaultFilterParams);
+        },
         queryListByFilter : function()
 		{
 			$.get("/home/articleList.json", this.filterParam, function(data){
 				console.info(data);
-				instance.totalArticle = data.total_number;
+				if(data.error)
+				{
+					alert(data.error);
+					window.location = "/users/logout";
+				}
+				if(data.hasOwnProperty("total_number"))
+				{
+
+					instance.totalArticle = data.total_number;
+				}else
+				{
+					instance.totalArticle = 0;
+				}
 				instance.currentPage = data.current_page;
 				instance.totalPages = Math.ceil(instance.totalArticle / 20);
 

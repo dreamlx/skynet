@@ -5,6 +5,7 @@ define(["jquery", "filterModel"],function($, model){
 
 	var config = {
 		mainDiv : "#brandTitleBlock",
+		conditionListId : "#conditionList",
 		selectedListWarpperId : "#selectedCondition ul", 
 		clearConditionBtnId : "#clearConditionBtn",
 		filterDiv: "#filterConditionBlock",
@@ -34,6 +35,16 @@ define(["jquery", "filterModel"],function($, model){
 			setDefaultSelected();
 		});
 
+		$(config.clearConditionBtnId).click(function(e){
+			model.setDefault();
+			model.queryListByFilter();	
+			e.preventDefault();
+		});
+
+		$(document).bind("listDataCompleted", function(){
+			updateFilterSelectedStatus();
+		});
+
 		$(config.slideUpBtnId).click(function(e){
 			$(config.filterDiv).slideToggle();
 			if($(this).hasClass("slideDown"))
@@ -50,9 +61,7 @@ define(["jquery", "filterModel"],function($, model){
 		});
 	}
 
-	var select = function(id){
-		
-	};
+	
 
 	function findSelectedLi(warpper, selectedValue){
 		$(warpper).find("li").each(function(index){
@@ -97,7 +106,7 @@ define(["jquery", "filterModel"],function($, model){
 			var id = obj.value, name = obj.name;
 			var liDom = $("<li value='"+id+"'><a href='#q"+filterType+"="+id+"'>"+name+"</a></li>");
 			liDom.find("a").click(function(e){
-				console.log(this.hash);
+				$(document).trigger("queryfilter", [this.hash]);
 			});
 			warpper.append(liDom);
 		}
@@ -132,9 +141,32 @@ define(["jquery", "filterModel"],function($, model){
 		}
 	};
 
+	function updateFilterSelectedStatus()
+	{
+		var params = model.filterParam;
+
+		$(conditionList).find("a").removeClass("selected");
+
+		findSelectedLi(config.statusListWarpperId, params.state);
+		findSelectedLi(config.mediaTypeListWarpperId, params.sourcetype);
+		findSelectedLi(config.dateListWarpperId, params.day_count);
+		findSelectedLi(config.isGoodListWarpperId, params.isgood);
+
+		$(config.selectedListWarpperId).find("li").each(function(i,li){
+			if($(li).attr("id") != "clearConditionBtn")
+			{
+				li.remove();
+			}
+		});
+		insertSeletedCondition(_all_article_filters.status, params.state, "状态");
+		insertSeletedCondition(_all_article_filters.media_kind, params.sourcetype, "类型");
+		insertSeletedCondition(_all_article_filters.date, params.day_count, "");
+		insertSeletedCondition(_all_article_filters.dx, params.isgood, "调性");
+
+	}
+
 	return {
 		init:init,
-		select:select,
 
 	}
 });

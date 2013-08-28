@@ -8,7 +8,9 @@ define(['jquery', 'filterModel'],function($, model){
 		triggerId : "a.next10PageBtn",
 		mainDivWarpperId : ".tablePaginationBlock", 
 		floatPageWarpperId : ".floatPageSelector",
-		pageLiDom : "<li class='create'><a href=''></a></li>"
+		pageLiDom : "<li class='create'><a href=''></a></li>",
+		prevPageBtnClass : ".prevPageBtn",
+		nextPageBtnClass : ".nextPageBtn"
 	};
 
 	var init = function()
@@ -21,6 +23,28 @@ define(['jquery', 'filterModel'],function($, model){
 
 		_triggers = _mainDivs.find(config.triggerId);
 		bindShowFloatEvt();
+
+		$(config.prevPageBtnClass).click(function(e){
+			var prevPage = model.currentPage - 1;
+			if(prevPage < 0)
+			{
+				e.preventDefault();
+				return
+			}
+			$(document).trigger("queryfilter", "#querypage="+prevPage);
+			e.preventDefault();
+		});
+
+		$(config.nextPageBtnClass).click(function(e){
+			var nextPage = model.currentPage+1;
+			if(nextPage > model.totalPages)
+			{
+				e.preventDefault();
+				return
+			}
+			$(document).trigger("queryfilter", "#querypage="+nextPage);
+			e.preventDefault();
+		});
 
 		$(document).bind("listDataCompleted", function(evt){
 			if( _mainDivs.find(".create").length > 0 )
