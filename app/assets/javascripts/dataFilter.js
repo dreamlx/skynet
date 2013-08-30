@@ -19,15 +19,10 @@ define(["jquery", "filterModel"],function($, model){
 
 	var init = function()
 	{
-		$.get("/home/articleParams.json",function(data){
-			// console.info(data);
-			if(data.article_kinds.error)
-			{
-				console.error(data.article_kinds.error);
-				return
-			}
-			_all_article_filters = data.article_filters.data;
-			_all_article_kinds = data.article_kinds.kinds;
+
+		$(document).bind("kindAndFilterCompleted", function(e){
+			_all_article_filters = model.allFilters;
+			_all_article_kinds = model.articleKinds;
 
 			setupKinds();
 			setupFilterList();
@@ -42,6 +37,7 @@ define(["jquery", "filterModel"],function($, model){
 		});
 
 		$(document).bind("listDataCompleted", function(){
+			updateKindSelectedStatus();
 			updateFilterSelectedStatus();
 		});
 
@@ -80,10 +76,15 @@ define(["jquery", "filterModel"],function($, model){
 			var obj = _all_article_kinds[i];
 			var id = obj.id;
 			var name = obj.name;
-			var liDom = $("<li><a href='#qkind="+id+"'>"+name+"</a></li>");
+			var liDom = $("<li><a rel='"+id+"' href='#qkind="+id+"'>"+name+"</a></li>");
 			ul.append(liDom);
 			_liArr.id = liDom;
 		};
+		ul.append("<li><a class='selected' rel='-1' href='#qkind=-1'>全部</a></li>");
+		ul.find("a").click(function(e){
+			$(document).trigger("queryfilter",[this.hash]);
+			e.preventDefault();
+		});
 	};
 
 	function setupFilterList()
@@ -162,6 +163,20 @@ define(["jquery", "filterModel"],function($, model){
 		insertSeletedCondition(_all_article_filters.media_kind, params.sourcetype, "类型");
 		insertSeletedCondition(_all_article_filters.date, params.day_count, "");
 		insertSeletedCondition(_all_article_filters.dx, params.isgood, "调性");
+
+	}
+
+	function updateKindSelectedStatus()
+	{
+		var aArr = $(config.mainDiv).find("a");
+		aArr.removeClass("selected");
+		var kind = model.filterParam.id_kind;
+		aArr.each(function(i, a){
+
+			if($(a).attr("rel") == kind){
+				$(a).addClass("selected")
+			}
+		})
 
 	}
 

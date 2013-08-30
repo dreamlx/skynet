@@ -6,8 +6,9 @@ require(["jquery",
 	"dataFilter",
 	"tableOperateFloat", 
 	"tableDataList",
-	"filterOrder"],
-	function($, domReady, controller,model, page, filter, tableOperate, table, order){
+	"filterOrder",
+	"batchOperate"],
+	function($, domReady, controller,model, page, filter, tableOperate, table, order,batch){
 		// var paginationArr = $(".tablePaginationBlock");
 		domReady(function(){
 			order.init();
@@ -15,7 +16,8 @@ require(["jquery",
 			filter.init(model);
 			table.init(model);
 			tableOperate.init();
-			model.queryListByFilter();
+			batch.init();
+			model.queryAllKindAndFilter();
 
 		});
 	}

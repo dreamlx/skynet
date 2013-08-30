@@ -70,7 +70,7 @@
         %option{:value=>3} 文章URL
         %option{:value=>4} 作者
 
-      %input#searchInput{:name=>"searchKeyword"}
+      %input#searchKeywordInput{:name=>"searchKeyword"}
 
   .tablePaginationBlock
     %ul
@@ -100,25 +100,26 @@
       %th#th9 操作
     %tbody
       
-  .dateOperateBlock
+  .dataOperateBlock
     %span
       %input{:type=>"checkbox"}
-    %span 全选
+      %a{:href=>"#"} 全选
+
     %ul
       %li
-        %a{:href=>"#"} 批量导出（EXCEL）
+        %a{:href=>"#batchExport"} 批量导出（EXCEL）
       %li
-        %a{:href=>"#"} 建立导出计划
+        %a{:href=>"#batchPlan"} 建立导出计划
       %li
-        %a{:href=>"#"} 批量修改
+        %a{:href=>"#batchModfiy"} 批量修改
       %li
-        %a{:href=>"#"} 批量删除
+        %a{:href=>"#batchDelete"} 批量删除
       %li
-        %a{:href=>"#"} 批量加入报告
+        %a{:href=>"#batchReport"} 批量加入报告
       %li
-        %a{:href=>"#"} 批量加入收藏
+        %a{:href=>"#batchFavorite"} 批量加入收藏
       %li
-        %a{:href=>"#"} 批量发送预警
+        %a{:href=>"#batchWarning"} 批量发送预警
 
   .tablePaginationBlock
     %ul
@@ -148,28 +149,28 @@
   #floatTableOperateDiv
     %span.dropDownArrow
     %ul
-      %li
+      %li#actionWarning
         %span#iconAlert
         %p 发送预警
-      %li
+      %li#actionFavorite
         %span#iconHeart
         %p 加入收藏
-      %li
+      %li#actionSetTop
         %span#iconUpload
         %p 信息置顶
-      %li
+      %li#actionSetHot
         %span#iconStar
         %p 设置热门
-      %li
+      %li#actionGetHitWord
         %span#iconSearch
         %p#threeLetter 
           命中
           %br
           关键词
-      %li
+      %li#actionInfo
         %span#iconBubble
         %p 添加备注
-      %li
+      %li#actionDel
         %span#iconCross
         %p 删除信息
 

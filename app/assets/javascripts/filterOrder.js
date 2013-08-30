@@ -4,7 +4,7 @@ define(["jquery","filterModel"], function($, model){
 	{
 		mainDivId : "#tableFilterBlock",
 		searchFormId : "#searchForm",
-		searchInputId : "#searchInput",
+		searchInputId : "#searchKeywordInput",
 		searchConditionId : "#searchCondition"
 	}
 
@@ -33,8 +33,8 @@ define(["jquery","filterModel"], function($, model){
 
 		$(config.searchInputId).keypress(function(e){
 			if(e.which == 13){
-				model.filterParam.searchtype = $(searchCondition).attr("value");
-				model.filterParam.searchkeyword = $(searchInputId).attr("value");
+				model.filterParam.searchtype = $(config.searchConditionId).val();
+				model.filterParam.searchkeyword = $(config.searchInputId).val();
 				model.queryListByFilter();
 				e.preventDefault();
 				model.filterParam.searchtype = 0;

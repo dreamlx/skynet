@@ -16,47 +16,108 @@ define(["jquery", "filterModel"], function($, model){
 					queryPage(queryValue);
 					break;
 				case "qstatus":
-					queryStatus(queryValue);
+					queryFilter("state", queryValue);
 					break;
 				case "qmediaType":
-					queryMediaType(queryValue);
+					queryFilter("sourcetype", queryValue);
 					break;
 				case "qdate":
-					queryDate(queryValue);
+					queryFilter("day_count", queryValue);
 					break;
 				case "qisGood":
-					queryDX(queryValue);
+					queryFilter("isgood", queryValue);
+					break;
+				case "qkind":
+					queryFilter("id_kind", queryValue);
 					break;
 				case "qorder":
-					queryOrder(queryValue)
+					queryFilter("orderby", queryValue);
+					break;
+			}
+		});
+
+		$(document).bind("queryArticleAct", function(e, act, ids){
+			switch(act)
+			{
+				case "actionWarning":
+					$.get("/home/send_warning.json", "aids="+ids.join(","), function(data){
+						console.log(data);
+					});
+					break;
+				case "actionFavorite":
+					$.get("/home/add_favorite.json", "aids="+ids.join(","), function(data){
+						console.log(data);
+					})
+					break;
+				case "actionSetTop":
+					$.get("/home/set_top.json", "aids="+ids.join(",")+"&val=1", function(data){
+						console.log(data);
+					})
+					break;
+				case "actionSetHot":
+					$.get("/home/set_hot.json", "aids="+ids.join(",")+"&val=1", function(data){
+						console.log(data);
+					})
+					break;
+				case "actionGetHitWord":
+					$.get("/home/get_hit_word.json", "aids="+ids.join(","), function(data){
+						console.log(data);
+					})
+					break;
+				case "actionInfo":
+					$.get("/home/add_info.json", "aids="+ids.join(","), function(data){
+						console.log(data);
+					})
+					break;
+				case "actionDel":
+					$.get("/home/del_article.json", "aids="+ids.join(","), function(data){
+						console.log(data);
+					})
+					break;
+			}
+		});
+
+		$(document).bind("querybatch", function(e, act, ids){
+			switch(act){
+				case "batchExport":
+					$.post("/home/excel_article.json", "aid="+ids.join(","), function(data){
+						console.log(data);
+					});					
+					break;
+				case "batchPlan":
+					$.post("/home/add_plan.json", "aid="+ids.join(","), function(data){
+						console.log(data);
+					});	
+					break;
+				case "batchModfiy":
+					break;
+				case "batchDelete":
+					$.post("/home/del_article.json", "aid="+ids.join(","), function(data){
+						console.log(data);
+					});
+					break;
+				case "batchReport":
+					break;
+				case "batchFavorite":
+					$.post("/home/add_favorite.json", "aid="+ids.join(","), function(data){
+						console.log(data);
+					})
+					break;
+				case "batchWarning":
+					$.post("/home/send_warning.json", "aid="+ids.join(","), function(data){
+						console.log(data);
+					});
 					break;
 			}
 		});
 	}
 
-	function queryStatus(value){
-		model.filterParam.state = value;
+	function queryFilter(param, value)
+	{
+		model.filterParam[param] = value;
 		model.filterParam.from = 1;
 		model.queryListByFilter();
-	};
-
-	function queryMediaType(value){
-		model.filterParam.sourcetype = value;
-		model.filterParam.from = 1;
-		model.queryListByFilter();
-	};
-
-	function queryDate(value){
-		model.filterParam.day_count = value;
-		model.filterParam.from = 1;
-		model.queryListByFilter();
-	};
-
-	function queryDX(value){
-		model.filterParam.isgood = value;
-		model.filterParam.from = 1;
-		model.queryListByFilter();
-	};
+	}
 
 	function queryPage(page)
 	{
@@ -64,12 +125,7 @@ define(["jquery", "filterModel"], function($, model){
 		model.queryListByFilter();
 	}
 
-	function queryOrder(value)
-	{
-		model.filterParam.orderby = value;
-		model.filterParam.from = 1;
-		model.queryListByFilter();
-	}
+
 
 	return {};
 

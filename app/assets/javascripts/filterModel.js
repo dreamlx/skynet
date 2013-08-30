@@ -1,6 +1,7 @@
 define(["jquery"], function($){
 
 	var instance = null;
+	var _all_article_kinds,_all_article_filters;
 
 	var _defaultFilterParams = {
 		id_kind : -1,		//话题id
@@ -35,6 +36,8 @@ define(["jquery"], function($){
             this.listdata = null;
             this.filterParam = cloneObject(_defaultFilterParams);
             this.defaultFilterParams = _defaultFilterParams;
+            this.articleKinds = _all_article_kinds;
+            this.allFilters = _all_article_filters;
         },
         setDefault:function(){
         	this.filterParam = cloneObject(_defaultFilterParams);
@@ -62,6 +65,23 @@ define(["jquery"], function($){
 				instance.listData = data.arts;
 
 				$(document).trigger("listDataCompleted");
+			});
+		},
+		queryAllKindAndFilter : function()
+		{
+			$.get("/home/articleParams.json",function(data){
+				if(data.article_kinds.error)
+				{
+					console.error(data.article_kinds.error);
+					return
+				}
+				_all_article_filters = data.article_filters.data;
+				_all_article_kinds = data.article_kinds.kinds;	
+				instance.articleKinds = _all_article_kinds;
+	            instance.allFilters = _all_article_filters;
+
+	            $(document).trigger("kindAndFilterCompleted");
+	            instance.queryListByFilter();
 			});
 		}
     };
