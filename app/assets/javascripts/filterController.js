@@ -10,6 +10,8 @@ define(["jquery", "filterModel"], function($, model){
 			var queryType = queryArr[0];
 			var queryValue = queryArr[1];
 
+			showLoading();
+
 			switch(queryType)
 			{
 				case "querypage":
@@ -37,6 +39,8 @@ define(["jquery", "filterModel"], function($, model){
 		});
 
 		$(document).bind("queryArticleAct", function(e, act, ids){
+			showLoading();
+
 			switch(act)
 			{
 				case "actionWarning":
@@ -78,6 +82,7 @@ define(["jquery", "filterModel"], function($, model){
 		});
 
 		$(document).bind("querybatch", function(e, act, ids){
+			showLoading();
 			switch(act){
 				case "batchExport":
 					$.post("/home/excel_article.json", "aid="+ids.join(","), function(data){
@@ -110,6 +115,10 @@ define(["jquery", "filterModel"], function($, model){
 					break;
 			}
 		});
+
+		$(document).bind("listDataCompleted", function(e){
+			hideLoading();
+		});
 	}
 
 	function queryFilter(param, value)
@@ -120,11 +129,22 @@ define(["jquery", "filterModel"], function($, model){
 	}
 
 	function queryPage(page)
-	{
+	{		
 		model.filterParam.from = (page-1)*20+1;
 		model.queryListByFilter();
 	}
 
+	function showLoading()
+	{
+		$("html").addClass("overlay-lock");
+		$("body").append("<div class='loading-overlay'><div class='loading'></div></div>")
+	}
+
+	function hideLoading()
+	{
+		$("html").removeClass("overlay-lock");
+		$(".loading-overlay").remove();
+	}
 
 
 	return {};

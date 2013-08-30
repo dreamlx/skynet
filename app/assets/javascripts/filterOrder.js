@@ -5,6 +5,7 @@ define(["jquery","filterModel"], function($, model){
 		mainDivId : "#tableFilterBlock",
 		searchFormId : "#searchForm",
 		searchInputId : "#searchKeywordInput",
+		topSearchInputId : "#searchInput",
 		searchConditionId : "#searchCondition"
 	}
 
@@ -38,6 +39,16 @@ define(["jquery","filterModel"], function($, model){
 				model.queryListByFilter();
 				e.preventDefault();
 				model.filterParam.searchtype = 0;
+				model.filterParam.searchkeyword = "";
+				$(this).blur();
+			}
+		});
+
+		$(config.topSearchInputId).keypress(function(e){
+			if(e.which == 13){
+				model.filterParam.searchkeyword = $(this).val();
+				model.queryListByFilter();
+				e.preventDefault();
 				model.filterParam.searchkeyword = "";
 			}
 		});
