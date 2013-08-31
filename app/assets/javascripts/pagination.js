@@ -10,7 +10,10 @@ define(['jquery', 'filterModel'],function($, model){
 		floatPageWarpperId : ".floatPageSelector",
 		pageLiDom : "<li class='create'><a href=''></a></li>",
 		prevPageBtnClass : ".prevPageBtn",
-		nextPageBtnClass : ".nextPageBtn"
+		nextPageBtnClass : ".nextPageBtn",
+		first10PageClass : "first10Page",
+		last10PageClass : "last10Page",
+		only10PageClass : "only10Page"
 	};
 
 	var init = function()
@@ -22,11 +25,11 @@ define(['jquery', 'filterModel'],function($, model){
 		});
 
 		_triggers = _mainDivs.find(config.triggerId);
-		bindShowFloatEvt();
+		// bindShowFloatEvt();
 
 		$(config.prevPageBtnClass).click(function(e){
 			var prevPage = model.currentPage - 1;
-			if(prevPage < 0)
+			if(prevPage <= 0)
 			{
 				e.preventDefault();
 				return
@@ -61,23 +64,44 @@ define(['jquery', 'filterModel'],function($, model){
 		var cur = model.currentPage;
 		_mainDivs.find("span em").text(model.totalArticle);
 		_mainDivs.find("span b").text(total);
-		var pageArrLen = total > 10 ? 10 : total;
-		if(cur > 10 && (total % 10) > 0)
-		{
-			pageArrLen = total % 10;
+		
+		var pageArrLen;
+		if((total-cur) >= 10){
+			//页数超过9个页码的，统统设定成10个页码
+			pageArrLen = 10;
+		}else{
+
+			if(total % 10 == 0)
+			{
+				//总数正好是10的倍数，当前必须显示10个页码
+				pageArrLen = 10
+			}else
+			{
+				//总数不能被10整除的，宗页码只取模除10的余数
+				pageArrLen = total % 10;
+			}			
 		}
-		var pageArr = [];
+
+		var pageNum;
+		if(cur%10 == 0)
+		{
+			pageNum = (Math.floor(cur / 10)-1)*10+pageArrLen
+		}else{
+			pageNum = Math.floor(cur / 10)*10+pageArrLen;
+		}
 		for (var i = pageArrLen; i > 0 ; i--) {
 			var li = $(config.pageLiDom);
-			li.find("a").attr("href", "#querypage="+i).text(i).click(function(e){
+			li.find("a").attr("href", "#querypage="+pageNum).text(pageNum).click(function(e){
 				// console.log(this.hash);
 				$(document).trigger("queryfilter", [this.hash]);
+				_float.hide();
+				e.preventDefault();
 			});
-			if(i == cur)
+			if(pageNum == cur)
 			{
 				li.find("a").addClass("selected");
 			}
-
+			pageNum--;
 			_mainDivs.find("ul li:first-child").after(li);
 		};
 		initFloatSelector();
@@ -91,7 +115,63 @@ define(['jquery', 'filterModel'],function($, model){
 
 	function initFloatSelector()
 	{
-		// _float.hide();
+		//clear li
+		$(config.floatPageWarpperId+" li").each(function(i,li){
+			if(!$(li).hasClass("noBorderAndBG"))
+			{
+				$(li).remove();
+			}
+		});
+		//get first page num  
+		var firstPageNum = Math.ceil(model.currentPage / 10)*10 + 1;
+		var totalPages = model.totalPages;
+		if(firstPageNum > totalPages)
+		{
+			return
+		}
+		//get last page num
+		var diff = (totalPages - firstPageNum);
+		var lastPageNum = diff<50?totalPages:firstPageNum+49;
+		//get num of page block
+		var blockLen = Math.floor((lastPageNum - firstPageNum)/10)+1;
+
+		var startPageNum=firstPageNum;
+		var endPageNum;
+		var liDom="";
+		for(var i = 0; i < blockLen; i++)
+		{
+			endPageNum = startPageNum+9;
+			endPageNum = endPageNum>lastPageNum ? lastPageNum : endPageNum;
+			var str = startPageNum+" - "+endPageNum;
+			var className="";
+			if(blockLen == 1)
+			{
+				className = config.only10PageClass;
+			}else
+			{
+				if(blockLen-i==1)
+				{
+					//最后一个block在最上面，所以class是 first10Page
+					className = config.first10PageClass;
+				}else if(i==0)
+				{
+					className = config.last10PageClass;
+				}
+			}
+
+			liDom = "<li class='"+className+"'><a href='#querypage="+startPageNum+"'>"+str+"</a></li>"+liDom;
+
+			startPageNum+=10;
+		}
+
+		$(config.floatPageWarpperId+" .noBorderAndBG").before(liDom);
+		$(config.floatPageWarpperId+" a").click(function(e){
+				// console.log(this.hash);
+				$(document).trigger("queryfilter", [this.hash]);
+				_float.hide();
+				e.preventDefault();
+			})
+		bindShowFloatEvt();
 	};
 
 	function bindShowFloatEvt()
@@ -103,7 +183,7 @@ define(['jquery', 'filterModel'],function($, model){
 				_float.show();
 
 				var position = $(this).position();
-				var left = position.left - (_float.width()/2 - 12);
+				var left = position.left - (_float.width()/2 - 2);
 				var top = position.top - _float.height();
 
 				_float.css("top", top).css("left", left);
