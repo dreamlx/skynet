@@ -11,7 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require plugins
 //= require home
 //= require video
 //= require carousel/jquery.ui.core.min

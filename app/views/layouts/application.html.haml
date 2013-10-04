@@ -16,7 +16,8 @@
     - if action_name == "filterArticle"
       %script(src='/assets/require.js' data-main="/assets/filterArticle")
     - else
-      = javascript_include_tag "application", action_name
+      %script(src='/assets/require.js' data-main="/assets/dashboard")
+      / = javascript_include_tag "application", action_name
     = csrf_meta_tags
   %body
     = render "layouts/ie7_check"
