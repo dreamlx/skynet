@@ -19,6 +19,26 @@ require(["jquery",
 			batch.init();
 			model.queryAllKindAndFilter();
 
+			$("#homePageBtn").click(function(e){
+				window.location.href = "/home/#home";
+				e.preventDefault();
+			});
+
+			$("#publicPageBtn").click(function(e){
+				window.location.href = "/home/#public";
+				e.preventDefault();				
+			});
+
+			$("#sensitivePageBtn").click(function(e){
+				window.location.href = "/home/#sensitive";
+				e.preventDefault();				
+			});
+
+			$("#reportPageBtn").click(function(e){
+				window.location.href = "/home/#report";
+				e.preventDefault();				
+			});
+
 		});
 	}
 );
