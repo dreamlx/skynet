@@ -62,6 +62,10 @@ define(['jquery', 'filterModel'],function($, model){
 	{
 		var total = model.totalPages;
 		var cur = model.currentPage;
+		if(total == 0)
+		{
+			return;
+		}
 		_mainDivs.find("span em").text(model.totalArticle);
 		_mainDivs.find("span b").text(total);
 		

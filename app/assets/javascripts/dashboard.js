@@ -59,6 +59,8 @@ require(
                 }
             });
 
+            init();
+
             wbList.init();
             lastest.init();
             realTimeCht.init();
@@ -94,6 +96,20 @@ require(
                     // menu.init();
                     break;
             }
+        }
+
+        function init()
+        {
+            $("#settingBtn").click(function(e){
+                alert("Coming Soon!");
+                e.preventDefault();
+            });
+            $("#updatePwdBtn").click(function(e){
+                e.preventDefault();
+            });
+            $("#logoutBtn").click(function(e){
+                window.location.href = "/users/logout";
+            });
         }
 
     }

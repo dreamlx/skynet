@@ -39,6 +39,8 @@ require(["jquery",
 				e.preventDefault();				
 			});
 
+			$("#monitoringPageBtn").parent().addClass("selected");
+
 		});
 	}
 );

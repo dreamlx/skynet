@@ -71,6 +71,10 @@ define(["jquery", "filterModel"],function($, model){
 	function setupKinds()
 	{
 		var ul = $(config.mainDiv+" ul");
+		if(_all_article_kinds.length > 8)
+		{
+			$(".listBrandBtn").show();
+		}
 		for (var i = 0,len = _all_article_kinds.length; i < len; i++) {
 			// console.log(_all_article_kinds[i]);
 			var obj = _all_article_kinds[i];

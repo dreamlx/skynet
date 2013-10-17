@@ -65,33 +65,35 @@ define(["jquery"],function($){
     });
 
     $("#weiboListBtn").click(function(e){
-    	if(!enableClick)
-        {
-            e.preventDefault();
-            return;
-        }
-        var miniHeight = 76;
-        $(this).toggleClass("floatWeiboListBtn");
-        $(".weiboDefaultList").toggleClass("weiboMiniList");
-        if($("#weiboList").height() > miniHeight)
-        {
-            $(".weiboDefaultList").height(miniHeight);
-            $("#weiboList").height(miniHeight);
-            $("#weiboListPageBtnBlock").show();
-            $("#weiboListBtn").css("margin-top",14);
-
-            $(window).off("scroll", scrollHandler);
-        }else
-        {
-            $(".weiboDefaultList ul").css("top",0);
-            var count = $(".weiboDefaultList ul li").length;
-            $(".weiboMiniList").height(miniHeight*count);
-            $("#weiboList").height(miniHeight*count);
-            $("#weiboListPageBtnBlock").hide();
-            
-            $(window).on("scroll", scrollHandler);
-        }
         e.preventDefault();
+        return;
+    	// if(!enableClick)
+     //    {
+     //        e.preventDefault();
+     //        return;
+     //    }
+     //    var miniHeight = 76;
+     //    $(this).toggleClass("floatWeiboListBtn");
+     //    $(".weiboDefaultList").toggleClass("weiboMiniList");
+     //    if($("#weiboList").height() > miniHeight)
+     //    {
+     //        $(".weiboDefaultList").height(miniHeight);
+     //        $("#weiboList").height(miniHeight);
+     //        $("#weiboListPageBtnBlock").show();
+     //        $("#weiboListBtn").css("margin-top",14);
+
+     //        $(window).off("scroll", scrollHandler);
+     //    }else
+     //    {
+     //        $(".weiboDefaultList ul").css("top",0);
+     //        var count = $(".weiboDefaultList ul li").length;
+     //        $(".weiboMiniList").height(miniHeight*count);
+     //        $("#weiboList").height(miniHeight*count);
+     //        $("#weiboListPageBtnBlock").hide();
+            
+     //        $(window).on("scroll", scrollHandler);
+     //    }
+     //    e.preventDefault();
     });
 
     var scrollHandler = function()
