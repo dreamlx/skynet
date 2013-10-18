@@ -1,6 +1,6 @@
 define(
-	["jquery","lastestUpdate","otherChartBlock"], 
-	function($, lastest,otherChart){
+	["jquery","lastestUpdate","otherChartBlock","weiboList"], 
+	function($, lastest,otherChart,weiboList){
 		$("#homePageBtn").click(function(e){
         	clickNav();
         	$(this).parent().addClass("selected");
@@ -59,6 +59,7 @@ define(
 		{
 		    nowPage = "home";
 		    $("#weiboList").show();
+		    $("#weiboListBlock").hide();
 		    $("#lastestUpdate").show();
 		    $("#lastestUpdate .lastestYQ").each(function(i, h){
 		        if(i!=0)
@@ -107,7 +108,14 @@ define(
 		var openPublicPage = function()
 		{
 		    nowPage = "public";
-		    $("#weiboList").show();
+		    $("#weiboList").hide();
+		    if($("#weiboListBlock").length > 0)
+		    {
+		    	$("#weiboListBlock").show();
+		    }else
+		    {
+			    weiboList.changeToTable();
+		    }
 		    $("#lastestUpdate").hide();
 		    $("#realTimeChartBlock").hide();
 		    $("#moreInfoBlock").hide();    
@@ -131,6 +139,7 @@ define(
 		{
 		    nowPage = "sensitive";
 		    $("#weiboList").hide();
+		    $("#weiboListBlock").hide();
 		    $("#lastestUpdate").show();
 		    $("#realTimeChartBlock").hide();
 		    $("#moreInfoBlock").hide();    
@@ -143,6 +152,7 @@ define(
 		{
 		    nowPage = "report";
 		    $("#weiboList").hide();
+		    $("#weiboListBlock").hide();
 		    $("#lastestUpdate").hide();
 		    $("#realTimeChartBlock").show();
 		    $("#moreInfoBlock").show();

@@ -1,9 +1,11 @@
 define(["jquery"],function($){
 	var enableClick = false;
+    var _data;
 
 	var init = function()
 	{
 		$.get("/home/weiboList.json",function(data){
+            _data = data.arts;
 			var arrLen = data.arts.length;
 			for(var i=0; i<arrLen; i++)
 			{
@@ -96,6 +98,40 @@ define(["jquery"],function($){
      //    e.preventDefault();
     });
 
+    var changeToTable = function()
+    {
+        if(!enableClick)
+        {
+            return
+        }
+        var tableDiv = $("<div class='tabTable' id='weiboListBlock'><div class='tab-content'><div class='tab-pane active' id='tabWeiboList'></div></div></div>");
+        var tdTpl = $("<div class='lastestWeiboArticle weiboListTable'><header><h3></h3><span><img src='/assets/weiboLogo.png'></span></header><p></p><span class='lastestData'></span></div>");
+        
+        $("#weiboList").after(tableDiv);
+        buildAllLastest(tdTpl);
+    }
+
+    var buildAllLastest = function(tpl)
+    {
+        for(var i=0;i<_data.length;i++)
+        {
+            var dom = tpl.clone();
+            buildLastest(dom, _data[i]);
+            dom.appendTo("#tabWeiboList");
+        }
+        var allHeight = 107*_data.length;
+        $("#weiboListBlock").height(allHeight);
+        $("#tabWeiboList").height(allHeight);
+        // return allHeight;
+    } 
+
+    function buildLastest(dom, data)
+    {
+        dom.find("h3").html(data.text);
+        dom.find(">p").html("<a href='"+data.url+"' target='_blank'>"+data['content']+"</a>");
+        dom.find("span.lastestData").html(data.published_at);
+    }
+
     var scrollHandler = function()
     {
     	scrollTop = $(window).scrollTop();
@@ -108,6 +144,7 @@ define(["jquery"],function($){
     }
 
 	return {
-		init:init
+		init:init,
+        changeToTable:changeToTable
 	}
 });
