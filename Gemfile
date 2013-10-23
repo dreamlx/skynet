@@ -12,10 +12,13 @@ gem 'psych'
 gem 'ya2yaml'  
 gem 'haml'
 gem 'delayed_job_active_record'
+gem 'ar_mailer_rails3'
 
 # deploy
 gem "rvm-capistrano"
 gem 'capistrano', '~> 2.12.0'
+
+gem 'daemons'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +32,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'delayed_job_active_record'
 gem 'jquery-rails'
 gem 'pry-rails', :group => :development
 gem "pry-nav", :group => :development

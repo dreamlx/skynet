@@ -50,7 +50,8 @@ class UsersController < ApplicationController
     @consult = Consult.new(params[:consult]) 
     respond_to do |format|
       if @consult.save
-        UserMailer.consult(@consult).deliver
+        # UserMailer.consult(@consult).deliver
+        UserMailer.delay.consult(@consult)
         format.html{redirect_to root_path, notice:'This email has aready send'} 
         format.json{render :json => {:response => "success"}}
       else
@@ -63,9 +64,11 @@ class UsersController < ApplicationController
     @experience = Experience.new(params[:experience])
     respond_to do |format|
       if @experience.save
-        UserMailer.post_experience(@experience).deliver
-        format.html{redirect_to root_path, notice:'This email has aready send'} 
+        # UserMailer.post_experience(@experience).deliver
+        UserMailer.delay.post_experience(@experience)
+        format.html{redirect_to root_path, alert:'This email has aready send'} 
         format.json{render :json => {:response => "success"}}
+        format.js
       else
         format.json{render :json => {:response => "failed"}}
       end

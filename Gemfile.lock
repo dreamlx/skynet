@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    ar_mailer_rails3 (2.1.12)
     arel (3.0.2)
     builder (3.0.4)
     capistrano (2.12.0)
@@ -46,6 +47,7 @@ GEM
     coffee-script-source (1.6.2)
     commonjs (0.2.6)
     curb (0.8.4)
+    daemons (1.1.9)
     delayed_job (3.0.5)
       activesupport (~> 3.0)
     delayed_job_active_record (0.4.4)
@@ -54,6 +56,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     gon (4.1.1)
       actionpack (>= 2.3.0)
       json
@@ -96,7 +101,7 @@ GEM
       pry (~> 0.9.10)
     pry-rails (0.3.1)
       pry (>= 0.9.10)
-    psych (2.0.0)
+    psych (2.0.1)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -155,10 +160,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ar_mailer_rails3
   capistrano (~> 2.12.0)
   coffee-rails (~> 3.2.1)
   curb
+  daemons
   delayed_job_active_record
+  figaro
   gon
   haml
   jquery-rails

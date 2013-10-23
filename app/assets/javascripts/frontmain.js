@@ -58,7 +58,8 @@ $(function(){
                 type: "POST",
                 dataType:"json",
              	url: $(this).attr('action'),
-            	data: $(this).serializeArray(),  async: false,
+            	data: $(this).serializeArray(),  
+            	async: false,
                 success: function(data) {
                     alert(data.response)
                 }
@@ -71,9 +72,10 @@ $(function(){
                 type: "POST",
                 dataType:"json",
              	url: $(this).attr('action'),
-            	data: $(this).serializeArray(),  async: false,
+            	data: $(this).serializeArray(),  
+            	async: false	,
                 success: function(data) {
-                    alert(data.response)
+                     alert(data.response)
                 }
             });
 	})
