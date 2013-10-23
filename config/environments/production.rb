@@ -1,4 +1,4 @@
-sSkynet::Application.configure do
+Skynet::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -76,15 +76,15 @@ config.i18n.fallbacks = true
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  # email_config = YAML::load(File.read(Rails.root.to_s + '/config/email_config.yml'))
+  email_config = YAML::load(File.read(Rails.root.to_s + '/config/email_config.yml'))
   config.action_mailer.smtp_settings = {
-    :address => Figaro.env.email_address
-    :port => Figaro.env.email_port
-    :domain => Figaro.env.email_domain
-    :authentication => Figaro.env.email_authentication
-    :user_name => Figaro.email_user_name
-    :password => Figaro.email_password
-    :enable_starttls_auto => Figaro.email_enable_starttls_auto
+    :address => email_config['address'],
+    :port => email_config['port'],
+    :domain => email_config['domain'],
+    :authentication => email_config['authentication'],
+    :user_name => email_config['email'],
+    :password => email_config['password'],
+    :enable_starttls_auto => email_config['enable_starttls_auto']
   }
 
   # Log the query plan for queries taking more than this (works

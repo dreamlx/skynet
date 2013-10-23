@@ -2,7 +2,8 @@
   %section.globalLogo
     #logo
       %img{:src => "/assets/globalLogo.png"}
-    %input#searchInput.radiusBtn.pull-right{ type: "search", placeholder: "搜索" }
+    - if session["current_user"] != nil
+      %input#searchInput.radiusBtn.pull-right{ type: "search", placeholder: "搜索" }
   .navbar
     .navbar-inner
       %ul.nav

@@ -56,9 +56,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    figaro (0.7.0)
-      bundler (~> 1.0)
-      rails (>= 3, < 5)
     gon (4.1.1)
       actionpack (>= 2.3.0)
       json
@@ -166,7 +163,6 @@ DEPENDENCIES
   curb
   daemons
   delayed_job_active_record
-  figaro
   gon
   haml
   jquery-rails

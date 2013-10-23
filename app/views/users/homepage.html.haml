@@ -15,7 +15,7 @@
       %section#macScreen
         %img{:id=>"playBtn", :src=>"/assets/homepage/videoplay.png"}
         %video(id="my_video_1" class="video-js vjs-default-skin" controls preload="false" width="419" height="266")
-          %source(src="" type='video/mp4')
+          %source(src="http://mgcfilm.qiniudn.com/qiangshengmeitong.mov?avthumb/mp4/r/30/vb/256k/vcodec/libx264/ar/22050/ab/64k/acodec/libmp3lame" type='video/mp4')
     .slide
       %img{:src=>"/assets/homepage/homebanner_bg.png"}
     .slide
@@ -55,16 +55,59 @@
   %ul
     %li 功能特性：
     %li
-      =link_to "新闻智能提取技术"
+      %a.lightview{:href=>"#keyword_1"}
+        新闻智能提取技术
     %li
-      =link_to "自然语言智能处理"
+      %a.lightview{:href=>"#keyword_2"}
+        自然语言智能处理
     %li 
-      =link_to "结构化采集技术"
+      %a.lightview{:href=>"#keyword_3"}
+        结构化采集技术
     %li
-      =link_to "丰富的数据接口"
+      %a.lightview{:href=>"#keyword_4"}
+        丰富的数据接口
     %li
-      =link_to "舆情预警功能"
-  %a.text-center.radiusBtn{:href=>"#"}
+      %a.lightview{:href=>"#keyword_5"}
+        舆情预警功能
+  %ul.moreKw
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+  %ul.moreKw
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+    %li
+      %a.lightview{:href=>"#keyword_6"}
+        其他关键字
+  %a.text-center.radiusBtn#moreKeyword{:href=>"#"}
     查看更多
 
 #services.container.row
@@ -85,3 +128,34 @@
     %figure
       %img{:src=>"/assets/homepage/figure_24hr.png"}
 =javascript_include_tag "fronthomepage"
+
+%div.keyword#keyword_1
+  %h1
+    新闻智能提取技术
+  %p
+    描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+%div.keyword#keyword_2
+  %h1
+    自然语言智能处理
+  %p
+    描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+%div.keyword#keyword_3
+  %h1
+    结构化采集技术
+  %p
+    描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+%div.keyword#keyword_4
+  %h1
+    丰富的数据接口
+  %p
+    描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+%div.keyword#keyword_5
+  %h1
+    舆情预警功能
+  %p
+    描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述
+%div.keyword#keyword_6
+  %h1
+    其他关键字
+  %p
+    描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述

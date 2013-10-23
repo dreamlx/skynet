@@ -11,12 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require plugins
 //= require home
 //= require video
 //= require carousel/jquery.ui.core.min
 //= require carousel/jquery.ui.widget.min
 //= require carousel/jquery.ui.rcarousel.min
+//= require front/lightview
 //= require validate
 //= require frontmain
 

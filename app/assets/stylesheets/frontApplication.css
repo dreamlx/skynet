@@ -13,5 +13,6 @@
  *= require bootstrap/bootstrap
  *= require bootstrap/responsive
  *= require frontmain
+ *= require front/lightview
  */
 a {blr:expression(this.onFocus=this.blur())}

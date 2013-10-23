@@ -12,7 +12,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+/test/yaml_data
 /config/deploy.rb
 /config/deploy
 /public/uploads

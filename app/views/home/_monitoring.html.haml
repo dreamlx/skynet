@@ -1,0 +1,172 @@
+%section#customizedMonitoringBlock
+  #brandTitleBlock
+    %ul
+      -#%li
+        -#%a.selected{:href=>"#"} 昌河铃木
+    #titleListBtnGroup
+      %a.listBrandBtn{:href=>"#"}
+        %span#toLeftArrow
+      %a.listBrandBtn{:href=>"#"}
+        %span#toRightArrow
+        
+  #filterConditionBlock
+    %section#selectedCondition
+      %h5 您的筛选条件：
+      %ul
+        %li#clearConditionBtn
+          %a{:href=>"#"} 清空
+
+    #conditionList
+      %article
+        %h5 信息状态：
+        %ul#statusList
+          
+      %article
+        %h5 媒介类型：
+        %ul#mediaTypeList
+          
+      %article
+        %h5 时间：
+        %ul#dateList
+          
+      %article
+        %h5 调性：
+        %ul#isGoodList
+          
+  %div#slideUpBtn
+    %a{:href=>"#"} 收起
+
+  #tableFilterBlock
+    %ul
+      %li
+        %a.acttime_down{:href=>"#qorder=acttime_down"} 
+          时间          
+          %span.dropDownArrow
+      %li
+        %a.title_down{:href=>"#qorder=title_down"} 
+          标题          
+          %span.dropDownArrow
+      %li
+        %a.click_down{:href=>"#qorder=click_down"}
+          点击
+          %span.dropDownArrow
+      %li
+        %a.reply_down{:href=>"#qorder=reply_down"}
+          评论
+          %span.dropDownArrow
+      %li
+        %a.level_down.longLink{:href=>"#qorder=level_down"}
+          预警级别
+          %span.dropDownArrow
+      %li
+        %a.sitename_down{:href=>"#qorder=sitename_down"}
+          网站
+          %span.dropDownArrow
+    %form#searchForm
+      %label{:for=>"searchCondition"} 搜索条件：
+      %select#searchCondition{:name=>"searchCondition"}
+        %option{:value=>0} 标题
+        %option{:value=>2} 网站域名
+        %option{:value=>3} 文章URL
+        %option{:value=>4} 作者
+
+      %input#searchKeywordInput{:name=>"searchKeyword"}
+
+  .tablePaginationBlock
+    %ul
+      %li
+        %a.prevPageBtn{:href=>"#"}
+      %li
+        %a.next10PageBtn{:href=>"#"}
+          %span.pageUpArrow
+      %li
+        %a.nextPageBtn{:href=>"#"}
+    %span
+      %em 0
+      条记录 ／ 
+      %b 0
+      页
+
+  %table#dataTable
+    %thead
+      %th#th1 全选
+      %th#th2 序号
+      %th#th3 标题
+      %th#th4 调性
+      %th#th5 点击／转发
+      %th#th6 评论
+      %th#th7 网站
+      %th#th8 发帖时间
+      %th#th9 操作
+    %tbody
+      
+  .dataOperateBlock
+    %span
+      %input{:type=>"checkbox"}
+      %a{:href=>"#"} 全选
+
+    %ul
+      %li
+        %a{:href=>"#batchExport"} 批量导出（EXCEL）
+      %li
+        %a{:href=>"#batchPlan"} 建立导出计划
+      %li
+        %a{:href=>"#batchModfiy"} 批量修改
+      %li
+        %a{:href=>"#batchDelete"} 批量删除
+      %li
+        %a{:href=>"#batchReport"} 批量加入报告
+      %li
+        %a{:href=>"#batchFavorite"} 批量加入收藏
+      %li
+        %a{:href=>"#batchWarning"} 批量发送预警
+
+  .tablePaginationBlock
+    %ul
+      %li
+        %a.prevPageBtn{:href=>"#"}
+      %li
+        %a.next10PageBtn{:href=>"#"}
+          %span.pageUpArrow
+      %li
+        %a.nextPageBtn{:href=>"#"}
+    %span
+      %em 0
+      条记录 ／ 
+      %b 0
+      页
+
+  %ul.floatPageSelector
+    %li.noBorderAndBG
+      %span.dropDownArrow
+
+  #floatTableOperateDiv
+    %span.dropDownArrow
+    %ul
+      %li#actionWarning
+        %span#iconAlert
+        %p 发送预警
+      %li#actionFavorite
+        %span#iconHeart
+        %p 加入收藏
+      %li#actionSetTop
+        %span#iconUpload
+        %p 信息置顶
+      %li#actionSetHot
+        %span#iconStar
+        %p 设置热门
+      %li#actionGetHitWord
+        %span#iconSearch
+        %p#threeLetter 
+          命中
+          %br
+          关键词
+      %li#actionInfo
+        %span#iconBubble
+        %p 添加备注
+      %li#actionDel
+        %span#iconCross
+        %p 删除信息
+
+
+
