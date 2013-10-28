@@ -1,10 +1,17 @@
 define(
-    ["jquery","html2canvas","jspdf/jspdf","jspdf/jspdf.plugin.addimage","printThis"],
+    ["jquery","html2canvas","jspdf/jspdf","jspdf/jspdf.plugin.addimage","jspdf/jspdf.plugin.cell","printThis","jquery-migrate-1.2.1"],
     function($, html2canvas){
 
         var init = function()
         {
             $(".downloadBtn").click(function(e){
+                
+                if($.browser.safari)
+                {
+                    printDiv(this.hash);
+                    e.preventDefault();
+                    return;
+                }
                 var config = this.hash.substr(1,1);
                 config = config == "q" || config == "m"?"small":"big"
                 savePdf(this.hash, config);

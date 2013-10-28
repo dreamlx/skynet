@@ -2,6 +2,7 @@ requirejs.config({
     shim: {
         'jquery.easing.min': ['jquery'],
         'jquery.simpleTabs': ['jquery'],
+        'jquery-migrate-1.2.1': ['jquery'],
         'printThis': ['jquery'],
         "Chart.min":{
             exports: "Chart"
@@ -36,8 +37,10 @@ require(
         // console.log(window.location.hash);
 
         var hash = window.location.hash.replace('#',"");
+        menu.init(hash);
         $(window).bind("moduleDataLoaded", onDataLoaded);
         ready(function(){
+            
             $.get("/home/unreadItems.json", function(data){
                 var obj = data.data;
 
@@ -66,7 +69,6 @@ require(
             realTimeCht.init();
             otherCht.init();            
             
-            menu.init(hash);
             pdf.init();
         });
 

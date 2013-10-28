@@ -30,7 +30,9 @@ define(
 	    	{
 	    		
 		    	nowPage = hash;
+
 	    	}
+	    	selectNav();
 	    	
 	    }
 
@@ -38,14 +40,17 @@ define(
 	    {
 	    	switch(nowPage)
 	    	{
+	    		case "home" :
+	    			$("#homePageBtn").parent().addClass("selected");
+	    			break;
 	    		case "public":
-	    			$("#publicPageBtn").addClass("selected");
+	    			$("#publicPageBtn").parent().addClass("selected");
 	    			break;
 	    		case "sensitive":
-	    			$("#sensitivePageBtn").addClass("selected");
+	    			$("#sensitivePageBtn").parent().addClass("selected");
 	    			break;
 	    		case "report":
-		    		$("#reportPageBtn").addClass("selected");
+		    		$("#reportPageBtn").parent().addClass("selected");
 	    			break;
 	    	}
 	    }
