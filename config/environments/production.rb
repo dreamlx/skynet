@@ -54,7 +54,8 @@ Skynet::Application.configure do
     frontexperience.css 
     frontlogin.css
     frontmain.css
-    colorDefine.css
+    colorDefine.less
+    index.less
     frontservices.css
     users.css
     frontabout.css    

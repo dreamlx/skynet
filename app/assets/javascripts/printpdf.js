@@ -1,5 +1,5 @@
 define(
-    ["jquery","html2canvas","jspdf/jspdf","jspdf/jspdf.plugin.addimage","jspdf/jspdf.plugin.cell","printThis","jquery-migrate-1.2.1"],
+    ["jquery","html2canvas","jspdf/jspdf","jspdf/jspdf.plugin.addimage","printThis","jquery-migrate-1.2.1"],
     function($, html2canvas){
 
         var init = function()
