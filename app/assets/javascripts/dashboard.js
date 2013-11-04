@@ -60,6 +60,8 @@ require(
                     $("#wbNum").show();
                     $("#wbNum").text(obj.wb_num);
                 }
+
+                setInterval(popNum,15000);
             });
 
             init();
@@ -112,6 +114,15 @@ require(
             $("#logoutBtn").click(function(e){
                 window.location.href = "/users/logout";
             });
+        }
+
+        function popNum()
+        {
+            $(".infoNum").toggleClass("bigInfoNum");
+            setTimeout(function(){
+                $(".infoNum").toggleClass("bigInfoNum");
+
+            },200);
         }
 
     }
